@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FC06EE9-D2B1-417D-AA4A-338EF497F982}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLHelper</RootNamespace>
+    <AssemblyName>BLHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLLAcademicMeeting.cs" />
+    <Compile Include="BLLAchieveAward.cs" />
+    <Compile Include="BLLAchievement.cs" />
+    <Compile Include="BLLAchievementApply.cs" />
+    <Compile Include="BLLAchievementCA.cs" />
+    <Compile Include="BLLAgency.cs" />
+    <Compile Include="BLLAnnouncement.cs" />
+    <Compile Include="BLLAttendMeeting.cs" />
+    <Compile Include="BLLAward.cs" />
+    <Compile Include="BLLBasicCode.cs" />
+    <Compile Include="BLLContract.cs" />
+    <Compile Include="BLLDFurtherStudy.cs" />
+    <Compile Include="BLLEducation.cs" />
+    <Compile Include="BLLEduExperience.cs" />
+    <Compile Include="BLLEquipment.cs" />
+    <Compile Include="BLLFiles.cs" />
+    <Compile Include="BLLFundInformation.cs" />
+    <Compile Include="BLLFundingSet.cs" />
+    <Compile Include="BLLFurniture.cs" />
+    <Compile Include="BLLFutherStudy.cs" />
+    <Compile Include="BLLHonor.cs" />
+    <Compile Include="BLLLibraryRecord.cs" />
+    <Compile Include="BLLMonograph.cs" />
+    <Compile Include="BLLNewAcademicReporting.cs" />
+    <Compile Include="BLLOperationLog.cs" />
+    <Compile Include="BLLPact.cs" />
+    <Compile Include="BLLPaper.cs" />
+    <Compile Include="BLLPatent.cs" />
+    <Compile Include="BLLPlatform.cs" />
+    <Compile Include="BLLProject.cs" />
+    <Compile Include="BLLProjectFile.cs" />
+    <Compile Include="BLLProjectImportantNode.cs" />
+    <Compile Include="BLLScienceReport.cs" />
+    <Compile Include="BLLSocialPartTime.cs" />
+    <Compile Include="BLLSpeakClass.cs" />
+    <Compile Include="BLLStaffAchieve.cs" />
+    <Compile Include="BLLStaffDevote.cs" />
+    <Compile Include="BLLStudent.cs" />
+    <Compile Include="BLLToolBar.cs" />
+    <Compile Include="BLLTree.cs" />
+    <Compile Include="BLLUnitInspect.cs" />
+    <Compile Include="BLLUnitLectures.cs" />
+    <Compile Include="BLLUser.cs" />
+    <Compile Include="BLLWithinPost.cs" />
+    <Compile Include="BLLWorkExperience.cs" />
+    <Compile Include="BLLWorkPlanSummary.cs" />
+    <Compile Include="BLLPhotos.cs" />
+    <Compile Include="BLLAttachment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Entities\Common.Entities.csproj">
+      <Project>{11c06ec4-d0ab-4927-8f7b-bde719125009}</Project>
+      <Name>Common.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataBase\DataBase.csproj">
+      <Project>{aa70b0c1-72a2-4b6d-95c1-2ebc1845e309}</Project>
+      <Name>DataBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

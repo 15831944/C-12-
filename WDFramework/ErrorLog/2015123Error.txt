@@ -1,0 +1,152 @@
+2015/12/3 21:24:19
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.DownloadPhoto(String photoPath) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\BLCommon\PublicMethod.cs:行号 58
+   在 WDFramework.People.Staffs.Down_Photos.DownLoad_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\People\Staffs\Down_Photos.aspx.cs:行号 42
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/People/Staffs/Down_Photos.aspx?id=215
+------------------------------------------------------------------------------
+2015/12/3 21:25:26
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.DownloadPhoto(String photoPath) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\BLCommon\PublicMethod.cs:行号 58
+   在 WDFramework.People.Staffs.Down_Photos.DownLoad_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\People\Staffs\Down_Photos.aspx.cs:行号 42
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/People/Staffs/Down_Photos.aspx?id=215
+------------------------------------------------------------------------------
+2015/12/3 21:27:34
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.DownloadPhoto(String photoPath) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\BLCommon\PublicMethod.cs:行号 58
+   在 WDFramework.People.Staffs.Down_Photos.DownLoad_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\People\Staffs\Down_Photos.aspx.cs:行号 42
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/People/Staffs/Down_Photos.aspx?id=216
+------------------------------------------------------------------------------
+2015/12/3 21:27:38
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.DownloadPhoto(String photoPath) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\BLCommon\PublicMethod.cs:行号 58
+   在 WDFramework.People.Staffs.Down_Photos.DownLoad_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\People\Staffs\Down_Photos.aspx.cs:行号 42
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/People/Staffs/Down_Photos.aspx?id=215
+------------------------------------------------------------------------------
+2015/12/3 21:31:15
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.DownloadFile(String aFilepath) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\BLCommon\PublicMethod.cs:行号 40
+   在 WDFramework.Achievement.AchievementInfo.Operate.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\Achievement\AchievementInfo\Operate.aspx.cs:行号 125
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/Achievement/AchievementInfo/Operate.aspx?id=44
+------------------------------------------------------------------------------
+2015/12/3 21:31:17
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.DownloadFile(String aFilepath) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\BLCommon\PublicMethod.cs:行号 40
+   在 WDFramework.Achievement.AchievementInfo.Operate.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\Achievement\AchievementInfo\Operate.aspx.cs:行号 125
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/Achievement/AchievementInfo/Operate.aspx?id=44
+------------------------------------------------------------------------------
+2015/12/3 21:31:18
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.DownloadFile(String aFilepath) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\BLCommon\PublicMethod.cs:行号 40
+   在 WDFramework.Achievement.AchievementInfo.Operate.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\Achievement\AchievementInfo\Operate.aspx.cs:行号 125
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/Achievement/AchievementInfo/Operate.aspx?id=44
+------------------------------------------------------------------------------
+2015/12/3 21:31:19
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.DownloadFile(String aFilepath) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\BLCommon\PublicMethod.cs:行号 40
+   在 WDFramework.Achievement.AchievementInfo.Operate.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\Achievement\AchievementInfo\Operate.aspx.cs:行号 125
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/Achievement/AchievementInfo/Operate.aspx?id=44
+------------------------------------------------------------------------------

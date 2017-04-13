@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BLHelper.BLLUser">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAQAQAQQgACEIAAAAAAAQAAAKAAA=</HashCode>
+      <FileName>BLLUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLHelper.BLLRole">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAQAQAAQAACEIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BLLRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLHelper.BLLToolBar">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAIAAUAQAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>BLLToolBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLHelper.BLLTree">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAUAAQAAAAAAAAAAAAAAAAAAgAAAAAQ=</HashCode>
+      <FileName>BLLTree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

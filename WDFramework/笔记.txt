@@ -1,0 +1,110 @@
+﻿1 初始化不能创建数据库 原因： base()括号中未传入连接字符串
+ public class QDFDBSet : DbContext
+    {
+        public QDFDBSet()
+            : base("QuickDevelopFrame")
+        {}
+	}
+	
+
+2多对一关系中 无法查询出相关联的表的数据， 原因  最后一行
+
+public class UserIF : ClassBase
+    {
+        public int UserIFID { get; set; }
+        public string UserBH { get; set; }//用户编号
+        public string LoginName { get; set; }//登录名
+        public string LoginPWD { get; set; }
+        public string DeptBH { get; set; }
+        public string UserName { get; set; }
+        public string Email { get; set; }
+        public string TeleNum { get; set; }
+        public virtual Role Roles { get; set; }//角色  因为此处没加virtual 导致不能关联查询
+    }
+3 多个项目 指令
+Enable-Migrations -ContextTypeName "DataBaseContext" -ProjectName "DataBase" -StartUpProjectName "WDFramework" -ConnectionStringName "WDFramework" -Verbose
+
+Update-Database -Script -ProjectName "DataBase" -StartUpProjectName "WDFramework" -ConnectionStringName "WDFramework"  -Verbose
+ Update-Database  -ProjectName "DataBase" -StartUpProjectName "WDFramework" -ConnectionStringName "WDFramework"  -Verbose
+
+ add-migration 1 -ProjectName "DataBase" -StartUpProjectName "WDFramework" -ConnectionStringName "WDFramework" -Verbose
+4 添加引用出现叹号，引用失败。
+	net的版本不相同
+
+
+
+	备份
+
+	<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="FineUI" type="FineUI.ConfigSection, FineUI" requirePermission="false" />
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+  </configSections>
+  <!-- 可用的配置项（这里列的都是默认值）: Language="zh_CN" AjaxTimeout="60" EnableAjax="true" Theme="blue" FormMessageTarget="qtip" FormOffsetRight="20" FormLabelWidth="100" FormLabelSeparator="：" IconBasePath="~/icon" EnableAjaxLoading="true" AjaxLoadingType="default" CustomTheme="" CustomThemeBasePath="~/theme" -->
+  <FineUI EnableBigFont="true" DebugMode="false" />
+  <appSettings />
+  <connectionStrings>
+    <add name="WDFramework" connectionString="Data Source=.;Initial Catalog=WDFramework;User Id=sa;Password=AAAaaa123" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+  <!--
+    有关 .NET 4.5 的 web.config 更改的说明，请参见 http://go.microsoft.com/fwlink/?LinkId=235367。
+
+    可在 <httpRuntime> 标记上设置以下特性。
+      <system.Web>
+        <httpRuntime targetFramework="4.5" />
+      </system.Web>
+  -->
+  <system.web>
+    <pages controlRenderingCompatibilityVersion="4.0" clientIDMode="AutoID">
+      <controls>
+        <add assembly="FineUI" namespace="FineUI" tagPrefix="x" />
+      </controls>
+    </pages>
+    <httpModules>
+      <add name="FineUIScriptModule" type="FineUI.ScriptModule, FineUI" />
+    </httpModules>
+    <httpHandlers>
+      <add verb="GET" path="res.axd" type="FineUI.ResourceHandler, FineUI" validate="false" />
+    </httpHandlers>
+    <httpRuntime maxRequestLength="102400 " />
+    <customErrors mode="Off" />
+    <compilation debug="true" targetFramework="4.5" />
+    <!--
+    <authentication mode="Forms">
+      <forms name=".ASPXFORMSAUTH" loginUrl="~/default.aspx" timeout="120" defaultUrl="~/main.aspx" protection="All" path="/"/>
+    </authentication>
+    <authorization>
+      <deny users="?"/>
+    </authorization>
+    -->
+  </system.web>
+  <!--
+  <location path="res.axd">
+    <system.web>
+      <authorization>
+        <allow users ="*" />
+      </authorization>
+    </system.web>
+  </location>
+  -->
+  <!-- IIS7 Integrated Mode
+  <system.webServer>
+    <modules>
+      <add name="FineUIScriptModule" type="FineUI.ScriptModule, FineUI"/>
+    </modules>
+    <handlers>
+      <add name="FineUIResourceHandler" verb="GET" path="res.axd" type="FineUI.ResourceHandler, FineUI" validate="false"/>
+    </handlers>
+    <httpErrors errorMode="Detailed"/>
+    <asp scriptErrorSentToBrowser="true"/>
+  </system.webServer>
+  -->
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework">
+      <parameters>
+        <parameter value="v11.0" />
+      </parameters>
+    </defaultConnectionFactory>
+  </entityFramework>
+</configuration>

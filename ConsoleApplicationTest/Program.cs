@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+      
+namespace ConsoleApplicationTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           // DataAccess a = new DataAccess();
+            //DataBaseContext db = new DataBaseContext();
+           // DataAccess<UserInfo> aa = new DataAccess<UserInfo>(db);
+        }
+    }
+}

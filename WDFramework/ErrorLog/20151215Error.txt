@@ -1,0 +1,186 @@
+2015/12/15 15:48:53
+------------------------------------------------------------------------------
+
+错误消息:该字符串未被识别为有效的 DateTime。有一个未知单词(从索引 0 处开始)。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.Convert.ToDateTime(String value)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertUserInfo(DataTable dt) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 300
+ 
+
+引发异常的方法:System.DateTime Parse(System.String, System.Globalization.DateTimeFormatInfo, System.Globalization.DateTimeStyles)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2015/12/15 15:51:15
+------------------------------------------------------------------------------
+
+错误消息:该字符串未被识别为有效的 DateTime。有一个未知单词(从索引 0 处开始)。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.Convert.ToDateTime(String value)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertUserInfo(DataTable dt) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 300
+ 
+
+引发异常的方法:System.DateTime Parse(System.String, System.Globalization.DateTimeFormatInfo, System.Globalization.DateTimeStyles)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2015/12/15 16:07:26
+------------------------------------------------------------------------------
+
+错误消息:该字符串未被识别为有效的 DateTime。有一个未知单词(从索引 0 处开始)。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.Convert.ToDateTime(String value)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertUserInfo(DataTable dt) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 300
+ 
+
+引发异常的方法:System.DateTime Parse(System.String, System.Globalization.DateTimeFormatInfo, System.Globalization.DateTimeStyles)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2015/12/15 19:53:49
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.AcademicMeeting.ImportExcel.insertPaper(DataTable dt) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 634
+ 
+
+引发异常的方法:System.String insertPaper(System.Data.DataTable)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2015/12/15 19:54:01
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.AcademicMeeting.ImportExcel.insertPaper(DataTable dt) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 634
+ 
+
+引发异常的方法:System.String insertPaper(System.Data.DataTable)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2015/12/15 19:54:04
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.AcademicMeeting.ImportExcel.insertPaper(DataTable dt) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 634
+ 
+
+引发异常的方法:System.String insertPaper(System.Data.DataTable)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2015/12/15 21:21:10
+------------------------------------------------------------------------------
+
+错误消息:列“资产名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertEquipment(DataTable dt) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1409
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2015/12/15 21:23:50
+------------------------------------------------------------------------------
+
+错误消息:列“资产名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertEquipment(DataTable dt) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1409
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2015/12/15 21:24:49
+------------------------------------------------------------------------------
+
+错误消息:列“资产编号”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertEquipment(DataTable dt) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1415
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2015/12/15 21:26:38
+------------------------------------------------------------------------------
+
+错误消息:列“购置日期”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertEquipment(DataTable dt) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1417
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2015/12/15 21:28:43
+------------------------------------------------------------------------------
+
+错误消息:列“购置日期”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertEquipment(DataTable dt) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1417
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2015/12/15 21:35:12
+------------------------------------------------------------------------------
+
+错误消息:列“存放地点”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertEquipment(DataTable dt) 位置 c:\Users\admin\Desktop\hr_workspace\tfs_workspace\WDFramework\Main\WDFramework\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1424
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
