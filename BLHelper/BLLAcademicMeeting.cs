@@ -28,7 +28,7 @@ namespace BLHelper
 {
     public class BLLAcademicMeeting
     {
-        DataBaseContext dbcontext = new DataBaseContext();
+        DataBaseContext dbcontext = new    DataBaseContext();
 
         //更新IsPass状态
         public void UpdateIsPass(int Id, bool Ispass)
