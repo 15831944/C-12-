@@ -45,7 +45,7 @@ namespace BLHelper
             try
             {
                 AcademicMeeting Meeting = dbcontext.AcademicMeetingContext.Find(ID);
-                Meeting.AttachmentID = null;
+                Meeting.AttachmentID =    null;
                 dbcontext.SaveChanges();
             }
             catch
