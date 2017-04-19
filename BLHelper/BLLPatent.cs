@@ -47,8 +47,10 @@ namespace BLHelper
                 Patent Patent = dbcontext.PatentContext.Where(u => u.PatentID == ID).FirstOrDefault();//new Announcement { AnnouncementID = announcementID };
                 //lby ↓
                 int[] attachID = new int[2];
-                attachID[0] = Patent.Attachment_Patent.Value;
-                attachID[1] = Patent.Attachment_Application.Value;
+                if (Patent.Attachment_Patent!=null)
+                    attachID[0] = Patent.Attachment_Patent.Value;
+                if (Patent.Attachment_Application!=null)
+                    attachID[1] = Patent.Attachment_Application.Value;
 
                 dbcontext.PatentContext.Attach(Patent);
                 dbcontext.PatentContext.Remove(Patent);

@@ -49,6 +49,12 @@ namespace WDFramework.AcademicMeeting
         {
             int AttachID = 0;
             string strPath = null;
+            string strTypeName = null;
+            if(Request["name"]!=null)
+            {
+                strTypeName = Request["name"].ToString();
+            }
+            
             try
             {
                 AttachID = publicMethod.UpLoad(filePath);
@@ -78,6 +84,11 @@ namespace WDFramework.AcademicMeeting
                 }
                 string fileExtension = Path.GetExtension(strPath);//获得excel扩展名
                 fileName = fileName.Replace(fileExtension, "");       //去掉扩展名
+                if(strTypeName!=null&&strTypeName!=fileName)
+                {
+                    Alert.Show("请选择名为" + strTypeName + "的导入模板!");
+                    return;
+                }
                 string strConn = "Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=" + strPath + ";" + "Extended Properties='Excel 8.0;HDR=Yes;IMEX=1'";
                 //string strConn = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR=Yes;IMEX=1;'", excelFilePath);
                 //string strConn = "Provider=Microsoft.Ace.OleDb.12.0;" + "data source=" + Microsoft.SqlServer.Server.MapPath("ExcelFiles/Mydata2007.xlsx") + ";Extended Properties='Excel 12.0; HDR=Yes; IMEX=1'"; 

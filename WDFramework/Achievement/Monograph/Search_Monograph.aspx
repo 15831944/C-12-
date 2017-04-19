@@ -63,8 +63,16 @@
                                     </x:Button>--%>
                                 <x:Button ID="btn_UpdateInspect" Text="编辑选中行" Icon="BulletEdit" EnablePostBack="true" runat="server" OnClick="btn_UpdateInspect_Click">
                                 </x:Button>
-                                <x:Button ID="btn_Get" Text="导出Excel文件" ConfirmText="确定导出？" Icon="Disk" EnablePostBack="true" runat="server" OnClick="btn_Get_Click" EnableAjax="false" DisableControlBeforePostBack="false">
-                                </x:Button>
+                                <x:Button ID="btnTool" EnablePostBack="false" Text="工具"  runat="server">
+                                <Menu ID="Menu1" runat="server">
+                                    <x:MenuButton ID="btnExcel" runat="server" Text="Excel导入" Icon="Add" EnablePostBack="true">
+                                    </x:MenuButton>
+                                    <x:MenuButton ID="btn_Get" Text="导出Excel文件" ConfirmText="确定导出？" Icon="Disk" EnablePostBack="true" runat="server" OnClick="btn_Get_Click" EnableAjax="false">
+                                    </x:MenuButton>
+                                </Menu>
+                            </x:Button>
+                                <%--<x:Button ID="btn_Get" Text="导出Excel文件" ConfirmText="确定导出？" Icon="Disk" EnablePostBack="true" runat="server" OnClick="btn_Get_Click" EnableAjax="false" DisableControlBeforePostBack="false">
+                                </x:Button>--%>
                                 <%--  <x:Button ID="reprot" Text="报表"  Icon="Report" EnablePostBack="true" runat="server" >
                                          <Menu ID="Menu1" runat="server">
                                     <x:MenuButton ID="reprot1" runat="server" Text="分部门按著作名称统计专著情况">
@@ -173,7 +181,9 @@
         <x:Window ID="WindowReport" Popup="false" EnableIFrame="true" runat="server"
             EnableMaximize="true" EnableResize="false" Height="450px" Width="800px">
         </x:Window>
-
+        <x:Window ID="Window_Import" Popup="false" EnableIFrame="true" runat="server" 
+            EnableMaximize="false" EnableResize="false" Height="250px" Width="350px" OnClose="Window_Import_Close" CloseAction="HidePostBack">
+        </x:Window>
         <x:Label ID="labResult" Visible="false" runat="server">
         </x:Label>
     </form>
