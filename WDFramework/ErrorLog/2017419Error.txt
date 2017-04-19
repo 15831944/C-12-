@@ -1,0 +1,196 @@
+2017/4/19 8:29:07
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.ExportExcel(Int32 k, Grid grid, Int32 j) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 365
+   在 WebApplication1.Search_Monograph.btn_Get_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Monograph\Search_Monograph.aspx.cs:行号 463
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/Achievement/Monograph/Search_Monograph.aspx
+------------------------------------------------------------------------------
+2017/4/19 8:31:52
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.ExportExcel(Int32 k, Grid grid, Int32 j) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 365
+   在 WebApplication1.Search_Monograph.btn_Get_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Monograph\Search_Monograph.aspx.cs:行号 463
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/Achievement/Monograph/Search_Monograph.aspx
+------------------------------------------------------------------------------
+2017/4/19 8:32:41
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.ExportExcel(Int32 k, Grid grid, Int32 j) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 365
+   在 WebApplication1.Search_Monograph.btn_Get_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Monograph\Search_Monograph.aspx.cs:行号 463
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/Achievement/Monograph/Search_Monograph.aspx
+------------------------------------------------------------------------------
+2017/4/19 8:33:25
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.ExportExcel(Int32 k, Grid grid, Int32 j) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 365
+   在 WebApplication1.Search_Monograph.btn_Get_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Monograph\Search_Monograph.aspx.cs:行号 463
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/Achievement/Monograph/Search_Monograph.aspx
+------------------------------------------------------------------------------
+2017/4/19 8:33:49
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.ExportExcel(Int32 k, Grid grid, Int32 j) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 365
+   在 WebApplication1.Search_Monograph.btn_Get_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Monograph\Search_Monograph.aspx.cs:行号 463
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/Achievement/Monograph/Search_Monograph.aspx
+------------------------------------------------------------------------------
+2017/4/19 9:13:34
+------------------------------------------------------------------------------
+
+错误消息:可为空的对象必须具有一个值。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 System.Nullable`1.get_Value()
+   在 BLHelper.BLLPatent.Delete(Int32 ID) 位置 c:\Users\admin\Source\Repos\kygl\BLHelper\BLLPatent.cs:行号 60
+   在 WebApplication1.Search_Patent.Delete_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 685
+ 
+
+引发异常的方法:Void ThrowInvalidOperationException(System.ExceptionResource)
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/19 9:16:36
+------------------------------------------------------------------------------
+
+错误消息:可为空的对象必须具有一个值。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 System.Nullable`1.get_Value()
+   在 BLHelper.BLLPatent.Delete(Int32 ID) 位置 c:\Users\admin\Source\Repos\kygl\BLHelper\BLLPatent.cs:行号 60
+   在 WebApplication1.Search_Patent.Delete_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 685
+ 
+
+引发异常的方法:Void ThrowInvalidOperationException(System.ExceptionResource)
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/19 9:20:47
+------------------------------------------------------------------------------
+
+错误消息:可为空的对象必须具有一个值。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 System.Nullable`1.get_Value()
+   在 BLHelper.BLLPatent.Delete(Int32 ID) 位置 c:\Users\admin\Source\Repos\kygl\BLHelper\BLLPatent.cs:行号 60
+   在 WebApplication1.Search_Patent.Delete_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 686
+ 
+
+引发异常的方法:Void ThrowInvalidOperationException(System.ExceptionResource)
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/19 9:25:03
+------------------------------------------------------------------------------
+
+错误消息:可为空的对象必须具有一个值。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   在 System.Nullable`1.get_Value()
+   在 BLHelper.BLLPatent.Delete(Int32 ID) 位置 c:\Users\admin\Source\Repos\kygl\BLHelper\BLLPatent.cs:行号 62
+   在 WebApplication1.Search_Patent.Delete_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 686
+ 
+
+引发异常的方法:Void ThrowInvalidOperationException(System.ExceptionResource)
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/19 9:29:49
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.Achievement.Patent.Operate_Application.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Operate_Application.aspx.cs:行号 81
+ 
+
+引发异常的方法:Void DownFile_Click(System.Object, System.EventArgs)
+
+错误页面:/Achievement/Patent/Operate_Application.aspx?id=34
+------------------------------------------------------------------------------
+2017/4/19 9:32:05
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.DownloadFile(String aFilepath) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 40
+   在 WDFramework.Achievement.Patent.Operate_Application.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Operate_Application.aspx.cs:行号 88
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/Achievement/Patent/Operate_Application.aspx?id=41
+------------------------------------------------------------------------------
