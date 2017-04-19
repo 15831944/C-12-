@@ -226,9 +226,5 @@ namespace WDFramework
                 Response.Redirect("login.aspx");
             }
         }
-
-
-
-
     }
 }

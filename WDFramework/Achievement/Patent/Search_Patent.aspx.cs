@@ -682,7 +682,8 @@ namespace WebApplication1
                 {
                     for (int i = 0; i < pm.GridCount(Grid_Patent, CBoxSelect).Count(); i++)
                     {
-                        int[] attachid = blpant.Delete(Convert.ToInt32(Grid_Patent.DataKeys[pm.GridCount(Grid_Patent, CBoxSelect)[i]][0].ToString()));
+                        int ss = Convert.ToInt32(Grid_Patent.DataKeys[pm.GridCount(Grid_Patent, CBoxSelect)[i]][0].ToString());
+                        int[] attachid = blpant.Delete(ss);
                         string path_Patent = blat.FindPath(attachid[0]);
                         string path_Application = blat.FindPath(attachid[1]);
                         pm.DeleteFile(attachid[0], path_Patent);

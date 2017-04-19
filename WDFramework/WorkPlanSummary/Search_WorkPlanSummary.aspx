@@ -51,6 +51,7 @@
                                 </x:Button>
                                 <x:Button ID="btnAddPlan" runat="server" EnablePostBack="false" Icon="Add" Text="新增信息">
                                 </x:Button>
+                                <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                                 <x:Button ID="btnDelete" Text="删除选中信息" Icon="Delete" runat="server" OnClick="btnDelete_Click" ConfirmText="确定删除？"
                                     ConfirmTarget="Top" Enabled="false">
                                 </x:Button>

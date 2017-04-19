@@ -34,6 +34,7 @@ namespace WebApplication1
             {
                 InitData();
                 btn_AddMonograph.OnClientClick = Window_addMonograph.GetShowReference("Add_Monograph.aspx", "新增专著信息");
+                btnExcel.OnClientClick = Window_Import.GetShowReference("~/AcademicMeeting/ImportExcel.aspx?name=专著情况表", "工具");
                 //reprot1.OnClientClick = WindowReport.GetShowReference("~/Report/R_Agency_Monograph.aspx", "分部门按著作名称统计专著情况");
             }
         }
@@ -492,6 +493,11 @@ namespace WebApplication1
         public int RowNumber(int dataItemIndex)
         {
             return dataItemIndex + (Grid_Monograph.PageIndex) * Grid_Monograph.PageSize;
+        }
+
+        protected void Window_Import_Close(object sender, WindowCloseEventArgs e)
+        {
+            this.btnRefresh_Click(null, null);
         }
     }
 }

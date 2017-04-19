@@ -532,5 +532,16 @@ namespace WebApplication1
             //string[] SecrecyLevels = new string[] { "公开", "内部", "秘密", "机密", "管理员" };
             return SecrecyLevels[level - 1];
         }
+
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            Grid_WorkPlanSummary.SelectAllRows();
+            int[] select = Grid_WorkPlanSummary.SelectedRowIndexArray;
+            foreach(int item in select)
+            {
+                BoxSelect.SetCheckedState(item,true);
+            }
+            btnDelete.Enabled = true;
+        }
     }
 }

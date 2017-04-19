@@ -45,7 +45,6 @@
                                 <Menu ID="Menu1" runat="server">
                                     <x:MenuButton ID="btnExcel" runat="server" Text="Excel导入">
                                     </x:MenuButton>
-                                    <%-- <x:MenuButton ID="createShoutCut" runat="server" Text="创建桌面快捷方式" OnClick="createShoutCut_Click1"></x:MenuButton>--%>
                                 </Menu>
                             </x:Button>
                           <%--  <x:ToolbarSeparator ID="ToolbarSeparator4" runat="server" />
