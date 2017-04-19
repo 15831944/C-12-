@@ -207,7 +207,7 @@ namespace WDFramework.Projects
                         operate.OperationDataID = Convert.ToInt32(GridProjectAndTime.DataKeys[selections[i]][0]);
                         operate.OperationTime = System.DateTime.Now;
                         operate.Remark = "";
-                        bllOperate.Insert(operate);                      
+                        bllOperate.Insert(operate);
                     }
                     Alert.ShowInTop("您的操作已提交，请等待审核！");
                     BindData();
@@ -218,6 +218,16 @@ namespace WDFramework.Projects
                 publicmethod.SaveError(ex, this.Request);
             }
         }
+        //protected void btnDelete_Click(object sender , EventArgs e)
+        //{
+        //    for (int i = 0; i <= this.GridProjectAndTime.Rows.Count - 1; i++)
+        //    {
+        //        if(this.GridProjectAndTime.Rows[i].FindControl(""))
+        //        {
+
+        //        }
+        //    }
+        //}
         //更新
         protected void btnUpdate_Click(object sender, EventArgs e)
         {

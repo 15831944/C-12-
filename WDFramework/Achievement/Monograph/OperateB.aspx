@@ -41,7 +41,9 @@
                 </x:FormRow>
                 <x:FormRow>
                     <Items>             
-                           <x:LinkButton ID="Delete"  Label="相关文件" ConfirmText="确定删除？"  runat="server"  Text="删除" OnClick="Delete_Click"></x:LinkButton>
+                          <%-- <x:LinkButton ID="Delete"  Label="相关文件" ConfirmText="确定删除？"  runat="server"  Text="删除" OnClick="Delete_Click"></x:LinkButton>--%>
+                        <x:Button ID="btnDelete" Text="删除选中行" Icon="Delete" runat="server" OnClick ="Delete_Click"   >
+                </x:Button>
                     </Items>
                 </x:FormRow>
             </Rows>

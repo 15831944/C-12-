@@ -76,8 +76,9 @@
                         <asp:Label ID="Label8" runat="server" Text='<%# RowNumber( Container.DataItemIndex + 1) %>'></asp:Label>
                     </ItemTemplate>
                 </x:TemplateField>
-           <x:CheckBoxField ID="CBoxSelect" CommandName="CBSelect" DataField="Project" runat="server" AutoPostBack="true" Enabled="true" RenderAsStaticField="false" Width="30" /> 
-           <x:BoundField Enabled="true" DataField="EntryPerson" SortField="EntryPerson" Hidden="true" /> 
+           <x:CheckBoxField ID="CBoxSelect" CommandName="CBSelect" DataField="Project" runat="server" AutoPostBack="true" Enabled="true" RenderAsStaticField="false"  ShowHeaderCheckBox="true" Width="30" /> 
+          <x:RowNumberField runat="server" EnablePagingNumber="true" />
+            <x:BoundField Enabled="true" DataField="EntryPerson" SortField="EntryPerson" Hidden="true" /> 
             <x:TemplateField Width="30px" Hidden ="true" >
                     <ItemTemplate>
                         <asp:Label ID="Label7" runat="server" Text='<%# RowNumber( Container.DataItemIndex + 1) %>'></asp:Label>
