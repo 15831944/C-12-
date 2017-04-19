@@ -36,13 +36,30 @@ namespace WebApplication1
             {
                 tApplicationTime.MaxDate = DateTime.Now;
                 tAccreditTime.MaxDate = DateTime.Now;
-                InitSecrecyLevell();
+                InitAchievement();
                 InitdPatentForm();
                 InitDropListAgency();
                 InitPatentCondition();
+                InitAchievement();
+                InitSecrecyLevell();
             }
         }
-      
+        public void InitAchievement()
+        {
+            try
+            {
+                BLHelper.BLLAchievement achevement = new BLHelper.BLLAchievement();
+                List<Common.Entities.Achievement> list = achevement.FindAllAchievementName();
+                for (int i = 0; i < list.Count(); i++)
+                {
+                    tAchievement.Items.Add(list[i].AchievementName.ToString(), list[i].AchievementID.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
         //初始化等级下拉框
         public void InitSecrecyLevell()
         {       
@@ -288,7 +305,7 @@ namespace WebApplication1
                     {
                         pa.Attachment_Application = null;
                     }
-
+                    pa.AchievementID = int.Parse(tAchievement.SelectedValue);
                     patent.Insert(pa);
                     PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference() + Alert.GetShowInTopReference("保存成功！"));
                 }

@@ -69,6 +69,14 @@ namespace BLHelper
                 return 0;
             }
         }
+
+        //获取所有已通过成果
+        public List<Achievement> FindAllAchievementName()
+        {
+            List<Achievement> list = new List<Achievement>();
+            list = dbcontext.AchievementContext.Where(a => a.IsPass==true).ToList();
+            return list;
+        }
         //成员
         public string FindName(int? userid)
         {
