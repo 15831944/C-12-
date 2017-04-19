@@ -57,8 +57,8 @@
                                     </x:Button> --%>
                                 <x:Button ID="btn_AddMonograph" Text="新增专著信息" Icon="Add" EnablePostBack="true" runat="server">
                                 </x:Button>
-                                <%-- <x:Button ID="btn_Delete" Text="删除选中信息" Icon="Delete" EnablePostBack="true" runat="server" OnClick="btn_Delete_Click">
-                                    </x:Button>--%>
+                                 <x:Button ID="btn_Delete" Text="删除选中信息" Icon="Delete" EnablePostBack="true" runat="server" OnClick="btn_Delete_Click">
+                                    </x:Button>
                                 <%--  <x:Button ID="btn_Get" Text="导出所选信息" Icon="Disk" EnablePostBack="true" runat="server">
                                     </x:Button>--%>
                                 <x:Button ID="btn_UpdateInspect" Text="编辑选中行" Icon="BulletEdit" EnablePostBack="true" runat="server" OnClick="btn_UpdateInspect_Click">

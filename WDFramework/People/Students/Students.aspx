@@ -13,9 +13,9 @@
             ShowBorder="false" Layout="VBox" BoxConfigAlign="Stretch" BoxConfigPosition="Start"
             ShowHeader="false" Title="用户管理">
         <Items>
-  <x:Grid ID="GridProjectStudent" runat="server" BoxFlex="1" ShowBorder="true" ShowHeader="false"
-         EnableCheckBoxSelect="false" EnableRowNumber="false" EnableRowNumberPaging="true" EnableTextSelection="true"
-         DataKeyNames="StudentID" AllowSorting="true" SortColumnIndex="0"  AllowPaging="true" OnPageIndexChange ="GridProjectStudent_PageIndexChange"  OnRowCommand ="GridProjectStudent_RowCommand" 
+  <x:Grid ID="GridProjectStudent" runat="server" BoxFlex="1" ShowBorder="true" ShowHeader="true"
+         EnableCheckBoxSelect="true" EnableRowNumber="false" EnableRowNumberPaging="false" EnableTextSelection="false"
+         DataKeyNames="StudentID"  AllowSorting="true" SortColumnIndex="0"  AllowPaging="true" OnPageIndexChange ="GridProjectStudent_PageIndexChange"  OnRowCommand ="GridProjectStudent_RowCommand" 
          SortDirection="DESC"  IsDatabasePaging="true"  >
         <Toolbars>
         <x:Toolbar ID="Toolbar2" runat="server" Width ="800px">
@@ -75,13 +75,16 @@
                     </PageItems>
        <%--DataKeyNames这是数据库唯一标识--%>     
        <%--DataKeyNames这是数据库唯一标识--%>
-       <Columns>          
+       <Columns>  
+           
            <x:TemplateField Width="30px" >
                     <ItemTemplate>
                         <asp:Label ID="Label8" runat="server" Text='<%# RowNumber(Container.DataItemIndex + 1) %>'></asp:Label>
                     </ItemTemplate>
+                
                 </x:TemplateField>
-           <x:CheckBoxField ID="CBoxSelect" CommandName="CBSelect" DataField="Project" runat="server" AutoPostBack="true" Enabled="true" RenderAsStaticField="false" Width="30" /> 
+           <x:CheckBoxField ID="CBoxSelect" CommandName="CBSelect" DataField="Project" runat="server" AutoPostBack="true" Enabled="true" RenderAsStaticField="false"  ShowHeaderCheckBox="true" Width="30"  /> 
+          
            <x:BoundField Enabled="true" DataField="EntryPerson" SortField="EntryPerson" Hidden="true" /> 
             <x:TemplateField Width="30px" Hidden ="true" >
                     <ItemTemplate>
