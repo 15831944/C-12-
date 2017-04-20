@@ -25,12 +25,12 @@ namespace WebApplication1
 {
     public partial class Search_Patent : System.Web.UI.Page
     {
-       
+
         BLHelper.BLLAchievement ach = new BLHelper.BLLAchievement();
         BLHelper.BLLPatent patent = new BLHelper.BLLPatent();
         BLHelper.BLLOperationLog op = new BLHelper.BLLOperationLog();
         BLHelper.BLLAttachment at = new BLHelper.BLLAttachment();
-       // BLHelper.BLLStaffPatent blsp = new BLHelper.BLLStaffPatent();
+        // BLHelper.BLLStaffPatent blsp = new BLHelper.BLLStaffPatent();
         BLHelper.BLLUser user = new BLHelper.BLLUser();
         BLCommon.PublicMethod pm = new BLCommon.PublicMethod();
         BLHelper.BLLBasicCode ba = new BLHelper.BLLBasicCode();
@@ -38,7 +38,7 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
-            if(dChoose.SelectedValue == "保密级别")
+            if (dChoose.SelectedValue == "保密级别")
             {
                 dCondition.Enabled = false;
                 tCondition.Enabled = false;
@@ -60,6 +60,7 @@ namespace WebApplication1
             {
                 InitData();
                 btn_AddPatent.OnClientClick = Window_addPatent.GetShowReference("Add_Patent.aspx", "新增专利信息");
+                btnExcel.OnClientClick = Window_Import.GetShowReference("~/AcademicMeeting/ImportExcel.aspx?name=专利情况表", "工具");
                 //reprot1.OnClientClick = WindowReport.GetShowReference("~/Report/R_Agency_Patent.aspx", "分部门按专利名称统计专利情况");
             }
         }
@@ -81,7 +82,7 @@ namespace WebApplication1
         //单位界面跳转
         protected string GetEditUrlw(object ID)
         {
-            return Units.GetShowReference("Unit.aspx?id=" +ID, "单位信息");
+            return Units.GetShowReference("Unit.aspx?id=" + ID, "单位信息");
         }
         //发明人界面跳转
         protected string GetEditUrlp(object ID)
@@ -136,7 +137,7 @@ namespace WebApplication1
             }
         }
 
-       //按所属机构查询
+        //按所属机构查询
         public void FindByAgency()
         {
             try
@@ -320,7 +321,7 @@ namespace WebApplication1
                 {
                     FindByAccreditTime();
                 }
-                else if(dChoose.SelectedText == "保密级别")
+                else if (dChoose.SelectedText == "保密级别")
                 {
                     FindBySecrecyLevel();
                 }
@@ -333,14 +334,14 @@ namespace WebApplication1
                     {
                         FindByAgency();
                     }
-                    else if(dChoose.SelectedText == "成员")
+                    else if (dChoose.SelectedText == "成员")
                     {
                         FindByMember();
                     }
-                else
-                {
-                    return;
-                }
+                    else
+                    {
+                        return;
+                    }
             }
             catch (Exception ex)
             {
@@ -357,9 +358,10 @@ namespace WebApplication1
             dCondition.Enabled = false;
             tCondition.Enabled = false;
             secrecyLevel.Enabled = false;
+            Delete.Enabled = false;
             InitData();
         }
-    
+
         //更新
         protected void btn_UpdatePatent_Click(object sender, EventArgs e)
         {
@@ -402,7 +404,7 @@ namespace WebApplication1
                     FindByAgency();
                     break;
                 case 2:
-                    FindByPatentForm();;
+                    FindByPatentForm(); ;
                     break;
                 case 3:
                     FindByApplicationTime();
@@ -426,33 +428,33 @@ namespace WebApplication1
         {
             Grid_Patent.PageIndex = 0;
             this.Grid_Patent.PageSize = Convert.ToInt32(ddlGridPageSize.SelectedValue);
-             switch (page)
-             {
-                 case 0:
-                     InitData();
-                     break;
-                 case 1:
-                     FindByAgency();
-                     break;
-                 case 2:
-                     FindByPatentForm(); ;
-                     break;
-                 case 3:
-                     FindByApplicationTime();
-                     break;
-                 case 4:
-                     FindByAccreditTime();
-                     break;
-                 case 5:
-                     FindByPeople();
-                     break;
-                 case 6:
-                     FindByMember();
-                     break;
-                 case 7:
-                     FindBySecrecyLevel();
-                     break;
-             }
+            switch (page)
+            {
+                case 0:
+                    InitData();
+                    break;
+                case 1:
+                    FindByAgency();
+                    break;
+                case 2:
+                    FindByPatentForm(); ;
+                    break;
+                case 3:
+                    FindByApplicationTime();
+                    break;
+                case 4:
+                    FindByAccreditTime();
+                    break;
+                case 5:
+                    FindByPeople();
+                    break;
+                case 6:
+                    FindByMember();
+                    break;
+                case 7:
+                    FindBySecrecyLevel();
+                    break;
+            }
         }
         //行点击事件
         protected void Grid_Patent_RowCommand(object sender, FineUI.GridCommandEventArgs e)
@@ -469,6 +471,24 @@ namespace WebApplication1
                     Alert.ShowInTop(str);
                     return;
                 }
+                int m;
+                //取整数（不是四舍五入，全舍）
+                int Pages = (int)Math.Floor(Convert.ToDouble(Grid_Patent.RecordCount / this.Grid_Patent.PageSize));
+
+                if (Grid_Patent.PageIndex == Pages)
+                    m = (Grid_Patent.RecordCount - this.Grid_Patent.PageSize * Grid_Patent.PageIndex);
+                else
+                    m = this.Grid_Patent.PageSize;
+                bool isCheck = false;
+                for (int i = 0; i < m; i++)
+                {
+                    if (CBoxSelect.GetCheckedState(i))
+                        isCheck = true;
+                }
+                if (isCheck)
+                    Delete.Enabled = true;
+                else
+                    Delete.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -489,7 +509,7 @@ namespace WebApplication1
                     dCondition.Enabled = false;
                     tCondition.Enabled = true;
                     secrecyLevel.Enabled = false;
-                    break; 
+                    break;
                 case "申请年份":
                     dCondition.Items.Clear();
                     for (int i = 1960; i <= 2060; i++)
@@ -519,11 +539,11 @@ namespace WebApplication1
                     break;
                 case "专利类型":
                     dCondition.Items.Clear();
-                     List<BasicCode> listname = ba.FindByCategoryName("专利类型");
-                     for (int i = 0; i < listname.Count(); i++)
-                      {
-                          dCondition.Items.Add(listname[i].CategoryContent.ToString(), listname[i].CategoryContent.ToString());
-                      }
+                    List<BasicCode> listname = ba.FindByCategoryName("专利类型");
+                    for (int i = 0; i < listname.Count(); i++)
+                    {
+                        dCondition.Items.Add(listname[i].CategoryContent.ToString(), listname[i].CategoryContent.ToString());
+                    }
                     dCondition.Items[0].Selected = true;
                     dCondition.EnableEdit = false;
                     dCondition.Enabled = true;
@@ -691,6 +711,7 @@ namespace WebApplication1
                     }
                     InitData();
                     Alert.ShowInTop("删除数据成功!");
+                    Delete.Enabled = false;
                 }
                 else
                 {
@@ -707,6 +728,7 @@ namespace WebApplication1
                     }
                     InitData();
                     Alert.ShowInTop("您的数据已提交，请等待确认!");
+                    Delete.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -714,7 +736,51 @@ namespace WebApplication1
                 pm.SaveError(ex, this.Request);
                 Alert.ShowInTop("删除错误，请联系管理员！");
             }
-            
+        }
+
+        //导入窗体关闭事件
+        protected void Window_Import_Close(object sender, WindowCloseEventArgs e)
+        {
+            this.btnRefresh_Click(null, null);
+        }
+
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            Grid_Patent.SelectAllRows();
+            int[] select = Grid_Patent.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(Grid_Patent.RecordCount / this.Grid_Patent.PageSize));
+
+            if (Grid_Patent.PageIndex == Pages)
+                m = (Grid_Patent.RecordCount - this.Grid_Patent.PageSize * Grid_Patent.PageIndex);
+            else
+                m = this.Grid_Patent.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                Delete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                Delete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
         }
     }
 }

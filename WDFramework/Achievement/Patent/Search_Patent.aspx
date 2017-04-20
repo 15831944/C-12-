@@ -62,10 +62,18 @@
 
                                 <x:Button ID="btn_UpdatePatent" Text="编辑选中行" Icon="BulletEdit" EnablePostBack="true" runat="server" OnClick="btn_UpdatePatent_Click">
                                 </x:Button>
-                                <x:Button ID="Delete" Text="删除" Icon="Delete" ConfirmText="确定删除？" ConfirmTarget="Top" runat="server" OnClick="Delete_Click">
+                                <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
+                                <x:Button ID="Delete" Text="删除" Icon="Delete" ConfirmText="确定删除？" Enabled="false" ConfirmTarget="Top" runat="server" OnClick="Delete_Click">
                                 </x:Button>
-                                <x:Button ID="btn_Get" Text="导出Excel文件" ConfirmText="确定导出？" Icon="Disk" EnablePostBack="true" runat="server" OnClick="btn_Get_Click" EnableAjax="false" DisableControlBeforePostBack="false">
+                                <x:Button ID="btnTool" EnablePostBack="false" Text="工具"  runat="server">
+                                <Menu ID="Menu1" runat="server">
+                                    <x:MenuButton ID="btnExcel" runat="server" Text="Excel导入">
+                                    </x:MenuButton>
+                                    <x:MenuButton ID="btn_Get" Text="导出Excel文件" ConfirmText="确定导出？" Icon="Disk" EnablePostBack="true" runat="server" OnClick="btn_Get_Click" EnableAjax="false">
+                                        </x:MenuButton>
                                 </x:Button>
+                                </Menu>
+                            </x:Button>
                                 <%-- <x:Button ID="reprot" Text="报表"  Icon="Report" EnablePostBack="true" runat="server" >
                                          <Menu ID="Menu1" runat="server">
                                     <x:MenuButton ID="reprot1" runat="server" Text="分部门按专利名称统计专利情况">
@@ -192,6 +200,9 @@
         </x:Window>
         <x:Window ID="WindowReport" Popup="false" EnableIFrame="true" runat="server"
             EnableMaximize="true" EnableResize="false" Height="450px" Width="800px">
+        </x:Window>
+        <x:Window ID="Window_Import" Popup="false" EnableIFrame="true" runat="server" 
+            EnableMaximize="false" EnableResize="false" Height="250px" Width="350px" OnClose="Window_Import_Close" CloseAction="HidePostBack">
         </x:Window>
     </form>
 </body>
