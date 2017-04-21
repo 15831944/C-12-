@@ -316,6 +316,7 @@ namespace WDFramework.Projects
             TriProjectNames.Text = "";
             TriProjectNames.Enabled = false;
             ddl_search.Reset();
+            btnDelete.Enabled = false;
         }
         //备注界面跳转
         protected string GetEditUrl(object ProjectImportantID)
@@ -438,6 +439,45 @@ namespace WDFramework.Projects
                 TriProjectNames.Enabled = true;
             else
                 TriProjectNames.Enabled = false;
+        }
+
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            GridProjectAndTime.SelectAllRows();
+            int[] select = GridProjectAndTime.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(GridProjectAndTime.RecordCount / this.GridProjectAndTime.PageSize));
+
+            if (GridProjectAndTime.PageIndex == Pages)
+                m = (GridProjectAndTime.RecordCount - this.GridProjectAndTime.PageSize * GridProjectAndTime.PageIndex);
+            else
+                m = this.GridProjectAndTime.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                btnDelete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                btnDelete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
         }
     }
 }

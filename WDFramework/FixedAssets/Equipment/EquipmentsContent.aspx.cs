@@ -504,5 +504,44 @@ namespace WDFramework.FixedAssets.Equipment
             else
                 pm.ExportExcel(3, Grid_Equipment, 0, selectnum);//有选择项，导出所选
         }
+
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            Grid_Equipment.SelectAllRows();
+            int[] select = Grid_Equipment.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(Grid_Equipment.RecordCount / this.Grid_Equipment.PageSize));
+
+            if (Grid_Equipment.PageIndex == Pages)
+                m = (Grid_Equipment.RecordCount - this.Grid_Equipment.PageSize * Grid_Equipment.PageIndex);
+            else
+                m = this.Grid_Equipment.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                btnDelete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                btnDelete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
+        }
     }
 }

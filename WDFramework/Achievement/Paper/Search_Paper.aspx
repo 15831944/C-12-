@@ -61,8 +61,10 @@
                                 </x:Button>
                                 <x:Button ID="btn_AddPaper" Text="新增论文信息" Icon="Add" EnablePostBack="true" runat="server">
                                 </x:Button>
-                               <x:Button ID="btn_Delete" Text="删除选中行" Icon="Delete" EnablePostBack="true" ConfirmText="确定删除？" runat="server" OnClick="btn_Delete_Click">
-                                    </x:Button>
+
+                                <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
+                               <x:Button ID="btn_Delete" Text="删除选中行" Icon="Delete" EnablePostBack="true" ConfirmText="确定删除？" runat="server"  Enabled="false" OnClick ="btn_Delete_Click">
+                               </x:Button>
                                 <%--  <x:Button ID="btn_Get" Text="导出所选信息" Icon="Disk" EnablePostBack="true" runat="server">
                                     </x:Button>--%>
                                 <x:Button ID="btn_UpdatePaper" Text="编辑选中行" Icon="BulletEdit" EnablePostBack="true" runat="server" OnClick="btn_UpdatePaper_Click">

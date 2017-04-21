@@ -332,5 +332,44 @@ namespace WDFramework.Platform
         {
             return PlatformManagementWindow.GetShowReference("PlatformManagement.aspx?id=" + ID, "平台管理信息");
         }
+
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            Grid_Platform.SelectAllRows();
+            int[] select = Grid_Platform.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(Grid_Platform.RecordCount / this.Grid_Platform.PageSize));
+
+            if (Grid_Platform.PageIndex == Pages)
+                m = (Grid_Platform.RecordCount - this.Grid_Platform.PageSize * Grid_Platform.PageIndex);
+            else
+                m = this.Grid_Platform.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                btnDelete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                btnDelete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
+        }
     }
 }

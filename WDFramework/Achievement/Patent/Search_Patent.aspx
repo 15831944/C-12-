@@ -71,9 +71,10 @@
                                     </x:MenuButton>
                                     <x:MenuButton ID="btn_Get" Text="导出Excel文件" ConfirmText="确定导出？" Icon="Disk" EnablePostBack="true" runat="server" OnClick="btn_Get_Click" EnableAjax="false">
                                         </x:MenuButton>
-                                </x:Button>
                                 </Menu>
-                            </x:Button>
+                                </x:Button>
+                                
+                            <%--</x:Button>--%>
                                 <%-- <x:Button ID="reprot" Text="报表"  Icon="Report" EnablePostBack="true" runat="server" >
                                          <Menu ID="Menu1" runat="server">
                                     <x:MenuButton ID="reprot1" runat="server" Text="分部门按专利名称统计专利情况">

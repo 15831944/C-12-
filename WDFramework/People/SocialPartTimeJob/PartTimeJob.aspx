@@ -47,6 +47,8 @@
                                     </x:Button> 
                  <x:Button ID="btnAdd" Text="新增人员社会兼职信息" Icon="Add"  runat="server">
                 </x:Button>
+
+                <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                 <x:Button ID="btnDelete" Text="删除选中行" Icon="Delete" OnClick ="btnDelete_Click" runat="server" ConfirmText="确定删除？" ConfirmTarget="Top" >
                 </x:Button>
                 <x:Button ID="Btnchange" Text="编辑选中行" Icon="Pencil" OnClick ="Btnchange_Click" runat="server">

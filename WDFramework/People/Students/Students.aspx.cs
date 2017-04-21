@@ -971,5 +971,43 @@ namespace WDFramework.People
                 DropDownList.Items.Add(list[i].CategoryContent.ToString(), list[i].CategoryContent.ToString());
             }
         }
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            GridProjectStudent.SelectAllRows();
+            int[] select = GridProjectStudent.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(GridProjectStudent.RecordCount / this.GridProjectStudent.PageSize));
+
+            if (GridProjectStudent.PageIndex == Pages)
+                m = (GridProjectStudent.RecordCount - this.GridProjectStudent.PageSize * GridProjectStudent.PageIndex);
+            else
+                m = this.GridProjectStudent.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                btnDelete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                btnDelete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
+        }
     }
 }

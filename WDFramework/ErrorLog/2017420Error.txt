@@ -1,0 +1,150 @@
+2017/4/20 21:04:05
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLHelper
+
+堆栈内容:   在 BLHelper.BLLPatent.FindByPatentDepartment(String PatentDepartment, Nullable`1 SecrecyLevel) 位置 c:\Users\susu\Desktop\空间\kygl\BLHelper\BLLPatent.cs:行号 121
+   在 WebApplication1.Search_Patent.FindByAgency() 位置 c:\Users\susu\Desktop\空间\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 146
+ 
+
+引发异常的方法:System.Collections.Generic.List`1[Common.Entities.Patent] FindByPatentDepartment(System.String, System.Nullable`1[System.Int32])
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/20 21:04:08
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLHelper
+
+堆栈内容:   在 BLHelper.BLLPatent.FindByPatentDepartment(String PatentDepartment, Nullable`1 SecrecyLevel) 位置 c:\Users\susu\Desktop\空间\kygl\BLHelper\BLLPatent.cs:行号 121
+   在 WebApplication1.Search_Patent.FindByAgency() 位置 c:\Users\susu\Desktop\空间\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 146
+ 
+
+引发异常的方法:System.Collections.Generic.List`1[Common.Entities.Patent] FindByPatentDepartment(System.String, System.Nullable`1[System.Int32])
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/20 21:04:09
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLHelper
+
+堆栈内容:   在 BLHelper.BLLPatent.FindByPatentDepartment(String PatentDepartment, Nullable`1 SecrecyLevel) 位置 c:\Users\susu\Desktop\空间\kygl\BLHelper\BLLPatent.cs:行号 121
+   在 WebApplication1.Search_Patent.FindByAgency() 位置 c:\Users\susu\Desktop\空间\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 146
+ 
+
+引发异常的方法:System.Collections.Generic.List`1[Common.Entities.Patent] FindByPatentDepartment(System.String, System.Nullable`1[System.Int32])
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/20 21:05:04
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLHelper
+
+堆栈内容:   在 BLHelper.BLLPatent.FindByPatentDepartment(String PatentDepartment, Nullable`1 SecrecyLevel) 位置 c:\Users\susu\Desktop\空间\kygl\BLHelper\BLLPatent.cs:行号 121
+   在 WebApplication1.Search_Patent.FindByAgency() 位置 c:\Users\susu\Desktop\空间\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 146
+ 
+
+引发异常的方法:System.Collections.Generic.List`1[Common.Entities.Patent] FindByPatentDepartment(System.String, System.Nullable`1[System.Int32])
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/20 21:05:05
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLHelper
+
+堆栈内容:   在 BLHelper.BLLPatent.FindByPatentDepartment(String PatentDepartment, Nullable`1 SecrecyLevel) 位置 c:\Users\susu\Desktop\空间\kygl\BLHelper\BLLPatent.cs:行号 121
+   在 WebApplication1.Search_Patent.FindByAgency() 位置 c:\Users\susu\Desktop\空间\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 146
+ 
+
+引发异常的方法:System.Collections.Generic.List`1[Common.Entities.Patent] FindByPatentDepartment(System.String, System.Nullable`1[System.Int32])
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/20 21:05:05
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLHelper
+
+堆栈内容:   在 BLHelper.BLLPatent.FindByPatentDepartment(String PatentDepartment, Nullable`1 SecrecyLevel) 位置 c:\Users\susu\Desktop\空间\kygl\BLHelper\BLLPatent.cs:行号 121
+   在 WebApplication1.Search_Patent.FindByAgency() 位置 c:\Users\susu\Desktop\空间\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 146
+ 
+
+引发异常的方法:System.Collections.Generic.List`1[Common.Entities.Patent] FindByPatentDepartment(System.String, System.Nullable`1[System.Int32])
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/20 21:05:06
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLHelper
+
+堆栈内容:   在 BLHelper.BLLPatent.FindByPatentDepartment(String PatentDepartment, Nullable`1 SecrecyLevel) 位置 c:\Users\susu\Desktop\空间\kygl\BLHelper\BLLPatent.cs:行号 121
+   在 WebApplication1.Search_Patent.FindByAgency() 位置 c:\Users\susu\Desktop\空间\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 146
+ 
+
+引发异常的方法:System.Collections.Generic.List`1[Common.Entities.Patent] FindByPatentDepartment(System.String, System.Nullable`1[System.Int32])
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/20 21:05:06
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLHelper
+
+堆栈内容:   在 BLHelper.BLLPatent.FindByPatentDepartment(String PatentDepartment, Nullable`1 SecrecyLevel) 位置 c:\Users\susu\Desktop\空间\kygl\BLHelper\BLLPatent.cs:行号 121
+   在 WebApplication1.Search_Patent.FindByAgency() 位置 c:\Users\susu\Desktop\空间\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 146
+ 
+
+引发异常的方法:System.Collections.Generic.List`1[Common.Entities.Patent] FindByPatentDepartment(System.String, System.Nullable`1[System.Int32])
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/20 21:05:07
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLHelper
+
+堆栈内容:   在 BLHelper.BLLPatent.FindByPatentDepartment(String PatentDepartment, Nullable`1 SecrecyLevel) 位置 c:\Users\susu\Desktop\空间\kygl\BLHelper\BLLPatent.cs:行号 121
+   在 WebApplication1.Search_Patent.FindByAgency() 位置 c:\Users\susu\Desktop\空间\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 146
+ 
+
+引发异常的方法:System.Collections.Generic.List`1[Common.Entities.Patent] FindByPatentDepartment(System.String, System.Nullable`1[System.Int32])
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/20 21:05:07
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLHelper
+
+堆栈内容:   在 BLHelper.BLLPatent.FindByPatentDepartment(String PatentDepartment, Nullable`1 SecrecyLevel) 位置 c:\Users\susu\Desktop\空间\kygl\BLHelper\BLLPatent.cs:行号 121
+   在 WebApplication1.Search_Patent.FindByAgency() 位置 c:\Users\susu\Desktop\空间\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 146
+ 
+
+引发异常的方法:System.Collections.Generic.List`1[Common.Entities.Patent] FindByPatentDepartment(System.String, System.Nullable`1[System.Int32])
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------

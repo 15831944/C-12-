@@ -14,7 +14,7 @@
             ShowHeader="false" Title="用户管理">
         <Items>
   <x:Grid ID="GridProjectStudent" runat="server" BoxFlex="1" ShowBorder="true" ShowHeader="true"
-         EnableCheckBoxSelect="true" EnableRowNumber="false" EnableRowNumberPaging="false" EnableTextSelection="false"
+         EnableCheckBoxSelect="false" EnableRowNumber="false" EnableRowNumberPaging="false" EnableTextSelection="false"
          DataKeyNames="StudentID"  AllowSorting="true" SortColumnIndex="0"  AllowPaging="true" OnPageIndexChange ="GridProjectStudent_PageIndexChange"  OnRowCommand ="GridProjectStudent_RowCommand" 
          SortDirection="DESC"  IsDatabasePaging="true"  >
         <Toolbars>
@@ -49,6 +49,8 @@
                                     </x:Button>      
                 <x:Button ID="btnAddProject" Text="新增学生信息" Icon="Add" runat="server">
                 </x:Button>
+
+                 <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                 <x:Button ID="btnDelete" Text="删除选中行" Icon="Delete" runat="server" ConfirmText ="确定删除？" ConfirmTarget ="Top"  OnClick ="btnDelete_Click"  >
                 </x:Button>
                 <x:Button ID="btnUpdate" Text="编辑选中行" Icon="Pencil"  runat="server" OnClick ="btnUpdate_Click"  >
@@ -83,7 +85,7 @@
                     </ItemTemplate>
                 
                 </x:TemplateField>
-           <x:CheckBoxField ID="CBoxSelect" CommandName="CBSelect" DataField="Project" runat="server" AutoPostBack="true" Enabled="true" RenderAsStaticField="false"  ShowHeaderCheckBox="true" Width="30"  /> 
+           <x:CheckBoxField ID="CBoxSelect" CommandName="CBSelect" DataField="Project" runat="server" AutoPostBack="true" Enabled="true" RenderAsStaticField="false"   Width="30"  /> 
           
            <x:BoundField Enabled="true" DataField="EntryPerson" SortField="EntryPerson" Hidden="true" /> 
             <x:TemplateField Width="30px" Hidden ="true" >

@@ -402,5 +402,44 @@ namespace WDFramework.People.SpeakClasses
                 DropDownListTeachingDegree.Items.Add(list[i].CategoryContent.ToString(), list[i].CategoryContent.ToString());
             }
         }
+
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            GridSpeakClass.SelectAllRows();
+            int[] select = GridSpeakClass.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(GridSpeakClass.RecordCount / this.GridSpeakClass.PageSize));
+
+            if (GridSpeakClass.PageIndex == Pages)
+                m = (GridSpeakClass.RecordCount - this.GridSpeakClass.PageSize * GridSpeakClass.PageIndex);
+            else
+                m = this.GridSpeakClass.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                btnDelete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                btnDelete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
+        }
     }
 }

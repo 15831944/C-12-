@@ -45,6 +45,8 @@
                                 </x:Button>
                                 <x:Button ID="btn_AddPlatform" Text="新增平台信息" Icon="Add" EnablePostBack="true" runat="server">
                                 </x:Button>
+
+                                 <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                                 <x:Button ID="btnDelete" Text="删除选中信息" Icon="Delete" EnablePostBack="true" runat="server" OnClick="btnDelete_Click" ConfirmText="确定删除？" ConfirmTarget="Top" Enabled="false">
                                 </x:Button>
                                 <x:Button ID="ButtonUpdate" Text="编辑选中行" Icon="Pencil" OnClick="ButtonUpdate_Click" runat="server">

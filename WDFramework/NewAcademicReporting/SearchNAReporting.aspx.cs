@@ -363,5 +363,44 @@ namespace WDFramework.NewAcademicReporting
             }
         }
 
+
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            Grid_NAReporting.SelectAllRows();
+            int[] select = Grid_NAReporting.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(Grid_NAReporting.RecordCount / this.Grid_NAReporting.PageSize));
+
+            if (Grid_NAReporting.PageIndex == Pages)
+                m = (Grid_NAReporting.RecordCount - this.Grid_NAReporting.PageSize * Grid_NAReporting.PageIndex);
+            else
+                m = this.Grid_NAReporting.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                btnDelete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                btnDelete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
+        }
     }
 }

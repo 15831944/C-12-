@@ -36,6 +36,8 @@
                                     </x:Button> 
                  <x:Button ID="btnAdd" Text="新增人员学历信息" Icon="Add"  runat="server">
                 </x:Button>
+
+                <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                 <x:Button ID="btnDelete" Text="删除选中行" Icon="Delete" runat="server" ConfirmText ="确定删除？" ConfirmTarget ="Top"  OnClick ="btnDelete_Click">
                 </x:Button>
                <x:Button ID="btnUpdate" Text="编辑选中行" Icon="Pencil"  runat="server" OnClick ="btnUpdate_Click">

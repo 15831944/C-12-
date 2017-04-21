@@ -492,5 +492,44 @@ namespace WDFramework.People
         {
             return dataItemIndex + (GridSocialPartTime.PageIndex) * GridSocialPartTime.PageSize;
         }
+
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            GridSocialPartTime.SelectAllRows();
+            int[] select = GridSocialPartTime.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(GridSocialPartTime.RecordCount / this.GridSocialPartTime.PageSize));
+
+            if (GridSocialPartTime.PageIndex == Pages)
+                m = (GridSocialPartTime.RecordCount - this.GridSocialPartTime.PageSize * GridSocialPartTime.PageIndex);
+            else
+                m = this.GridSocialPartTime.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                btnDelete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                btnDelete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
+        }
     }
 }

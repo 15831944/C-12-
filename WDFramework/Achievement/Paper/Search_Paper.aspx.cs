@@ -73,6 +73,7 @@ namespace WebApplication1
             dCondition.Enabled = false;
             tCondition.Enabled = false;
             InitData();
+            btn_Delete.Enabled = false;
         }
        
         //将成果ID转化为成果名称
@@ -200,6 +201,24 @@ namespace WebApplication1
                     CBoxSelect.SetCheckedState(e.RowIndex, false);
                     Alert.ShowInTop(str);
                 }
+                int m;
+                //取整数（不是四舍五入，全舍）
+                int Pages = (int)Math.Floor(Convert.ToDouble(Grid_Paper.RecordCount / this.Grid_Paper.PageSize));
+
+                if (Grid_Paper.PageIndex == Pages)
+                    m = (Grid_Paper.RecordCount - this.Grid_Paper.PageSize * Grid_Paper.PageIndex);
+                else
+                    m = this.Grid_Paper.PageSize;
+                bool isCheck = false;
+                for (int i = 0; i < m; i++)
+                {
+                    if (CBoxSelect.GetCheckedState(i))
+                        isCheck = true;
+                }
+                if (isCheck)
+                    btn_Delete.Enabled = true;
+                else
+                    btn_Delete.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -661,6 +680,7 @@ namespace WebApplication1
                     }
                     InitData();
                     Alert.ShowInTop("删除数据成功!");
+                    btn_Delete.Enabled = false;
                 }
                 else
                 {
@@ -684,6 +704,44 @@ namespace WebApplication1
             {
                 pm.SaveError(ex, this.Request);
                 Alert.ShowInTop("删除失败，请联系管理员！");
+            }
+        }
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            Grid_Paper.SelectAllRows();
+            int[] select = Grid_Paper.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(Grid_Paper.RecordCount / this.Grid_Paper.PageSize));
+
+            if (Grid_Paper.PageIndex == Pages)
+                m = (Grid_Paper.RecordCount - this.Grid_Paper.PageSize * Grid_Paper.PageIndex);
+            else
+                m = this.Grid_Paper.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                btn_Delete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                btn_Delete.Enabled = false;
+                btnSelect_All.Text = "全选";
             }
         }
     }

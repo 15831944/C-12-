@@ -21,6 +21,7 @@ namespace WebApplication1
         BLHelper.BLLAgency agency = new BLHelper.BLLAgency();
         BLHelper.BLLAchievement ach = new BLHelper.BLLAchievement();
         BLHelper.BLLMonograph mo = new BLHelper.BLLMonograph();
+        BLHelper.BLLOperationLog bllOperate = new BLHelper.BLLOperationLog();
         BLHelper.BLLUser user = new BLHelper.BLLUser();
         //BLHelper.BLLStaffMonograph st = new BLHelper.BLLStaffMonograph();
        
@@ -286,8 +287,50 @@ namespace WebApplication1
             dCondition.Enabled = false;
             tCondition.Enabled = false;
             InitData();
+            Delete.Enabled = false;
         }
-       
+
+        //删除
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<int> selections = pm.GridCount(Grid_Monograph, CBoxSelect);
+                if (Convert.ToInt32(Session["SecrecyLevel"]) == 5)
+                {
+                    for (int i = 0; i < selections.Count(); i++)
+                    {
+                        mo.Delete(Convert.ToInt32(Grid_Monograph.DataKeys[selections[i]][0]));
+                    }
+                    InitData();
+                    Alert.ShowInTop("删除数据成功!");
+                    
+                }
+                else
+                {
+                    for (int i = 0; i < selections.Count(); i++)
+                    {
+                        mo.UpdateIsPass(Convert.ToInt32(Grid_Monograph.DataKeys[selections[i]][0]), false);
+                        //向操作日志表中插入
+                        OperationLog operate = new OperationLog();
+                        operate.LoginName = user.FindByLoginName(Session["LoginName"].ToString()).UserName;
+                        operate.LoginIP = "";
+                        operate.OperationType = "删除";
+                        operate.OperationContent = "ProjectImportantNode";
+                        operate.OperationDataID = Convert.ToInt32(Grid_Monograph.DataKeys[selections[i]][0]);
+                        operate.OperationTime = System.DateTime.Now;
+                        operate.Remark = "";
+                        bllOperate.Insert(operate);
+                    }
+                    Alert.ShowInTop("您的操作已提交，请等待审核！");
+                    InitData();
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
         //更新
         protected void btn_UpdateInspect_Click(object sender, EventArgs e)
         {
@@ -384,6 +427,24 @@ namespace WebApplication1
                     CBoxSelect.SetCheckedState(e.RowIndex, false);
                     Alert.ShowInTop(str);
                 }
+                int m;
+                //取整数（不是四舍五入，全舍）
+                int Pages = (int)Math.Floor(Convert.ToDouble(Grid_Monograph.RecordCount / this.Grid_Monograph.PageSize));
+
+                if (Grid_Monograph.PageIndex == Pages)
+                    m = (Grid_Monograph.RecordCount - this.Grid_Monograph.PageSize * Grid_Monograph.PageIndex);
+                else
+                    m = this.Grid_Monograph.PageSize;
+                bool isCheck = false;
+                for (int i = 0; i < m; i++)
+                {
+                    if (CBoxSelect.GetCheckedState(i))
+                        isCheck = true;
+                }
+                if (isCheck)
+                    Delete.Enabled = true;
+                else
+                    Delete.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -498,6 +559,44 @@ namespace WebApplication1
         protected void Window_Import_Close(object sender, WindowCloseEventArgs e)
         {
             this.btnRefresh_Click(null, null);
+        }
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            Grid_Monograph.SelectAllRows();
+            int[] select = Grid_Monograph.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(Grid_Monograph.RecordCount / this.Grid_Monograph.PageSize));
+
+            if (Grid_Monograph.PageIndex == Pages)
+                m = (Grid_Monograph.RecordCount - this.Grid_Monograph.PageSize * Grid_Monograph.PageIndex);
+            else
+                m = this.Grid_Monograph.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                Delete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                Delete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
         }
     }
 }

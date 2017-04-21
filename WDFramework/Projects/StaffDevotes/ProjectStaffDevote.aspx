@@ -40,6 +40,8 @@
               <%--  <x:Label ID="Label4" runat="server" Label="Label" Width ="20" Text=" "></x:Label>  --%>          
                 <x:Button ID="btnAddProject" Text="新增项目人员投入信息" Icon="Add" runat="server"  >
                 </x:Button>
+
+                 <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                 <x:Button ID="btnDelete" Text="删除选中行" Icon="Delete" runat="server" OnClick ="btnDelete_Click" ConfirmText ="确定删除？" ConfirmTarget ="Top"  >
                 </x:Button>
                 <x:Button ID="btnUpdate" Text="编辑选择行" Icon="Pencil"  runat="server" OnClick ="btnUpdate_Click" >

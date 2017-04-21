@@ -46,6 +46,8 @@
                          
                 <x:Button ID="btnAddProject" Text="新增项目重大节点信息" Icon="Add" runat="server"  >
                 </x:Button>
+
+                 <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                 <x:Button ID="btnDelete" Text="删除选中行" Icon="Delete" runat="server" OnClick ="btnDelete_Click"   >
                 </x:Button>
                 <x:Button ID="btnUpdate" Text="编辑选中行" Icon="Pencil"  runat="server" OnClick ="btnUpdate_Click"   >
@@ -76,8 +78,8 @@
                         <asp:Label ID="Label8" runat="server" Text='<%# RowNumber( Container.DataItemIndex + 1) %>'></asp:Label>
                     </ItemTemplate>
                 </x:TemplateField>
-           <x:CheckBoxField ID="CBoxSelect" CommandName="CBSelect" DataField="Project" runat="server" AutoPostBack="true" Enabled="true" RenderAsStaticField="false"  ShowHeaderCheckBox="true" Width="30" /> 
-          <x:RowNumberField runat="server" EnablePagingNumber="true" />
+           <x:CheckBoxField ID="CBoxSelect" CommandName="CBSelect" DataField="Project" runat="server" AutoPostBack="true" Enabled="true" RenderAsStaticField="false"   Width="30" /> 
+          
             <x:BoundField Enabled="true" DataField="EntryPerson" SortField="EntryPerson" Hidden="true" /> 
             <x:TemplateField Width="30px" Hidden ="true" >
                     <ItemTemplate>

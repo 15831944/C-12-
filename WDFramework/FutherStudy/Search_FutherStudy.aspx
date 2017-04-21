@@ -51,6 +51,8 @@
                                     </x:Button>
                                     <x:Button ID="btnAddFutherStudy" Text="新增进修学习信息(接受)" Icon="Add" EnablePostBack="true" runat="server">
                                     </x:Button>
+
+                                    <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                                     <x:Button ID="btnDelete" Text="删除选中行" Icon="Delete" ConfirmText="确定删除？" EnablePostBack="true" runat="server" OnClick="btnDelete_Click">
                                     </x:Button>  
                                      <x:Button ID="ButtonUpdate" OnClick="ButtonUpdate_Click" Text="编辑选中行" Icon="Pencil" runat="server">

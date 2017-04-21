@@ -63,6 +63,8 @@
                                 </x:Button>
                                 <x:Button ID="btnNew" Text="新增人员基本信息" Icon="Add" runat="server">
                                 </x:Button>
+
+                                 <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                                 <x:Button ID="btnDelete" Text="删除选中行" Icon="Delete" runat="server" OnClick="btnDelete_Click" ConfirmText="确定删除？" ConfirmTarget="Top" EnablePostBack="true">
                                 </x:Button>
                                 <x:Button ID="ButtonUpdate" Text="编辑选中行" Icon="Pencil" runat="server" OnClick="ButtonUpdate_Click">
