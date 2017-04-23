@@ -538,11 +538,39 @@ namespace WebApplication1
         {
             Grid_WorkPlanSummary.SelectAllRows();
             int[] select = Grid_WorkPlanSummary.SelectedRowIndexArray;
-            foreach(int item in select)
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(Grid_WorkPlanSummary.RecordCount / this.Grid_WorkPlanSummary.PageSize));
+
+            if (Grid_WorkPlanSummary.PageIndex == Pages)
+                m = (Grid_WorkPlanSummary.RecordCount - this.Grid_WorkPlanSummary.PageSize * Grid_WorkPlanSummary.PageIndex);
+            else
+                m = this.Grid_WorkPlanSummary.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
             {
-                BoxSelect.SetCheckedState(item,true);
+                if (BoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
             }
-            btnDelete.Enabled = true;
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    BoxSelect.SetCheckedState(item, true);
+                }
+                btnDelete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    BoxSelect.SetCheckedState(item, false);
+                }
+                btnDelete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
         }
+
     }
 }

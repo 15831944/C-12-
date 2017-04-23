@@ -1160,5 +1160,44 @@ namespace WDFramework.Project
                 btnSelect_All.Text = "全选";
             }
         }
+
+        //全选按钮
+        protected void btnSelect_All_Click_Two(object sender, EventArgs e)
+        {
+            GridProjectAllTwo.SelectAllRows();
+            int[] select = GridProjectAllTwo.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(GridProjectAllTwo.RecordCount / this.GridProjectAllTwo.PageSize));
+
+            if (GridProjectAllTwo.PageIndex == Pages)
+                m = (GridProjectAllTwo.RecordCount - this.GridProjectAllTwo.PageSize * GridProjectAllTwo.PageIndex);
+            else
+                m = this.GridProjectAllTwo.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBSelect_Two.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBSelect_Two.SetCheckedState(item, true);
+                }
+                btnDelete_two.Enabled = true;
+                btnSelect_All_Two.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBSelect_Two.SetCheckedState(item, false);
+                }
+                btnDelete_two.Enabled = false;
+                btnSelect_All_Two.Text = "全选";
+            }
+        }
     }
 }

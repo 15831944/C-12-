@@ -9,24 +9,22 @@
 <body oncontextmenu='return false'>
     <%--取消鼠标右键的点击--%>
     <form id="form1" runat="server">
-        <x:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
+       <x:PageManager ID="PageManager1" AutoSizePanelID="Panel1"  runat="server" />
         <%--  --%>
-        <x:Panel ID="Panel1" runat="server" BodyPadding="5px" EnableBackgroundColor="true"
+          <x:Panel ID="Panel1" runat="server" BodyPadding="5px" EnableBackgroundColor="true"
             ShowBorder="false" Layout="VBox" BoxConfigAlign="Stretch" BoxConfigPosition="Start"
             ShowHeader="false" Title="用户管理">
             <Items>
-
                 <%--  --%>
-
-                <x:Grid ID="GridProjectAll" runat="server" BoxFlex="1" ShowBorder="true" ShowHeader="false"
+                <x:Grid ID="GridProjectAll" runat="server" BoxFlex="3" ShowBorder="true" ShowHeader="false"
                     EnableCheckBoxSelect="false" EnableRowNumber="false" DataKeyNames="ProjectID"
                     AllowSorting="true" SortColumnIndex="0" SortDirection="DESC" AllowPaging="true" IsDatabasePaging="true" OnRowCommand="GridProjectAll_RowCommand" OnPageIndexChange="GridProjectAll_PageIndexChange">
                     <Toolbars>
                         <x:Toolbar ID="Toolbar1" runat="server">
                             <Items>
-                                <x:Label ID="Label2" runat="server" Label="Label" Width="5" Text=" "></x:Label>
-                                <x:Label ID="Label9" runat="server" Label="Label" Text="分"></x:Label>
-                                <x:Label ID="Label3" runat="server" Label="Label" Width="5" Text=" "></x:Label>
+                                <x:Label ID="Label2" runat="server" Label="Label" Width="0" Text=" "></x:Label>
+                                <x:Label ID="Label9" runat="server" Label="Label" Text="查询条件："></x:Label>
+                                <x:Label ID="Label3" runat="server" Label="Label" Width="0" Text=" "></x:Label>
                                 <x:DropDownList ID="FEN" ShowLabel="false" AutoPostBack="true" TabIndex="1" OnSelectedIndexChanged="FEN_SelectedIndexChanged" runat="server" Width="100px">
                                     <x:ListItem Text="全部" Value="全部" />
                                     <x:ListItem Text="项目名称" Value="项目名称" />
@@ -50,7 +48,7 @@
                                 <x:Label ID="Label7" runat="server" Label="Label" Width="5" Text=" "></x:Label>
                                 <x:Label ID="Label11" runat="server" Label="Label" Text="按"></x:Label>
                                 <x:Label ID="Label12" runat="server" Label="Label" Width="5" Text=" "></x:Label>
-
+                               
 
                                 <x:DropDownList ID="AN" ShowLabel="false" AutoPostBack="true" runat="server" TabIndex="4" Width="100px">
                                     <%--                     <x:ListItem Text="" Value="1" /> --%>
@@ -186,9 +184,8 @@
 
                     </Columns>
                 </x:Grid>
-
                 <%------------%>
-
+        
                 <x:Grid ID="GridProjectAllTwo" runat="server" BoxFlex="1" ShowBorder="true" ShowHeader="false"
                     EnableCheckBoxSelect="false" EnableRowNumber="false" DataKeyNames="ProjectFileID"
                     AllowSorting="true" SortColumnIndex="0" SortDirection="DESC" AllowPaging="true" IsDatabasePaging="true" OnRowCommand="GridProjectAll_Two_RowCommand" OnPageIndexChange="GridProjectAll_PageIndexChange">
@@ -201,6 +198,8 @@
                                 <x:Label ID="Label13" runat="server" Label="Label" Width="5" Text=" "></x:Label>
                                 <x:Button ID="btnAdd_two" Text="新增项目文档" Icon="Add" runat="server">
                                 </x:Button>
+
+                                <x:Button ID="btnSelect_All_Two" runat="server" Text="全选" OnClick="btnSelect_All_Click_Two"></x:Button>
                                 <x:Button ID="btnDelete_two" Text="删除项目文档" Icon="Delete" runat="server" OnClick="btnDeleteTwo_Click" ConfirmText="确定删除？" ConfirmTarget="Top">
                                 </x:Button>
                                 <x:Button ID="btnUpdate_two" Text="编辑项目文档" Icon="Pencil" runat="server">
@@ -251,9 +250,10 @@
                         </x:DropDownList>
                     </PageItems>
                 </x:Grid>
-                <%------------------%>
-            </Items>
-        </x:Panel>
+
+      </Items>
+   </x:Panel>
+                 <%------------------%>
         <x:Window ID="WindowProject" Popup="false" EnableIFrame="true" runat="server" AutoScroll="false"
             EnableMaximize="false" EnableResize="false" Height="450px" Width="850px" Title="添加项目基本信息">
         </x:Window>

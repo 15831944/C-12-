@@ -24,6 +24,7 @@ namespace WebApplication1.Achievement.AchievementCA
         BLCommon.PublicMethod pm = new BLCommon.PublicMethod();
         BLHelper.BLLUser user = new BLHelper.BLLUser();
         BLHelper.BLLStaffAchieve blst = new BLHelper.BLLStaffAchieve();
+        BLHelper.BLLOperationLog bllOperate = new BLHelper.BLLOperationLog();
         private int page;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -92,6 +93,47 @@ namespace WebApplication1.Achievement.AchievementCA
             dCondition.Enabled = false;
             tCondition.Enabled = false;
             InitData();
+        }
+
+        //删除
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<int> selections = pm.GridCount(Grid_AchievementCA, CBoxSelect);
+                if (Convert.ToInt32(Session["SecrecyLevel"]) == 5)
+                {
+                    for (int i = 0; i < selections.Count(); i++)
+                    {
+                        ca.Delete(Convert.ToInt32(Grid_AchievementCA.DataKeys[selections[i]][0]));
+                    }
+                    InitData();
+                    Alert.ShowInTop("删除数据成功!");
+                }
+                else
+                {
+                    for (int i = 0; i < selections.Count(); i++)
+                    {
+                        ca.UpdateIsPass(Convert.ToInt32(Grid_AchievementCA.DataKeys[selections[i]][0]), false);
+                        //向操作日志表中插入
+                        OperationLog operate = new OperationLog();
+                        operate.LoginName = user.FindByLoginName(Session["LoginName"].ToString()).UserName;
+                        operate.LoginIP = "";
+                        operate.OperationType = "删除";
+                        operate.OperationContent = "ProjectImportantNode";
+                        operate.OperationDataID = Convert.ToInt32(Grid_AchievementCA.DataKeys[selections[i]][0]);
+                        operate.OperationTime = System.DateTime.Now;
+                        operate.Remark = "";
+                        bllOperate.Insert(operate);
+                    }
+                    Alert.ShowInTop("您的操作已提交，请等待审核！");
+                    InitData();
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
         }
    
         //更新
@@ -552,6 +594,45 @@ namespace WebApplication1.Achievement.AchievementCA
         public int RowNumber(int dataItemIndex)
         {
             return dataItemIndex + (Grid_AchievementCA.PageIndex) * Grid_AchievementCA.PageSize;
+        }
+
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            Grid_AchievementCA.SelectAllRows();
+            int[] select = Grid_AchievementCA.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(Grid_AchievementCA.RecordCount / this.Grid_AchievementCA.PageSize));
+
+            if (Grid_AchievementCA.PageIndex == Pages)
+                m = (Grid_AchievementCA.RecordCount - this.Grid_AchievementCA.PageSize * Grid_AchievementCA.PageIndex);
+            else
+                m = this.Grid_AchievementCA.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                btnDelete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                btnDelete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
         }
     }
 }

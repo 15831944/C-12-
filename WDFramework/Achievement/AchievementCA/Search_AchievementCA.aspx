@@ -27,7 +27,7 @@
                                 <x:Label ID="AgencyID" Width="60px" runat="server" CssClass="marginr" ShowLabel="true" Text="查询条件"></x:Label>
                                 <x:DropDownList ID="dChoose" Width="100px" ShowLabel="false" AutoPostBack="true" runat="server" OnSelectedIndexChanged="dChoose_SelectedIndexChanged">
                                     <x:ListItem Text="全部" Value="全部" />
-                                    <x:ListItem Text="项目名称" Value="项目名称" />
+                                    <x:ListItem Text="成果名称" Value="成果名称" />
                                     <x:ListItem Text="验收年份" Value="验收年份" />
                                     <x:ListItem Text="验收组织部门" Value="验收组织部门" />
                                     <x:ListItem Text="完成人" Value="完成人" />
@@ -49,10 +49,12 @@
                                 </x:Button>
                                 <x:Button ID="btnRefresh" runat="server" Icon="ArrowRotateClockwise" Text="刷新" OnClick="btnRefresh_Click">
                                 </x:Button>
-                                <x:Button ID="btn_AddAchievementCA" Text="新增项目验收信息" Icon="Add" EnablePostBack="true" runat="server">
+                                <x:Button ID="btn_AddAchievementCA" Text="新增成果验收信息" Icon="Add" EnablePostBack="true" runat="server">
                                 </x:Button>
-                                <%--    <x:Button ID="btnDelete" Text="删除选中信息" Icon="Delete" EnablePostBack="true" runat="server" OnClick="btnDelete_Click">
-                                    </x:Button>--%>
+
+                                   <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
+                                    <x:Button ID="btnDelete" Text="删除选中信息" Icon="Delete" EnablePostBack="true" runat="server" OnClick="btnDelete_Click"  ConfirmText="确定删除？" ConfirmTarget="Top">
+                                    </x:Button>
                                 <%--  <x:Button ID="Get2" Text="导出所选信息" Icon="Disk" EnablePostBack="true" runat="server">
                                     </x:Button>--%>
                                 <x:Button ID="btn_UpdateAchievementCA" Text="编辑选中行" Icon="BulletEdit" EnablePostBack="true" runat="server" OnClick="btn_UpdateAchievementCA_Click">
@@ -95,7 +97,7 @@
                                 <asp:Label ID="Label5" runat="server" Text='<%#RowNumber( Container.DataItemIndex + 1) %>'></asp:Label>
                             </ItemTemplate>
                         </x:TemplateField>
-                        <x:TemplateField Width="80px" HeaderText="项目名称">
+                        <x:TemplateField Width="80px" HeaderText="成果名称">
                             <ItemTemplate>
                                 <asp:Label ID="LabeAgency" runat="server" Text='<%# FindName(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "AchievementID"))) %>'></asp:Label>
                             </ItemTemplate>

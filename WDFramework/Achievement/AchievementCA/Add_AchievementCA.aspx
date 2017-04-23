@@ -36,7 +36,7 @@
                         <x:Panel ID="Panel14" ShowHeader="false" CssClass="formitem" ShowBorder="false"
                             Layout="Column" runat="server">
                             <Items>
-                                <x:Label ID="Achievement" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="项目名称：">
+                                <x:Label ID="Achievement" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="成果名称：">
                                 </x:Label>
                                 <x:TextBox ID="tAchievement" MaxLength="100" MaxLengthMessage="最多可输入100个字符" ShowLabel="true" Label="项目名称" Required="true" Width="200px" CssClass="marginr" runat="server" TabIndex="1" AutoPostBack="true" OnTextChanged="tAchievement_TextChanged">
                                 </x:TextBox>

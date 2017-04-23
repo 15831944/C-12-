@@ -1,0 +1,152 @@
+2017/4/22 14:17:01
+------------------------------------------------------------------------------
+
+错误消息:未能找到文件“F:\c#程序\项目1\WDFramework\WDFramework\Uploads\635801033052247519_2014级学生自然情况表(1).xls”。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileInfo.get_Length()
+   在 BLCommon.PublicMethod.DownloadFile(String aFilepath) 位置 c:\Users\susu\Desktop\空间\空间2\kygl\BLCommon\PublicMethod.cs:行号 31
+   在 WDFramework.WorkPlanSummary.DownLoadWPS.btn_DownLoad_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间2\kygl\WDFramework\WorkPlanSummary\DownLoadWPS.aspx.cs:行号 40
+ 
+
+引发异常的方法:Void WinIOError(Int32, System.String)
+
+错误页面:/WorkPlanSummary/DownLoadWPS.aspx?id=31
+------------------------------------------------------------------------------
+2017/4/22 14:20:47
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLCommon
+
+堆栈内容:   在 BLCommon.PublicMethod.UpLoadFile(HtmlInputFile InputFile) 位置 c:\Users\susu\Desktop\空间\空间2\kygl\BLCommon\PublicMethod.cs:行号 286
+   在 WDFramework.Projects.ADD_Projects.AddProjects() 位置 c:\Users\susu\Desktop\空间\空间2\kygl\WDFramework\Projects\Projects\ADD_Projects.aspx.cs:行号 186
+ 
+
+引发异常的方法:BLCommon.FileUpLoad UpLoadFile(System.Web.UI.HtmlControls.HtmlInputFile)
+
+错误页面:/Projects/Projects/ADD_Projects.aspx
+------------------------------------------------------------------------------
+2017/4/22 14:20:56
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLCommon
+
+堆栈内容:   在 BLCommon.PublicMethod.UpLoadFile(HtmlInputFile InputFile) 位置 c:\Users\susu\Desktop\空间\空间2\kygl\BLCommon\PublicMethod.cs:行号 286
+   在 WDFramework.Projects.ADD_Projects.AddProjects() 位置 c:\Users\susu\Desktop\空间\空间2\kygl\WDFramework\Projects\Projects\ADD_Projects.aspx.cs:行号 186
+ 
+
+引发异常的方法:BLCommon.FileUpLoad UpLoadFile(System.Web.UI.HtmlControls.HtmlInputFile)
+
+错误页面:/Projects/Projects/ADD_Projects.aspx
+------------------------------------------------------------------------------
+2017/4/22 14:26:52
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLCommon
+
+堆栈内容:   在 BLCommon.PublicMethod.UpLoadFile(HtmlInputFile InputFile) 位置 c:\Users\susu\Desktop\空间\空间2\kygl\BLCommon\PublicMethod.cs:行号 286
+   在 WDFramework.Projects.ADD_Projects.AddProjects() 位置 c:\Users\susu\Desktop\空间\空间2\kygl\WDFramework\Projects\Projects\ADD_Projects.aspx.cs:行号 186
+ 
+
+引发异常的方法:BLCommon.FileUpLoad UpLoadFile(System.Web.UI.HtmlControls.HtmlInputFile)
+
+错误页面:/Projects/Projects/ADD_Projects.aspx
+------------------------------------------------------------------------------
+2017/4/22 14:31:49
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLCommon
+
+堆栈内容:   在 BLCommon.PublicMethod.UpLoadFile(HtmlInputFile InputFile) 位置 c:\Users\susu\Desktop\空间\空间2\kygl\BLCommon\PublicMethod.cs:行号 286
+   在 WDFramework.Projects.ADD_Projects.AddProjects() 位置 c:\Users\susu\Desktop\空间\空间2\kygl\WDFramework\Projects\Projects\ADD_Projects.aspx.cs:行号 186
+ 
+
+引发异常的方法:BLCommon.FileUpLoad UpLoadFile(System.Web.UI.HtmlControls.HtmlInputFile)
+
+错误页面:/Projects/Projects/ADD_Projects.aspx
+------------------------------------------------------------------------------
+2017/4/22 14:32:06
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLCommon
+
+堆栈内容:   在 BLCommon.PublicMethod.UpLoadFile(HtmlInputFile InputFile) 位置 c:\Users\susu\Desktop\空间\空间2\kygl\BLCommon\PublicMethod.cs:行号 286
+   在 WDFramework.Projects.ADD_Projects.AddProjects() 位置 c:\Users\susu\Desktop\空间\空间2\kygl\WDFramework\Projects\Projects\ADD_Projects.aspx.cs:行号 186
+ 
+
+引发异常的方法:BLCommon.FileUpLoad UpLoadFile(System.Web.UI.HtmlControls.HtmlInputFile)
+
+错误页面:/Projects/Projects/ADD_Projects.aspx
+------------------------------------------------------------------------------
+2017/4/22 14:36:01
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLCommon
+
+堆栈内容:   在 BLCommon.PublicMethod.UpLoadFile(HtmlInputFile InputFile) 位置 c:\Users\susu\Desktop\空间\空间2\kygl\BLCommon\PublicMethod.cs:行号 286
+   在 WDFramework.Projects.ADD_Projects.AddProjects() 位置 c:\Users\susu\Desktop\空间\空间2\kygl\WDFramework\Projects\Projects\ADD_Projects.aspx.cs:行号 186
+ 
+
+引发异常的方法:BLCommon.FileUpLoad UpLoadFile(System.Web.UI.HtmlControls.HtmlInputFile)
+
+错误页面:/Projects/Projects/ADD_Projects.aspx
+------------------------------------------------------------------------------
+2017/4/22 15:06:07
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLCommon
+
+堆栈内容:   在 BLCommon.PublicMethod.UpLoadFile(HtmlInputFile InputFile) 位置 c:\Users\susu\Desktop\空间\空间2\kygl\BLCommon\PublicMethod.cs:行号 286
+   在 WDFramework.Projects.ADD_Projects.AddProjects() 位置 c:\Users\susu\Desktop\空间\空间2\kygl\WDFramework\Projects\Projects\ADD_Projects.aspx.cs:行号 186
+ 
+
+引发异常的方法:BLCommon.FileUpLoad UpLoadFile(System.Web.UI.HtmlControls.HtmlInputFile)
+
+错误页面:/Projects/Projects/ADD_Projects.aspx
+------------------------------------------------------------------------------
+2017/4/22 15:09:00
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLCommon
+
+堆栈内容:   在 BLCommon.PublicMethod.UpLoadFile(HtmlInputFile InputFile) 位置 c:\Users\susu\Desktop\空间\空间2\kygl\BLCommon\PublicMethod.cs:行号 286
+   在 WDFramework.Projects.ADD_Projects.AddProjects() 位置 c:\Users\susu\Desktop\空间\空间2\kygl\WDFramework\Projects\Projects\ADD_Projects.aspx.cs:行号 186
+ 
+
+引发异常的方法:BLCommon.FileUpLoad UpLoadFile(System.Web.UI.HtmlControls.HtmlInputFile)
+
+错误页面:/Projects/Projects/ADD_Projects.aspx
+------------------------------------------------------------------------------
+2017/4/22 15:12:58
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:BLCommon
+
+堆栈内容:   在 BLCommon.PublicMethod.UpLoadFile(HtmlInputFile InputFile) 位置 c:\Users\susu\Desktop\空间\空间2\kygl\BLCommon\PublicMethod.cs:行号 286
+   在 WDFramework.Projects.ADD_Projects.AddProjects() 位置 c:\Users\susu\Desktop\空间\空间2\kygl\WDFramework\Projects\Projects\ADD_Projects.aspx.cs:行号 186
+ 
+
+引发异常的方法:BLCommon.FileUpLoad UpLoadFile(System.Web.UI.HtmlControls.HtmlInputFile)
+
+错误页面:/Projects/Projects/ADD_Projects.aspx
+------------------------------------------------------------------------------

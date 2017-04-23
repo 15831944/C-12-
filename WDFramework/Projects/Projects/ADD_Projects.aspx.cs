@@ -1,7 +1,10 @@
 ﻿/**编写人：王会会
  * 时间：2014年8月3号
  * 功能：添加项目基本信息的相关操作
- * 修改履历：
+ * 修改履历：  修改人：苏瑀
+ *             时间： 2017年4月22日
+ *             修改内容：注释掉经费文件，使得保存可用；
+ *                       添加全选删除功能；
  **/
 using Common.Entities;
 using FineUI;
@@ -183,57 +186,57 @@ namespace WDFramework.Projects
                 aproject.ProjectInNum = ProjectInNum.Text.Trim();//项目内部编号(科技处)
                 aproject.ProjectMember = ProjectMember.Text.Trim();//项目成员
                 //经济效益附件
-                int attachidbenefit = pm.UpLoadFile(FileUploadFile).Attachid;
-                switch (attachidbenefit)
-                {
-                    case -1:
-                        Alert.ShowInTop("经济效益文件类型不符，请重新选择！");
-                        return;
-                    case 0:
-                        Alert.ShowInTop("经济效益文件名已经存在！");
-                        return;
-                    case -2:
-                        Alert.ShowInTop("经济效益文件不能大于150M");
-                        return;
-                }
-                //经济预算效益
-                int attachidbudget = pm.UpLoadFile(FileUploadFileM).Attachid;
-                switch (attachidbudget)
-                {
-                    case -1:
-                        Alert.ShowInTop("经费预算文件类型不符，请重新选择！");
-                        if (attachidbenefit != -1 && attachidbenefit != 0 && attachidbenefit != -2)
-                            pm.DeleteFile(attachidbenefit, bllAttachment.FindPath(attachidbenefit));
-                        return;
-                    case 0:
-                        Alert.ShowInTop("经费预算文件名已经存在！");
-                        if (attachidbenefit != -1 && attachidbenefit != 0 && attachidbenefit != -2)
-                            pm.DeleteFile(attachidbenefit, bllAttachment.FindPath(attachidbenefit));
-                        return;
-                    case -2:
-                        Alert.ShowInTop("经费预算文件不能大于150M");
-                        if (attachidbenefit != -1 && attachidbenefit != 0 && attachidbenefit != -2)
-                            pm.DeleteFile(attachidbenefit, bllAttachment.FindPath(attachidbenefit));
-                        return;
-                }
-                //经济效益
-                if (attachidbenefit != -3)
-                {
-                    aproject.BenefitAttachment = attachidbenefit;
-                }
-                else
-                {
-                    aproject.BenefitAttachment = null;
-                }
-                //经费预算
-                if (attachidbudget != -3)
-                {
-                    aproject.BudgetAttachment = attachidbudget;
-                }
-                else
-                {
-                    aproject.BudgetAttachment = null;
-                }
+                //int attachidbenefit = pm.UpLoadFile(FileUploadFile).Attachid;
+                //switch (attachidbenefit)
+                //{
+                //    case -1:
+                //        Alert.ShowInTop("经济效益文件类型不符，请重新选择！");
+                //        return;
+                //    case 0:
+                //        Alert.ShowInTop("经济效益文件名已经存在！");
+                //        return;
+                //    case -2:
+                //        Alert.ShowInTop("经济效益文件不能大于150M");
+                //        return;
+                //}
+                ////经济预算效益
+                //int attachidbudget = pm.UpLoadFile(FileUploadFileM).Attachid;
+                //switch (attachidbudget)
+                //{
+                //    case -1:
+                //        Alert.ShowInTop("经费预算文件类型不符，请重新选择！");
+                //        if (attachidbenefit != -1 && attachidbenefit != 0 && attachidbenefit != -2)
+                //            pm.DeleteFile(attachidbenefit, bllAttachment.FindPath(attachidbenefit));
+                //        return;
+                //    case 0:
+                //        Alert.ShowInTop("经费预算文件名已经存在！");
+                //        if (attachidbenefit != -1 && attachidbenefit != 0 && attachidbenefit != -2)
+                //            pm.DeleteFile(attachidbenefit, bllAttachment.FindPath(attachidbenefit));
+                //        return;
+                //    case -2:
+                //        Alert.ShowInTop("经费预算文件不能大于150M");
+                //        if (attachidbenefit != -1 && attachidbenefit != 0 && attachidbenefit != -2)
+                //            pm.DeleteFile(attachidbenefit, bllAttachment.FindPath(attachidbenefit));
+                //        return;
+                //}
+                ////经济效益
+                //if (attachidbenefit != -3)
+                //{
+                //    aproject.BenefitAttachment = attachidbenefit;
+                //}
+                //else
+                //{
+                //    aproject.BenefitAttachment = null;
+                //}
+                ////经费预算
+                //if (attachidbudget != -3)
+                //{
+                //    aproject.BudgetAttachment = attachidbudget;
+                //}
+                //else
+                //{
+                //    aproject.BudgetAttachment = null;
+                //}
                 aproject.EntryPerson = bllUser.FindByLoginName(Session["LoginName"].ToString()).UserName;
                 bllProject.InsertProject(aproject);
                 if (Convert.ToInt32(Session["SecrecyLevel"]) != 5)
