@@ -62,7 +62,7 @@ namespace BLHelper
         //按照项目成员查询
         public List<Project> FindByProjectMember(string projectMember, int secrelevel)
         {
-            var res = dbcontext.ProjectContext.Where(u => u.ProjectMember.Contains(projectMember) && u.SecrecyLevel <= secrelevel && u.IsPass == true).ToList();
+            var res = dbcontext.ProjectContext.Where(u => (u.ProjectMember.Contains(projectMember) ||u.ProjectManager.Contains(projectMember)) && u.SecrecyLevel <= secrelevel && u.IsPass == true).ToList();
             return res;
         }
 
