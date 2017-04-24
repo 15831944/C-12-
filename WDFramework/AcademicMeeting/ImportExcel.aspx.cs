@@ -36,7 +36,7 @@ namespace WDFramework.AcademicMeeting
         BLHelper.BLLStaffDevote BLLStaffDevote = new BLHelper.BLLStaffDevote();
         BLHelper.BLLAcademicMeeting BLLAcademicMeeting = new BLHelper.BLLAcademicMeeting();
         BLHelper.BLLAttendMeeting BLLAttendMeeting = new BLHelper.BLLAttendMeeting();
-        BLHelper.BLLEquipment BLLEquipment = new BLHelper.BLLEquipment ();
+        BLHelper.BLLEquipment BLLEquipment = new BLHelper.BLLEquipment();
         BLHelper.BLLFurniture BLLFurniture = new BLHelper.BLLFurniture();
         BLCommon.Encrypt encrypt = new BLCommon.Encrypt();
         DataBaseContext dbcontext = new DataBaseContext();
@@ -50,11 +50,11 @@ namespace WDFramework.AcademicMeeting
             int AttachID = 0;
             string strPath = null;
             string strTypeName = null;
-            if(Request["name"]!=null)
+            if (Request["name"] != null)
             {
                 strTypeName = Request["name"].ToString();
             }
-            
+
             try
             {
                 AttachID = publicMethod.UpLoad(filePath);
@@ -84,7 +84,7 @@ namespace WDFramework.AcademicMeeting
                 }
                 string fileExtension = Path.GetExtension(strPath);//获得excel扩展名
                 fileName = fileName.Replace(fileExtension, "");       //去掉扩展名
-                if(strTypeName!=null&&strTypeName!=fileName)
+                if (strTypeName != null && strTypeName != fileName)
                 {
                     Alert.Show("请选择名为" + strTypeName + "的导入模板!");
                     return;
@@ -151,7 +151,11 @@ namespace WDFramework.AcademicMeeting
                 if (IsImport == null)
                     Alert.Show("导入成功！");
                 else
-                    Alert.Show(IsImport);
+                {
+                    
+                    Alert.Show("部分数据未导入，请根据错误日志进行修改！\n" + IsImport);
+                    
+                }
                 //switch (IsImport)
                 //{
                 //    case 0:
@@ -189,6 +193,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -209,7 +214,8 @@ namespace WDFramework.AcademicMeeting
                                 bool IsExit = BLLUser.IsExit(userInfo.UserName, userInfo.LoginName);//存在返回true
                                 if (IsExit)
                                 {
-                                    return "第" + row + "行出错，该用户信息已存在！";
+                                    Error += "第" + row + "行出错，该用户信息已存在！\n";
+                                    continue;
                                 }
                                 if (dr["性别"].ToString() == "男")
                                     userInfo.Sex = true;
@@ -320,7 +326,8 @@ namespace WDFramework.AcademicMeeting
                                 {
                                     //return row;//返回错误行号
                                     //返回错误信息
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
                                 }
                                 context.UserInfoContext.Add(userInfo);
                             }
@@ -328,7 +335,7 @@ namespace WDFramework.AcademicMeeting
                             //    return row;
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                     }
                     else
                         return "Excel无数据导入！";
@@ -349,6 +356,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -364,7 +372,8 @@ namespace WDFramework.AcademicMeeting
                                 project.ProjectName = dr["项目名称"].ToString();
                                 if (BLLProject.IsNullProject(project.ProjectName) != null)
                                 {
-                                    return "第" + row + "行出错，该项目名称已存在！";
+                                    Error += "第" + row + "行出错，该项目名称已存在！\n";
+                                    continue;
                                 }
                                 project.AgencyID = BLLAgency.SelectAgencyID(dr["项目所属机构"].ToString());//AgencyID为0则不存在该机构
                                 if (project.AgencyID == 0)
@@ -435,12 +444,13 @@ namespace WDFramework.AcademicMeeting
                                 else
                                 {
                                     //return row; 
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
                                 }
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                     }
                     else
                         return "Excel无数据导入！";
@@ -462,6 +472,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -484,7 +495,8 @@ namespace WDFramework.AcademicMeeting
                                 staffDevote.ProjectID = BLLProject.SelectProjectID(ProjectName);//ProjectID为零则不存在该项目
                                 if (staffDevote.ProjectID == 0)
                                 {
-                                    return "第" + row + "行出错，项目名称不存在！";
+                                    Error += "第" + row + "行出错，项目名称不存在！\n";
+                                    continue;
                                 }
                                 //paper.PublicDate = dr["发表日期"].ToString();
                                 if (dr["投入时间"].ToString() == "")
@@ -525,7 +537,8 @@ namespace WDFramework.AcademicMeeting
                                 {
                                     //Alert.Show("导入失败，姓名或项目名称错误！");
                                     //return row;
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
                                 }
                                 else
                                 {
@@ -537,7 +550,7 @@ namespace WDFramework.AcademicMeeting
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                         //return 0;
                     }
                     else
@@ -559,6 +572,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -575,7 +589,8 @@ namespace WDFramework.AcademicMeeting
                                 int IsExit = BLLPaper.FindByPaperName(paper.Subject);
                                 if (IsExit != 0)
                                 {
-                                    return "第" + row + "行出错，该题目已存在！";
+                                    Error += "第" + row + "行出错，该题目已存在！\n";
+                                    continue;
                                 }
                                 paper.PublicJournalName = dr["发布刊物"].ToString();
                                 paper.PaperPeople = dr["全部作者"].ToString();
@@ -646,11 +661,16 @@ namespace WDFramework.AcademicMeeting
                                     context.PaperContext.Add(paper);
                                 }
                                 else
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                {
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
+                                }
                                 //return row;
                                 //if(dr["所属成果名称"].ToString() == ""&& paper.AchievementID==0)
                             }
                         }
+                        if (Error != null)
+                            return Error;
                         context.SaveChanges();
                         return null;
                         //return 0;
@@ -674,6 +694,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -690,7 +711,8 @@ namespace WDFramework.AcademicMeeting
                                 bool IsExit = BLLPatent.FindByPaperName(patent.PatentName);//存在返回true
                                 if (IsExit)
                                 {
-                                    return "第" + row + "行出错，该专利名称已存在！";
+                                    Error += "第" + row + "行出错，该专利名称已存在！\n";
+                                    continue;
                                 }
                                 patent.PatentNumber = dr["专利号"].ToString();
                                 patent.PatentPeople = dr["全部发明人"].ToString();
@@ -756,12 +778,13 @@ namespace WDFramework.AcademicMeeting
                                 else
                                 {
                                     //return row;
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！";
+                                    continue;
                                 }
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                         //return 0;
                     }
                     else
@@ -783,6 +806,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -804,7 +828,10 @@ namespace WDFramework.AcademicMeeting
                                 string AchieveName = dr["所属成果名称"].ToString();
                                 monograph.AchievementID = BLLAchievement.FindByAchievementName(AchieveName);//AchievementID为零则不存在成果名称
                                 if (AchieveName != "" && monograph.AchievementID == 0)
-                                    return "第" + row + "行出错，所属成果名称不存在！";
+                                {
+                                    Error += "第" + row + "行出错，所属成果名称不存在！\n";
+                                    continue;
+                                }
                                 if (dr["出版时间"].ToString() == "")
                                     monograph.PUblicationTime = null;
                                 //monograph.PUblicationTime = Convert.ToDateTime("1/1/1753 12:00:00");//默认时间
@@ -849,12 +876,15 @@ namespace WDFramework.AcademicMeeting
                                     context.MonographContext.Add(monograph);
                                 }
                                 else
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                {
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
+                                }
                                 //return row;
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                         //return 0;
                     }
                     else
@@ -876,6 +906,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -892,7 +923,8 @@ namespace WDFramework.AcademicMeeting
                                 staffAchieve.UserInfoID = BLLUser.FindID(userName);//UserInfoID为0则不存在该用户
                                 if (staffAchieve.UserInfoID == 0)
                                 {
-                                    return "第" + row + "行出错，人员姓名不存在！";
+                                    Error += "第" + row + "行出错，人员姓名不存在！\n";
+                                    continue;
                                 }
                                 string AchieveName = dr["鉴定成果名称"].ToString();
                                 staffAchieve.AchievementID = BLLAchievement.FindByAchievementName(AchieveName);//AchievementID为零则不存在成果名称
@@ -924,7 +956,8 @@ namespace WDFramework.AcademicMeeting
                                 }
                                 if (staffAchieve.SecrecyLevel == 0)
                                 {
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
                                     //return row;
                                 }
                                 else
@@ -936,7 +969,7 @@ namespace WDFramework.AcademicMeeting
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                         //return 0;
                     }
                     else
@@ -958,6 +991,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -975,7 +1009,8 @@ namespace WDFramework.AcademicMeeting
                                 attendMeeting.UserInfoID = BLLUser.FindID(userName);//UserInfoID为零则不存在该用户
                                 if (attendMeeting.UserInfoID == 0)
                                 {
-                                    return "第" + row + "行出错，姓名不存在！";
+                                    Error += "第" + row + "行出错，姓名不存在！\n";
+                                    continue;
                                 }
                                 //int UserInfoID = BLLUser.FindByUserID(userName);
                                 string MeetingName = dr["会议名称"].ToString();
@@ -1011,14 +1046,15 @@ namespace WDFramework.AcademicMeeting
                                 attendMeeting.EntryPerson = BLLUser.FindByLoginName(Session["LoginName"].ToString()).UserName;
                                 if (attendMeeting.SecrecyLevel == 0)
                                 {
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
                                     //return row;
                                 }
                                 context.AttendMeetingContext.Add(attendMeeting);
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                         //return 0;
                     }
                     else
@@ -1041,6 +1077,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -1056,7 +1093,8 @@ namespace WDFramework.AcademicMeeting
                                 award.AwardName = dr["获奖名称"].ToString();
                                 if (BLLAward.IsExitAwardName(award.AwardName) != null)
                                 {
-                                    return "第" + row + "行出错，该获奖名称已存在！";
+                                    Error += "第" + row + "行出错，该获奖名称已存在！\n";
+                                    continue;
                                 }
                                 if (dr["获奖时间"].ToString() == "")
                                     award.AwardTime = null;
@@ -1099,7 +1137,8 @@ namespace WDFramework.AcademicMeeting
                                 award.Remark = dr["备注"].ToString();
                                 if (award.SecrecyLevel == 0)
                                 {
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
                                     //return row;
                                 }
                                 else
@@ -1111,7 +1150,7 @@ namespace WDFramework.AcademicMeeting
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                         //return 0;
                     }
                     else
@@ -1133,6 +1172,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -1193,7 +1233,8 @@ namespace WDFramework.AcademicMeeting
                                 }
                                 if (AM.SecrecyLevel == 0)
                                 {
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
                                     //return row;
                                 }
                                 else
@@ -1205,7 +1246,7 @@ namespace WDFramework.AcademicMeeting
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error; ;
                         //return 0;
                     }
                     else
@@ -1227,6 +1268,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -1248,9 +1290,12 @@ namespace WDFramework.AcademicMeeting
                                 SR.SReportPlace = dr["报告地点"].ToString();
                                 SR.MeetingID = BLLAcademicMeeting.FindMeetingID(dr["所属会议"].ToString());
                                 if (SR.MeetingID == 0)
-                                    return "第" + row + "行出错，不存在所属会议名称";
+                                {
+                                    Error += "第" + row + "行出错，不存在所属会议名称\n";
+                                    continue;
+                                }
                                 SR.AgencyID = BLLAgency.SelectAgencyID(dr["所属机构"].ToString());
-                               
+
                                 //1公开 2内部 3秘密 4机密 5管理员
                                 switch (dr["保密级别"].ToString())
                                 {
@@ -1275,7 +1320,8 @@ namespace WDFramework.AcademicMeeting
                                 }
                                 if (SR.SecrecyLevel == 0)
                                 {
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
                                     //return row;
                                 }
                                 else
@@ -1287,7 +1333,7 @@ namespace WDFramework.AcademicMeeting
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                         //return 0;
                     }
                     else
@@ -1309,6 +1355,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -1370,7 +1417,8 @@ namespace WDFramework.AcademicMeeting
                                 }
                                 if (SR.SecrecyLevel == 0)
                                 {
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
                                     //return row;
                                 }
                                 else
@@ -1382,7 +1430,7 @@ namespace WDFramework.AcademicMeeting
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                         //return 0;
                     }
                     else
@@ -1405,6 +1453,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -1417,7 +1466,7 @@ namespace WDFramework.AcademicMeeting
                             dr = dt.Rows[i];
                             if (dr["序号"].ToString() != "")
                             {
-                                equipment.EquipmentName= dr["资产名称"].ToString();
+                                equipment.EquipmentName = dr["资产名称"].ToString();
                                 //int count = BLLEquipment.FindByEquipmentName(equipment.EquipmentName,5).Count;
                                 //if (count!=0)
                                 //{
@@ -1456,7 +1505,7 @@ namespace WDFramework.AcademicMeeting
                                 //    if(equipment.AgencyID==0)
                                 //        return "第" + row + "行出错，所属机构名称不存在！";
                                 //}
-                               
+
                                 //1公开 2内部 3秘密 4机密 5管理员
                                 switch (dr["保密级别"].ToString())
                                 {
@@ -1484,7 +1533,8 @@ namespace WDFramework.AcademicMeeting
                                 {
                                     //Alert.Show("导入失败，姓名或项目名称错误！");
                                     //return row;
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
                                 }
                                 else
                                 {
@@ -1495,7 +1545,7 @@ namespace WDFramework.AcademicMeeting
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                         //return 0;
                     }
                     else
@@ -1506,7 +1556,7 @@ namespace WDFramework.AcademicMeeting
                 {
                     BLCommon.PublicMethod pm = new BLCommon.PublicMethod();
                     pm.SaveError(ex, this.Request);
-                    return row+"行 Excel 字段错误 导入失败！";
+                    return row + "行 Excel 字段错误 导入失败！";
                     //return row;
                 }
             }
@@ -1518,6 +1568,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -1564,10 +1615,10 @@ namespace WDFramework.AcademicMeeting
                                     furniture.IsShare = false;
                                 //equipment.IsGowerProcu = dr["是否政府采购"].ToString();
                                 //furniture.AgencyID = BLLAgency.SelectAgencyID(dr["所属机构"].ToString());
-                               // if (dr["所属机构"].ToString() != "")
+                                // if (dr["所属机构"].ToString() != "")
                                 //{
-                                    //if (furniture.AgencyID == 0)
-                                    //    return "第" + row + "行出错，所属机构名称不存在！";
+                                //if (furniture.AgencyID == 0)
+                                //    return "第" + row + "行出错，所属机构名称不存在！";
                                 //}
 
                                 //1公开 2内部 3秘密 4机密 5管理员
@@ -1597,7 +1648,8 @@ namespace WDFramework.AcademicMeeting
                                 {
                                     //Alert.Show("导入失败，姓名或项目名称错误！");
                                     //return row;
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
                                 }
                                 else
                                 {
@@ -1608,7 +1660,7 @@ namespace WDFramework.AcademicMeeting
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                         //return 0;
                     }
                     else
@@ -1631,6 +1683,7 @@ namespace WDFramework.AcademicMeeting
             using (DataBaseContext context = new DataBaseContext())
             {
                 int row = 0;
+                string Error = null;
                 try
                 {
                     if (dt.Rows.Count > 0)
@@ -1676,9 +1729,10 @@ namespace WDFramework.AcademicMeeting
                                 student.UserInfoID = BLLUser.FindID(userName);//UserInfoID为零则不存在该用户
                                 if (student.UserInfoID == 0)
                                 {
-                                    return "第" + row + "行出错，指导教师不存在！";
+                                    Error += "第" + row + "行出错，指导教师不存在！\n";
+                                    continue;
                                 }
-                                
+
                                 switch (dr["保密级别"].ToString())
                                 {
                                     case "四级":
@@ -1705,7 +1759,8 @@ namespace WDFramework.AcademicMeeting
                                 {
                                     //Alert.Show("导入失败，姓名或项目名称错误！");
                                     //return row;
-                                    return "第" + row + "行出错，保密级别不存在！";
+                                    Error += "第" + row + "行出错，保密级别不存在！\n";
+                                    continue;
                                 }
                                 else
                                 {
@@ -1716,7 +1771,7 @@ namespace WDFramework.AcademicMeeting
                             }
                         }
                         context.SaveChanges();
-                        return null;
+                        return Error;
                         //return 0;
                     }
                     else
