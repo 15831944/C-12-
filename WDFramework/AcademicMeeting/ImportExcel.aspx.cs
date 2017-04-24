@@ -152,7 +152,8 @@ namespace WDFramework.AcademicMeeting
                     Alert.Show("导入成功！");
                 else
                 {
-                    
+                    //BLCommon.PublicMethod pm = new BLCommon.PublicMethod();
+                    //pm.SaveImportError(IsImport);
                     Alert.Show("部分数据未导入，请根据错误日志进行修改！\n" + IsImport);
                     
                 }
