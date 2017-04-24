@@ -446,5 +446,43 @@ namespace WDFramework.AcademicMeeting
             }
 
         }
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            Grid_MeetingName.SelectAllRows();
+            int[] select = Grid_MeetingName.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(Grid_MeetingName.RecordCount / this.Grid_MeetingName.PageSize));
+
+            if (Grid_MeetingName.PageIndex == Pages)
+                m = (Grid_MeetingName.RecordCount - this.Grid_MeetingName.PageSize * Grid_MeetingName.PageIndex);
+            else
+                m = this.Grid_MeetingName.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect_MeetingName.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect_MeetingName.SetCheckedState(item, true);
+                }
+                btnDelete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect_MeetingName.SetCheckedState(item, false);
+                }
+                btnDelete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
+        }
     }
 }

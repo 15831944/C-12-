@@ -44,6 +44,7 @@
                                 <x:Button ID="btnUpdate" Text="编辑选中行" Icon="Pencil" runat="server" OnClick="ButtonUpdate_Click">
                                 </x:Button>
 
+                                 <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                                 <x:Button ID="btnDelete" Text="删除选中信息" Icon="Delete" EnablePostBack="true" runat="server" ConfirmText="确定删除？" ConfirmTarget="Top" OnClick="btnDelete_Click" Enabled="false">
                                 </x:Button>
                                 <%--<x:Button ID="Get2" Text="导出所选信息" Icon="Disk" EnablePostBack="true" runat="server">

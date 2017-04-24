@@ -98,7 +98,7 @@ namespace WDFramework.ContractAndPact.Contract
                 NewContract.EntryPerson = BLLcontract.FindByContractID(Convert.ToInt32(Session["ContractID"])).EntryPerson;
                 NewContract.SecrecyLevel = Convert.ToInt32(DropDownList_SecrecyLevel.SelectedValue);
 
-                
+                NewContract.ContractID = Convert.ToInt32(Session["ContractID"]);
                 //上传附件
                 
                 int AttachID = pm.UpLoadFile(fileupload).Attachid;
@@ -126,8 +126,10 @@ namespace WDFramework.ContractAndPact.Contract
                 {
                     NewContract.IsPass = true;
                     //向资料表中插入数据
-                    BLLcontract.Insert(NewContract);
-                    Alert.ShowInTop("保存成功");
+                    //BLLcontract.Insert(NewContract);
+                    //Alert.ShowInTop("保存成功");
+                    BLLcontract.Update(NewContract);//5级直接更新平台表
+                    PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference() + Alert.GetShowInTopReference("信息已更新完成！"));
                 }
                 else
                 {
@@ -147,8 +149,7 @@ namespace WDFramework.ContractAndPact.Contract
                 }
 
                 //PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference());
-                BLLcontract.Update(NewContract);//5级直接更新平台表
-                PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference() + Alert.GetShowInTopReference("平台信息已更新完成！"));
+               
             }
             catch (Exception ex)
             {
