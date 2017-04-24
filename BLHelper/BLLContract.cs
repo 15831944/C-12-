@@ -58,7 +58,24 @@ namespace BLHelper
                 throw;
             }
         }
-
+        //更新
+        public void Update(Contract contract)
+        {
+            try
+            {
+                Contract newcontract = dbcontext.ContractContext.Find(contract.ContractID);
+                newcontract.ContractHeadLine = contract.ContractHeadLine;
+                newcontract.ContractAuthors = contract.ContractAuthors;
+                newcontract.ContractOriginal = contract.ContractOriginal;
+                newcontract.SecrecyLevel = contract.SecrecyLevel;
+                dbcontext.SaveChanges();
+                
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                throw e;
+            }
+        }
         //插入资料信息
         public void Insert(Contract constract)
         {

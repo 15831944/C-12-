@@ -289,6 +289,39 @@ namespace WebApplication1.ContractAndPact.Contract
             string[] SecrecyLevels = new string[] { "四级", "三级", "二级", "一级", "管理员" };
             return SecrecyLevels[level - 1];
         }
+        //编辑平台信息
+         protected void ButtonUpdate_Click(object sender,EventArgs e)
+        {
+            try
+            {
+                List<int> selections = publicMethod.GridCount(Grid_Contract, BoxSelect_Contract);
+                if (selections.Count() != 0)
+                {
+                    if (selections.Count() == 1)
+                    {
+                        int rowID = Convert.ToInt32(Grid_Contract.DataKeys[selections[0]][0]);
+                        Session["ContractID"] = rowID;
+                        Alert.Show("你确定要修改该行数据吗!", "确认消息", MessageBoxIcon.Information, Window_Update.GetShowReference("Updata_Contract.aspx", "编辑平台信息"), Target.Top);
+                      
+                    }
+                    else
+                    {
+                        Alert.Show("一次仅可以对一行进行编辑！");
+                    }
+                }
+                else
+                {
 
+                    Alert.Show("请选择一行！");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                BLCommon.PublicMethod pm = new BLCommon.PublicMethod();
+                pm.SaveError(ex, this.Request);
+
+            }
+        }
     }
 }

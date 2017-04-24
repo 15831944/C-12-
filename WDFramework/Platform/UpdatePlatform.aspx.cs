@@ -31,6 +31,7 @@ namespace WDFramework.Platform
         {
             if (!IsPostBack)
             {
+
                 //初始化平台级别
                 InitDropDownListPlatformRank();
                 //初始化批复部门

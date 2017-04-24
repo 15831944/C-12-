@@ -42,7 +42,8 @@
                                 </x:Button>
                                 <x:Button ID="btnLibraryRecord" Text="查看借阅记录" Icon="Disk" EnablePostBack="true" runat="server">
                                 </x:Button>
-
+                                <x:Button ID="ButtonUpdate" Text="编辑选中行" Icon="Pencil" OnClick="ButtonUpdate_Click" runat="server" EnablePostBack="true">
+                                </x:Button>
                                 <x:Button ID="rep" Text="借阅信息统计" Icon="Report" EnablePostBack="true" runat="server">
                                     <Menu ID="Menu1" runat="server">
                                         <x:MenuButton ID="reprotLibrery" Text="借阅统计" Icon="Disk" EnablePostBack="true" runat="server">
@@ -123,6 +124,9 @@
         </x:Window>
         <x:Window ID="Window_Add_LibraryRecord" Popup="false" EnableIFrame="true" runat="server"
             EnableMaximize="false" EnableResize="false" Height="400px" Width="450px" Title="增加借阅记录">
+        </x:Window>
+         <x:Window ID="Window_Update" Popup="false" EnableIFrame="true" runat="server"
+            EnableMaximize="false" EnableResize="false" Height="410px" Width="450px" Title="更新平台信息">
         </x:Window>
         <x:Window ID="Window_NoLibraryMessage" Popup="false" EnableIFrame="true" runat="server"
             EnableMaximize="false" EnableResize="false" Height="250px" Width="350px">

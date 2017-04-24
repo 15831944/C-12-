@@ -1,0 +1,210 @@
+2017/4/24 15:30:14
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 304
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:30:16
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 304
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:30:17
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 304
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:30:19
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 304
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:30:19
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 304
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:30:49
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 304
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:32:01
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 304
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:33:12
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 304
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:33:46
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 304
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:42:15
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 304
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:44:12
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 304
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:48:05
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 304
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:49:04
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.Platform.UpdatePlatform.InitData() 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\Platform\UpdatePlatform.aspx.cs:行号 52
+ 
+
+引发异常的方法:Void InitData()
+
+错误页面:/Platform/UpdatePlatform.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:52:00
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 305
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:52:45
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.ContractAndPact.Contract.Search_Contract.ButtonUpdate_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间3\kygl\WDFramework\ContractAndPact\Contract\Search_Contract.aspx.cs:行号 305
+ 
+
+引发异常的方法:Void ButtonUpdate_Click(System.Object, System.EventArgs)
+
+错误页面:/ContractAndPact/Contract/Search_Contract.aspx
+------------------------------------------------------------------------------
