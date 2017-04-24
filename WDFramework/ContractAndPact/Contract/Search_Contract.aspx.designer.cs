@@ -21,6 +21,7 @@ namespace WebApplication1.ContractAndPact.Contract {
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
+
         /// <summary>
         /// PageManager1 control.
         /// </summary>

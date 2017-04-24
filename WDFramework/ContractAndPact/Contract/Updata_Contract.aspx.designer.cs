@@ -67,6 +67,7 @@ namespace WDFramework.ContractAndPact.Contract
         /// </remarks>
         protected global::FineUI.Panel Panel3;
 
+
         /// <summary>
         /// Label4 control.
         /// </summary>

@@ -44,6 +44,7 @@ namespace WDFramework.ContractAndPact.Contract
                     txtContractAuthors.Text = contract.ContractAuthors;
                     txtContractOriginal.Text = contract.ContractOriginal;
 
+
                 }
                 else
                 {

@@ -304,6 +304,7 @@ namespace WebApplication1.ContractAndPact.Contract
                         Alert.Show("你确定要修改该行数据吗!", "确认消息", MessageBoxIcon.Information, Window_Update.GetShowReference("Updata_Contract.aspx", "编辑平台信息"), Target.Top);
                       
                     }
+
                     else
                     {
                         Alert.Show("一次仅可以对一行进行编辑！");

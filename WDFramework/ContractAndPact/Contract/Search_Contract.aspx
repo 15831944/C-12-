@@ -113,6 +113,7 @@
                         <%--<x:LinkButtonField ID="LinkbtnDownLoad" HeaderText="&nbsp;" EnableAjax="false" Width="80px" CommandName="Action2" Text="下载" />--%>
                     </Columns>
                 </x:Grid>
+
             </Items>
         </x:Panel>
         <x:Window ID="Window_addContract" Popup="false" EnableIFrame="true" runat="server"
