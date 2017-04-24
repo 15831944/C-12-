@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2017/4/24 15:30:14
 ------------------------------------------------------------------------------
 
@@ -208,3 +209,88 @@
 
 错误页面:/ContractAndPact/Contract/Search_Contract.aspx
 ------------------------------------------------------------------------------
+=======
+2017/4/24 13:55:12
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.ExportExcel(Int32 k, Grid grid, Int32 j) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 365
+   在 WebApplication1.Search_Patent.btn_Get_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Search_Patent.aspx.cs:行号 636
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/Achievement/Patent/Search_Patent.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:39:11
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.SaveImportError(String Error) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 512
+   在 WDFramework.AcademicMeeting.ImportExcel.btnSubmit_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 156
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/4/24 15:41:36
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:BLCommon
+
+堆栈内容:   在 BLCommon.PublicMethod.SaveImportError(String Error) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 511
+   在 WDFramework.AcademicMeeting.ImportExcel.btnSubmit_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 156
+ 
+
+引发异常的方法:Void SaveImportError(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/4/24 16:28:03
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:BLCommon
+
+堆栈内容:   在 BLCommon.PublicMethod.SaveImportError(String Error) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 526
+   在 WDFramework.AcademicMeeting.ImportExcel.btnSubmit_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 159
+ 
+
+引发异常的方法:Void SaveImportError(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/4/24 16:42:27
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:BLCommon
+
+堆栈内容:   在 BLCommon.PublicMethod.SaveImportError(String Error) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 537
+   在 WDFramework.AcademicMeeting.ImportExcel.btnSubmit_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 156
+ 
+
+引发异常的方法:Void SaveImportError(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+>>>>>>> 209552cda8d2afd202a8cd1e88f0bb24f9ca55cd

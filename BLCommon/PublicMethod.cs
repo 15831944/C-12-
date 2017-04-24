@@ -491,5 +491,52 @@ namespace BLCommon
             }
 
         }
+
+        //导入错误日志
+        public void SaveImportError(string Error)
+        {
+            try
+            {
+                //string filename = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Day.ToString() + "ImportError.doc";
+                //HttpContext.Current.Response.ClearContent();
+                //HttpContext.Current.Response.AddHeader("content-disposition", "attachment; filename=myexcel.xls");
+                //HttpContext.Current.Response.ContentType = "application/excel";
+                //HttpContext.Current.Response.Charset = "GB2312";
+                //HttpContext.Current.Response.ContentEncoding = System.Text.Encoding.GetEncoding("GB2312");
+                //HttpContext.Current.Response.Write(Error);
+                //HttpContext.Current.Response.End();
+                //HttpContext.Current.Response.ClearContent();
+                //HttpContext.Current.Response.AddHeader("content-disposition", "attachment; filename=" + filename);
+                //HttpContext.Current.Response.ContentType = "application/word";
+                //HttpContext.Current.Response.Charset = "GB2312";
+                //HttpContext.Current.Response.ContentEncoding = System.Text.Encoding.GetEncoding("GB2312");
+                //HttpContext.Current.Response.Write(Error);
+                //HttpContext.Current.Response.End();
+                //HttpContext.Current.Response.Clear();
+                //HttpContext.Current.Response.Buffer = true;
+                //HttpContext.Current.Response.Charset = "GB2312";  //设置了类型为中文防止乱码的出现 
+                //HttpContext.Current.Response.AppendHeader("Content-Disposition", "attachment; filename=" + filename);
+                //HttpContext.Current.Response.ContentType = "application/ms-word;charset=GB2312";
+                //HttpContext.Current.Response.ContentEncoding = System.Text.Encoding.GetEncoding("GB2312"); //设置输出流为简体中文
+                //HttpContext.Current.Response.Write(Error);
+                //HttpContext.Current.ApplicationInstance.CompleteRequest();
+
+                HttpContext.Current.Response.Clear();
+                HttpContext.Current.Response.Buffer = true;
+                HttpContext.Current.Response.Charset = "GB2312";
+                HttpContext.Current.Response.AppendHeader("Content-Disposition", "attachment;filename=abc.txt");
+                HttpContext.Current.Response.ContentEncoding = System.Text.Encoding.GetEncoding("GB2312");//设置输出流为简体中文
+                HttpContext.Current.Response.ContentType = "text/plain";//设置输出文件类型为txt文件。 
+                System.Globalization.CultureInfo myCItrad = new System.Globalization.CultureInfo("ZH-CN", true);
+                System.IO.StringWriter oStringWriter = new System.IO.StringWriter(myCItrad);
+                HttpContext.Current.Response.Write(Error);
+                HttpContext.Current.Response.End();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }
