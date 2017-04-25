@@ -96,6 +96,20 @@ namespace BLHelper
                 return null;
             }
         }
+
+        //根据人员ID和教学对象查询授课情况
+        public List<SpeakClass> FindByTime(string time, string TeachingDegree)
+        {
+            if (TeachingDegree != null)
+            {
+                return dbcontext.SpeakClassContext.Where(s => s.TeachingDegree == TeachingDegree &&s.TeachingTime.Value.Year==Convert.ToInt32(time) && s.IsPass == true).ToList();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         //更新用户主讲课程
         public bool Update(SpeakClass sc)
         {

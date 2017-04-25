@@ -10,7 +10,7 @@
 namespace WDFramework.WorkPlanSummary {
     
     
-    public partial class Add_WorkPlanSummary {
+    public partial class Update_WorkPlanSummary {
         
         /// <summary>
         /// Head1 控件。

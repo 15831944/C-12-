@@ -403,7 +403,7 @@ namespace BLHelper
         }
        
         //根据UserID获取用户名
-        public string FindByUserID(int UserID)
+        public string FindByUserID(int? UserID)
         {
             List<UserInfo> df = new List<UserInfo>();
             df = dbcontext.UserInfoContext.Where(d => d.UserInfoID == UserID).ToList();

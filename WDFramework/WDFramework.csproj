@@ -2122,6 +2122,7 @@
     <Content Include="WorkPlanSummary\Add_WorkPlanSummary.aspx" />
     <Content Include="WorkPlanSummary\DownLoadWPS.aspx" />
     <Content Include="WorkPlanSummary\Search_WorkPlanSummary.aspx" />
+    <Content Include="WorkPlanSummary\Update_WorkPlanSummary.aspx" />
     <Content Include="笔记.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -3727,6 +3728,13 @@
     </Compile>
     <Compile Include="WorkPlanSummary\Search_WorkPlanSummary.aspx.designer.cs">
       <DependentUpon>Search_WorkPlanSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkPlanSummary\Update_WorkPlanSummary.aspx.cs">
+      <DependentUpon>Update_WorkPlanSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkPlanSummary\Update_WorkPlanSummary.aspx.designer.cs">
+      <DependentUpon>Update_WorkPlanSummary.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

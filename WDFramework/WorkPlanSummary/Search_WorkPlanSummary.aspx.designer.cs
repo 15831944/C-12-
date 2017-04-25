@@ -121,6 +121,15 @@ namespace WebApplication1 {
         protected global::FineUI.Button btnAddPlan;
         
         /// <summary>
+        /// btnUpdate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnUpdate;
+        
+        /// <summary>
         /// btnSelect_All 控件。
         /// </summary>
         /// <remarks>
@@ -245,6 +254,15 @@ namespace WebApplication1 {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Window Window_NoLibraryMessage;
+        
+        /// <summary>
+        /// WindowUpdate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Window WindowUpdate;
         
         /// <summary>
         /// labResult 控件。

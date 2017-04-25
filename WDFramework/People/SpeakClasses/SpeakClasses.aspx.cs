@@ -87,13 +87,25 @@ namespace WDFramework.People.SpeakClasses
                 //根据人员名称模糊查找人员ID
                 UserIDlist = bllUser.FindList(TriggerBox.Text.Trim(), Convert.ToInt32(Session["SecrecyLevel"]));
                 List<SpeakClass> alist = new List<SpeakClass>();
-                for (int i = 0; i < UserIDlist.Count(); i++)
+                if(UserIDlist.Count==0)
                 {
-                    //根据人员ID查找主讲课程信息
-                    List<SpeakClass> SpeakList = bllSpeak.FindByIT(UserIDlist[i], TeachingDegree).ToList();
+                    List<SpeakClass> SpeakList = bllSpeak.FindByTime(TriggerBox.Text.Trim(), TeachingDegree).ToList();
                     for (int j = 0; j < SpeakList.Count(); j++)
                     {
                         alist.Add(SpeakList[j]);
+                    }
+                }
+               
+                else
+                {
+                    for (int i = 0; i < UserIDlist.Count(); i++)
+                    {
+                        //根据人员ID查找主讲课程信息
+                        List<SpeakClass> SpeakList = bllSpeak.FindByIT(UserIDlist[i], TeachingDegree).ToList();
+                        for (int j = 0; j < SpeakList.Count(); j++)
+                        {
+                            alist.Add(SpeakList[j]);
+                        }
                     }
                 }
 

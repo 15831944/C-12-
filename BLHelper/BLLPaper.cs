@@ -241,6 +241,21 @@ namespace BLHelper
                 return 0;
             }
         }
+
+        //根据论文名和发布时间获取论文ID
+        public int FindByPaperName_Time(string name,DateTime?Time)
+        {
+            List<Paper> list = new List<Paper>();
+            list = dbcontext.PaperContext.Where(p => p.Subject == name&&p.PublicDate==Time).ToList();
+            if (list.Count() != 0)
+            {
+                return list.FirstOrDefault().PaperID;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     
         //根据论文名获取论文ID(不包括当前ID)
         public int FindByPaperNames(string name,int id)

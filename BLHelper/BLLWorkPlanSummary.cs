@@ -42,6 +42,27 @@ namespace BLHelper
             }
         }
 
+       public void Update(WorkPlanSummary work)
+        {
+            try
+            {
+                WorkPlanSummary WorkPlanSummary = dbcontext.WorkPlanSummaryContext.Find(work.WorkPlanSummaryID);
+                if (WorkPlanSummary == null)
+                    return;
+                WorkPlanSummary.AgencyID = work.AgencyID;
+                WorkPlanSummary.SecrecyLevel = work.SecrecyLevel;
+                WorkPlanSummary.Sort=work.Sort;
+                WorkPlanSummary.Time=work.Time;
+                WorkPlanSummary.UserInfoID = work.UserInfoID;
+                if (work.Attachment != -4)
+                    WorkPlanSummary.Attachment = work.Attachment;
+                dbcontext.SaveChanges();
+            }
+           catch(Exception ex)
+            {
+                throw;
+            }
+        }
 
         //插入工作计划与总结信息
         public void Insert(WorkPlanSummary workPlanSummary)

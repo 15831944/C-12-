@@ -572,5 +572,35 @@ namespace WebApplication1
             }
         }
 
+        //修改按钮
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<int> selections = publicMethod.GridCount(Grid_WorkPlanSummary, BoxSelect);
+                if (selections.Count() != 0)
+                {
+                    if (selections.Count() == 1)
+                    {
+                        int rowID = Convert.ToInt32(Grid_WorkPlanSummary.DataKeys[selections[0]][0]);
+                        Session["WorkPlanSummary"] = rowID;
+                        Alert.Show("你确定要修改该行数据吗!", "确认消息", MessageBoxIcon.Information, WindowUpdate.GetShowReference("Update_WorkPlanSummary.aspx"), Target.Top);
+                    }
+                    else
+                    {
+                        Alert.Show("一次仅可以对一行进行编辑！");
+                    }
+                }
+                else
+                {
+                    Alert.Show("请选择一行！");
+                }
+            }
+            catch (Exception ex)
+            {
+                publicMethod.SaveError(ex, this.Request);
+            }
+        }
+
     }
 }

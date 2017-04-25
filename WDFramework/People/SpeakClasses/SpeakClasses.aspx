@@ -26,7 +26,7 @@
                <x:Label ID="Label1" runat="server" Label="Label" Width ="5" Text=" "></x:Label>
                 <x:Label ID="Label2" runat="server" Label="Label" Text="查询条件："></x:Label>
                 <x:Label ID="Label3" runat="server" Label="Label" Width ="5" Text=" "></x:Label>
-                <x:TwinTriggerBox runat="server" EmptyText="输入要搜索的人员姓名" MaxLength ="20" ShowLabel="false" ID="TriggerBox" ShowTrigger1="false" TabIndex ="1"
+                <x:TwinTriggerBox runat="server" EmptyText="输入要搜索的人员姓名或时间（如：2015）" MaxLength ="20" ShowLabel="false" ID="TriggerBox" ShowTrigger1="false" TabIndex ="1"
                     ShowTrigger2 ="false" >
                 </x:TwinTriggerBox>
                 <x:Label ID="Label9" runat="server" Label="Label" Width ="5" Text=" "></x:Label>

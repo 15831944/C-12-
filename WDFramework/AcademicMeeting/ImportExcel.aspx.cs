@@ -587,10 +587,11 @@ namespace WDFramework.AcademicMeeting
                             if (dr["序号"].ToString() != "")
                             {
                                 paper.Subject = dr["题目"].ToString();
-                                int IsExit = BLLPaper.FindByPaperName(paper.Subject);
+                                paper.PublicDate = Convert.ToDateTime(dr["发表时间"].ToString());
+                                int IsExit = BLLPaper.FindByPaperName_Time(paper.Subject,paper.PublicDate);
                                 if (IsExit != 0)
                                 {
-                                    Error += "第" + row + "行出错，该题目已存在！\n";
+                                    Error += "第" + row + "行出错，该论文已存在！\n";
                                     continue;
                                 }
                                 paper.PublicJournalName = dr["发布刊物"].ToString();

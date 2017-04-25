@@ -236,7 +236,7 @@ namespace BLHelper
         }
 
         //根据id查找机构
-        public Agency FindByid(int agenid)
+        public Agency FindByid(int? agenid)
         {
             return dbcontext.AgencyContext.Find(agenid);
         }
