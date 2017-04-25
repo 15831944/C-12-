@@ -289,6 +289,79 @@ namespace WebApplication1.ContractAndPact.Contract
             string[] SecrecyLevels = new string[] { "四级", "三级", "二级", "一级", "管理员" };
             return SecrecyLevels[level - 1];
         }
+        //编辑平台信息
+         protected void ButtonUpdate_Click(object sender,EventArgs e)
+        {
+            try
+            {
+                List<int> selections = publicMethod.GridCount(Grid_Contract, BoxSelect_Contract);
+                if (selections.Count() != 0)
+                {
+                    if (selections.Count() == 1)
+                    {
+                        int rowID = Convert.ToInt32(Grid_Contract.DataKeys[selections[0]][0]);
+                        Session["ContractID"] = rowID;
+                        Alert.Show("你确定要修改该行数据吗!", "确认消息", MessageBoxIcon.Information, Window_Update.GetShowReference("Updata_Contract.aspx", "编辑平台信息"), Target.Top);
+                      
+                    }
 
+                    else
+                    {
+                        Alert.Show("一次仅可以对一行进行编辑！");
+                    }
+                }
+                else
+                {
+
+                    Alert.Show("请选择一行！");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                BLCommon.PublicMethod pm = new BLCommon.PublicMethod();
+                pm.SaveError(ex, this.Request);
+
+            }
+        }
+
+         //全选按钮
+         protected void btnSelect_All_Click(object sender, EventArgs e)
+         {
+             Grid_Contract.SelectAllRows();
+             int[] select = Grid_Contract.SelectedRowIndexArray;
+             int m;
+             //取整数（不是四舍五入，全舍）
+             int Pages = (int)Math.Floor(Convert.ToDouble(Grid_Contract.RecordCount / this.Grid_Contract.PageSize));
+
+             if (Grid_Contract.PageIndex == Pages)
+                 m = (Grid_Contract.RecordCount - this.Grid_Contract.PageSize * Grid_Contract.PageIndex);
+             else
+                 m = this.Grid_Contract.PageSize;
+             bool isCheck = false;
+             for (int i = 0; i < m; i++)
+             {
+                 if (BoxSelect_Contract.GetCheckedState(i) == false)
+                     isCheck = true;
+             }
+             if (isCheck)
+             {
+                 foreach (int item in select)
+                 {
+                     BoxSelect_Contract.SetCheckedState(item, true);
+                 }
+                 btnDelete.Enabled = true;
+                 btnSelect_All.Text = "取消全选";
+             }
+             else
+             {
+                 foreach (int item in select)
+                 {
+                     BoxSelect_Contract.SetCheckedState(item, false);
+                 }
+                 btnDelete.Enabled = false;
+                 btnSelect_All.Text = "全选";
+             }
+         }
     }
 }

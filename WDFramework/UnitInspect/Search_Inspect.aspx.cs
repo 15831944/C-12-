@@ -367,5 +367,44 @@ namespace WebApplication1
                     break;
             }
         }
+
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            Grid_UnitInspect.SelectAllRows();
+            int[] select = Grid_UnitInspect.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(Grid_UnitInspect.RecordCount / this.Grid_UnitInspect.PageSize));
+
+            if (Grid_UnitInspect.PageIndex == Pages)
+                m = (Grid_UnitInspect.RecordCount - this.Grid_UnitInspect.PageSize * Grid_UnitInspect.PageIndex);
+            else
+                m = this.Grid_UnitInspect.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                btnDelete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                btnDelete.Enabled = false;
+                btnSelect_All.Text = "全选";
+            }
+        }
     }
 }

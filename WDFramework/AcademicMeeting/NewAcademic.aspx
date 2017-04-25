@@ -43,6 +43,8 @@
                                 </x:Button>
                                 <x:Button ID="btnUpdateMeeting" Text="编辑选中行" Icon="BulletEdit" EnablePostBack="true" runat="server" OnClick="btnUpdateMeeting_Click">
                                 </x:Button>
+
+                                  <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                                 <x:Button ID="btnDelete" Text="删除选中会议" Icon="Delete" EnablePostBack="true" runat="server" OnClick="btnDelete_Click"
                                     ConfirmText="确定删除？" ConfirmTarget="Top" Enabled="false">
                                 </x:Button>

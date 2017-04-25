@@ -21,6 +21,7 @@ namespace WebApplication1.ContractAndPact.Contract {
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
+
         /// <summary>
         /// PageManager1 control.
         /// </summary>
@@ -272,5 +273,23 @@ namespace WebApplication1.ContractAndPact.Contract {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::FineUI.Label labResult;
+
+        /// <summary>
+        /// Window_Update control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::FineUI.Window Window_Update;
+
+        /// <summary>
+        /// btnSelect_All 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnSelect_All;
     }
 }

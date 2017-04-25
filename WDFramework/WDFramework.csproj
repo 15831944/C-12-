@@ -161,6 +161,7 @@
     <Content Include="ContractAndPact\Contract\NewAdd_ContractRecord.aspx" />
     <Content Include="ContractAndPact\Contract\Search_Contract.aspx" />
     <Content Include="ContractAndPact\Contract\LibraryRecord_Contract.aspx" />
+    <Content Include="ContractAndPact\Contract\Updata_Contract.aspx" />
     <Content Include="ContractAndPact\Contract\Update_ContractRecord.aspx" />
     <Content Include="ContractAndPact\Contract\DownLoad.aspx" />
     <Content Include="ContractAndPact\NoLibraryMessage.aspx" />
@@ -2647,6 +2648,13 @@
     </Compile>
     <Compile Include="ContractAndPact\Contract\LibraryRecord_Contract.aspx.designer.cs">
       <DependentUpon>LibraryRecord_Contract.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContractAndPact\Contract\Updata_Contract.aspx.cs">
+      <DependentUpon>Updata_Contract.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContractAndPact\Contract\Updata_Contract.aspx.designer.cs">
+      <DependentUpon>Updata_Contract.aspx</DependentUpon>
     </Compile>
     <Compile Include="ContractAndPact\Contract\Update_ContractRecord.aspx.cs">
       <DependentUpon>Update_ContractRecord.aspx</DependentUpon>

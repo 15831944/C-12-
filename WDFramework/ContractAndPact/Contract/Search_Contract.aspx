@@ -38,11 +38,14 @@
                                 </x:Button>
                                 <x:Button ID="btn_AddContract" Text="新增资料信息" Icon="Add" EnablePostBack="true" runat="server">
                                 </x:Button>
+
+                                  <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                                 <x:Button ID="btnDelete" Text="删除选中信息" Icon="Delete" EnablePostBack="true" runat="server" OnClick="btnDelete_Click" ConfirmText="确定删除？" ConfirmTarget="Top" Enabled="false">
                                 </x:Button>
                                 <x:Button ID="btnLibraryRecord" Text="查看借阅记录" Icon="Disk" EnablePostBack="true" runat="server">
                                 </x:Button>
-
+                                <x:Button ID="ButtonUpdate" Text="编辑选中行" Icon="Pencil" OnClick="ButtonUpdate_Click" runat="server" EnablePostBack="true">
+                                </x:Button>
                                 <x:Button ID="rep" Text="借阅信息统计" Icon="Report" EnablePostBack="true" runat="server">
                                     <Menu ID="Menu1" runat="server">
                                         <x:MenuButton ID="reprotLibrery" Text="借阅统计" Icon="Disk" EnablePostBack="true" runat="server">
@@ -112,6 +115,7 @@
                         <%--<x:LinkButtonField ID="LinkbtnDownLoad" HeaderText="&nbsp;" EnableAjax="false" Width="80px" CommandName="Action2" Text="下载" />--%>
                     </Columns>
                 </x:Grid>
+
             </Items>
         </x:Panel>
         <x:Window ID="Window_addContract" Popup="false" EnableIFrame="true" runat="server"
@@ -123,6 +127,9 @@
         </x:Window>
         <x:Window ID="Window_Add_LibraryRecord" Popup="false" EnableIFrame="true" runat="server"
             EnableMaximize="false" EnableResize="false" Height="400px" Width="450px" Title="增加借阅记录">
+        </x:Window>
+         <x:Window ID="Window_Update" Popup="false" EnableIFrame="true" runat="server"
+            EnableMaximize="false" EnableResize="false" Height="410px" Width="450px" Title="更新平台信息">
         </x:Window>
         <x:Window ID="Window_NoLibraryMessage" Popup="false" EnableIFrame="true" runat="server"
             EnableMaximize="false" EnableResize="false" Height="250px" Width="350px">
