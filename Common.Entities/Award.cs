@@ -17,7 +17,7 @@ namespace Common.Entities
         public int AwardID { get; set; }	//ID 	
         [StringLength(20)]
         public string AwardwSpecies { get; set; }	//获奖类别	
-        [StringLength(5)]
+        [StringLength(20)]
         public string Grade { get; set; }	//获奖等级	
         // [Required]
         [StringLength(100)]
