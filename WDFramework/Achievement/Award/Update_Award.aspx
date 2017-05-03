@@ -248,20 +248,20 @@
                         <x:Label ID="Label8" runat="server" Label="Label" Text=" " Height="20px">
                         </x:Label>
                         <%--这是空行--%>
-                       <%-- <x:Panel ID="Panel" ShowHeader="false" CssClass="formitem" ShowBorder="false"
+                        <x:Panel ID="Panel" ShowHeader="false" CssClass="formitem" ShowBorder="false"
                             Layout="Column" runat="server">
                             <Items>
-                                <x:Label ID="Label9" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="全部获奖人：">
+                                <x:Label ID="Label9" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="成员及排序：">
                                 </x:Label>
-                                <x:TextArea runat="server" MaxLength="250" EmptyText="两个或两个以上请用逗号隔开" MaxLengthMessage="最多可输入250个字符" ID="AwardPeople" Label="全部获奖人" CssStyle ="overflow-y:scroll" ShowLabel="true" Width="195px" Height="40px" AutoGrowHeight="false"   TabIndex="13">
+                                <x:TextArea runat="server" MaxLength="250" EmptyText="两个或两个以上请用逗号隔开" MaxLengthMessage="最多可输入250个字符" ID="AwardPeople" Label="成员及排序" CssStyle ="overflow-y:scroll" ShowLabel="true" Width="195px" Height="40px" AutoGrowHeight="false"   TabIndex="13">
                                 </x:TextArea>
                             </Items>
                         </x:Panel>
 
                         <x:Label ID="Label6" runat="server" Label="Label" Text=" " Height="20px">
-                        </x:Label>--%>
+                        </x:Label>
                         <%--这是空行--%>
-                        <x:Panel ID="Panel_123" ShowHeader="false" CssClass="formitem" ShowBorder="false"
+                        <%--<x:Panel ID="Panel_123" ShowHeader="false" CssClass="formitem" ShowBorder="false"
                             Layout="Column" runat="server">
                              <Items>
                                 <x:Label ID="Member" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="成员及排序：">
@@ -269,7 +269,7 @@
                                 <x:TextArea runat="server" MaxLength="200"  MaxLengthMessage="最多可输入200个字符" ID="Members" Label="成员及排序" ShowLabel="true" Width="195px" Height="40px" CssStyle ="overflow-y:scroll" AutoGrowHeight="false"   TabIndex="17">
                                 </x:TextArea>
                             </Items>
-                        </x:Panel>
+                        </x:Panel>--%>
                         <%--这是空行--%>
                         <x:Panel ID="Panel19" ShowHeader="false" CssClass="formitem" ShowBorder="false"
                             Layout="Column" runat="server">

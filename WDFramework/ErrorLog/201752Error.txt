@@ -1,17 +1,405 @@
-2017/5/2 8:41:11
+2017/5/2 10:43:10
 ------------------------------------------------------------------------------
 
-错误消息:An error occurred while updating the entries. See the inner exception for details.
+错误消息:列“获奖名称”不属于表 Table。
 
-导致错误的应用程序或对象的名称:EntityFramework
+导致错误的应用程序或对象的名称:System.Data
 
-堆栈内容:   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
-   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
-   在 System.Data.Entity.DbContext.SaveChanges()
-   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1154
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
  
 
-引发异常的方法:Int32 SaveChanges()
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
 
 错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 10:43:44
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 10:46:06
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 10:46:09
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 10:46:36
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 10:47:50
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 10:49:10
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 10:55:48
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 10:57:50
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 11:00:49
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 11:00:52
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 11:02:33
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 11:02:36
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 11:09:02
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 11:09:13
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 11:15:49
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 11:15:52
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 11:16:30
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 11:16:33
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 11:21:02
+------------------------------------------------------------------------------
+
+错误消息:列“获奖名称”不属于表 Table。
+
+导致错误的应用程序或对象的名称:System.Data
+
+堆栈内容:   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.get_Item(String columnName)
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1095
+ 
+
+引发异常的方法:System.Data.DataColumn GetDataColumn(System.String)
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
+2017/5/2 21:48:11
+------------------------------------------------------------------------------
+
+错误消息:输入字符串的格式不正确。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Int32.Parse(String s)
+   在 WebApplication1.Add_Patent.Save_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\Achievement\Patent\Add_Patent.aspx.cs:行号 309
+ 
+
+引发异常的方法:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+
+错误页面:/Achievement/Patent/Add_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/2 21:48:16
+------------------------------------------------------------------------------
+
+错误消息:输入字符串的格式不正确。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Int32.Parse(String s)
+   在 WebApplication1.Add_Patent.Save_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\Achievement\Patent\Add_Patent.aspx.cs:行号 309
+ 
+
+引发异常的方法:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+
+错误页面:/Achievement/Patent/Add_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/2 21:50:47
+------------------------------------------------------------------------------
+
+错误消息:输入字符串的格式不正确。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Int32.Parse(String s)
+   在 WebApplication1.Add_Patent.Save_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\Achievement\Patent\Add_Patent.aspx.cs:行号 309
+ 
+
+引发异常的方法:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+
+错误页面:/Achievement/Patent/Add_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/2 21:50:55
+------------------------------------------------------------------------------
+
+错误消息:输入字符串的格式不正确。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Int32.Parse(String s)
+   在 WebApplication1.Add_Patent.Save_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\Achievement\Patent\Add_Patent.aspx.cs:行号 309
+ 
+
+引发异常的方法:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+
+错误页面:/Achievement/Patent/Add_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/2 21:52:37
+------------------------------------------------------------------------------
+
+错误消息:输入字符串的格式不正确。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Int32.Parse(String s)
+   在 WebApplication1.Add_Patent.Save_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间6\kygl\WDFramework\Achievement\Patent\Add_Patent.aspx.cs:行号 309
+ 
+
+引发异常的方法:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+
+错误页面:/Achievement/Patent/Add_Patent.aspx
 ------------------------------------------------------------------------------

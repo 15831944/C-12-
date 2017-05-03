@@ -190,14 +190,35 @@ namespace BLHelper
                 return "";
             }
         }
-       //根据ID查成员及排序
+       ////根据ID查成员及排序
+       // public string FindMember(int id)
+       // {
+       //     List<Award> list = new List<Award>();
+       //     list = dbcontext.AwardContext.Where(a => a.AwardID == id).ToList();
+       //     if (list != null)
+       //     {
+       //         if (list.FirstOrDefault().Member != "")
+       //         {
+       //             return list.FirstOrDefault().Member;
+       //         }
+       //         else
+       //         {
+       //             return "";
+       //         }
+       //     }
+       //     else
+       //     {
+       //         return "";
+       //     }
+       // }
+        //根据ID查成员及排序
         public string FindMember(int id)
         {
             List<Award> list = new List<Award>();
             list = dbcontext.AwardContext.Where(a => a.AwardID == id).ToList();
             if (list != null)
             {
-                if (list.FirstOrDefault().Member != "")
+                if (list.FirstOrDefault().AwardPeople != "")
                 {
                     return list.FirstOrDefault().Member;
                 }

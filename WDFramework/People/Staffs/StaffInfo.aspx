@@ -67,11 +67,12 @@
                                  <x:Button ID="btnSelect_All" runat="server" Text="全选" OnClick="btnSelect_All_Click"></x:Button>
                                 <x:Button ID="btnDelete" Text="删除选中行" Icon="Delete" runat="server" OnClick="btnDelete_Click" ConfirmText="确定删除？" ConfirmTarget="Top" EnablePostBack="true">
                                 </x:Button>
+                               
                                 <x:Button ID="ButtonUpdate" Text="编辑选中行" Icon="Pencil" runat="server" OnClick="ButtonUpdate_Click">
                                 </x:Button>
                                 <x:Button ID="btn_Get" Text="导出Excel文件" ConfirmText="确定导出？" Icon="Disk" EnablePostBack="true" runat="server" OnClick="btn_Get_Click" EnableAjax="false" DisableControlBeforePostBack="false">
                                 </x:Button>
-
+                                <x:Button ID="btn_delete_all" runat="server" OnClick="btn_delete_all_Click" Text="清空数据表" EnablePostBack="true" ConfirmText ="确定删除？" Icon="Delete"></x:Button>
                             </Items>
                         </x:Toolbar>
                     </Toolbars>

@@ -120,9 +120,9 @@ namespace WDFramework.Achievement.Award
                 dAwardTime.SelectedDate = aw.AwardTime;
                 dAwardwSpecies.SelectedValue = aw.AwardwSpecies;
                 dGrade.SelectedValue = aw.Grade;
-                //AwardPeople.Text = aw.AwardPeople;
+                AwardPeople.Text = aw.AwardPeople;
                 DropDownList_Sort.SelectedValue = aw.Sort;
-                Members.Text = aw.Member;
+                //Members.Text = aw.Member;
                 if (aw.Remark != null)
                 {
                     tRemark.Text = aw.Remark;
@@ -208,9 +208,9 @@ namespace WDFramework.Achievement.Award
             aww.Remark = tRemark.Text.Trim();
             aww.SecrecyLevel = Convert.ToInt32(dSecrecyLevel.SelectedIndex + 1);
             aww.GivAgency = tGivenAgency.Text.Trim();
-            //aww.AwardPeople = AwardPeople.Text.Trim();
+            aww.AwardPeople = AwardPeople.Text.Trim();
             aww.Sort = DropDownList_Sort.SelectedText;
-            aww.Member = Members.Text.Trim();
+            //aww.Member = Members.Text.Trim();
         }
       
         //保存
@@ -371,7 +371,7 @@ namespace WDFramework.Achievement.Award
         {
             try
             {
-                //AwardPeople.Reset();
+                AwardPeople.Reset();
                 tachievement.Reset();
                 tAwardName.Reset();
                 dAwardTime.Reset();
@@ -389,7 +389,7 @@ namespace WDFramework.Achievement.Award
                 Unit4.Reset();
                 Unit5.Reset();
                 DropDownList_Sort.Reset();
-                Members.Reset();
+                //Members.Reset();
                 PageContext.RegisterStartupScript("clearFile();");
             }
             catch (Exception ex)

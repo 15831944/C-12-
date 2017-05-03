@@ -353,6 +353,7 @@ namespace WebApplication1
                     if (dChoose.SelectedText == "成果名称")
                     {
                         FindByName();
+                        //FindByAwardName();
                     }
                     if (dChoose.SelectedText == "颁奖部门")
                     {
@@ -867,6 +868,7 @@ namespace WebApplication1
                         award.Delete(Convert.ToInt32(Grid_Award.DataKeys[selections[i]][0].ToString()));
                     }
                     Alert.ShowInTop("删除成功!");
+                    btnSelect_All.Text = "全选";
                 }
                 else
                 {

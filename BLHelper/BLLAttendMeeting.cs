@@ -90,7 +90,7 @@ namespace BLHelper
         public List<int?> FindAcademicMeetingID(int userInfoID)
         {
             List<int?> list = new List<int?>();
-            int count = dbcontext.AttendMeetingContext.OrderBy(p => p.UserInfoID == userInfoID && p.IsPass == true).Count();
+            int count = dbcontext.AttendMeetingContext.Where(p => p.UserInfoID == userInfoID && p.IsPass == true).Count();
             List<AttendMeeting> objectlist = dbcontext.AttendMeetingContext.Where(p => p.UserInfoID == userInfoID).ToList();
             for (int i = 0; i < count; i++)
             {
