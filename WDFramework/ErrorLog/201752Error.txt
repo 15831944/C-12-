@@ -1,0 +1,17 @@
+2017/5/2 8:41:11
+------------------------------------------------------------------------------
+
+错误消息:An error occurred while updating the entries. See the inner exception for details.
+
+导致错误的应用程序或对象的名称:EntityFramework
+
+堆栈内容:   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 WDFramework.AcademicMeeting.ImportExcel.insertAward(DataTable dt) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\AcademicMeeting\ImportExcel.aspx.cs:行号 1154
+ 
+
+引发异常的方法:Int32 SaveChanges()
+
+错误页面:/AcademicMeeting/ImportExcel.aspx
+------------------------------------------------------------------------------
