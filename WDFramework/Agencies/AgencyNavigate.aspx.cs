@@ -167,6 +167,7 @@ namespace WDFramework.Agencies
                 BindPeople();
                 Delete.Enabled = false;
                 Alert.ShowInTop("删除数据成功!");
+
                 return;
             }
             Common.Entities.Agency ag = new Common.Entities.Agency();

@@ -8,6 +8,7 @@
  *           修改时间：2015.11.27
  *           修改内容：增加编辑选中行 方法
  *           修改人：高琪  修改时间：2015.11.28  修改内容：增加合同负责人查询 方法
+ *           修改人：苏瑀 修改时间：2017.5.3 修改内容：增加全选，取消全选功能，实现批量删除
  **/
 using FineUI;
 using System;
@@ -226,6 +227,8 @@ namespace WebApplication1.ContractAndPact.Pact
                     BLLPact.Delete(Convert.ToInt32(Grid_Pact.DataKeys[selections[i]][0].ToString()));
                 }
                 Alert.ShowInTop("删除数据成功!");
+
+                btnSelect_All.Text = "全选";
             }
             else
             {
@@ -245,6 +248,7 @@ namespace WebApplication1.ContractAndPact.Pact
                     op.Insert(operate);
                 }
                 Alert.ShowInTop("操作已经提交，请等待管理员确认!");
+                btnSelect_All.Text = "全选";
             }
             btnDelete.Enabled = false;
             Grid_Pact.PageIndex = 0;

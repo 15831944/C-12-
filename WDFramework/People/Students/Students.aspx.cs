@@ -664,6 +664,7 @@ namespace WDFramework.People
                     }
                     BindData();
                     Alert.ShowInTop("删除成功!");
+                    btnSelect_All.Text = "全选";
                 }
                 else
                 {
@@ -683,6 +684,7 @@ namespace WDFramework.People
                     }
                     Alert.ShowInTop("您的操作已提交，请等待审核！");
                     BindData();
+                    btnSelect_All.Text = "全选";
                 }
             }
             catch (Exception ex)

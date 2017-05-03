@@ -726,6 +726,7 @@ namespace WDFramework.People.Staffs
                         bllUser.Delete(Convert.ToInt32(People_Info.DataKeys[selections[i]][0]));
                     }
                     Alert.ShowInTop("删除成功!");
+                    btnSelect_All.Text = "全选";
                     BindData();
                 }
                 else
@@ -746,6 +747,8 @@ namespace WDFramework.People.Staffs
                     }
                     Alert.ShowInTop("您的数据已提交，请等待确认！");
                     BindData();
+                    btnSelect_All.Text = "全选";
+
                 }
             }
             catch (Exception ex)
