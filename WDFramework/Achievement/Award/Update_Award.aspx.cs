@@ -120,7 +120,7 @@ namespace WDFramework.Achievement.Award
                 dAwardTime.SelectedDate = aw.AwardTime;
                 dAwardwSpecies.SelectedValue = aw.AwardwSpecies;
                 dGrade.SelectedValue = aw.Grade;
-                AwardPeople.Text = aw.AwardPeople;
+                AwardPeople.Text = aw.Member;
                 DropDownList_Sort.SelectedValue = aw.Sort;
                 //Members.Text = aw.Member;
                 if (aw.Remark != null)

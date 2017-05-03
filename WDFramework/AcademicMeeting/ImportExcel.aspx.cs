@@ -1105,6 +1105,7 @@ namespace WDFramework.AcademicMeeting
                                     award.AwardTime = Convert.ToDateTime(dr["获奖时间"].ToString());
                                 award.AwardwSpecies = dr["获奖类别"].ToString();
                                 award.AwardPeople = dr["获奖人"].ToString();
+                                award.Member = dr["获奖人"].ToString();
                                 //string AchieveName = dr["成果名称"].ToString();
                                 //award.Acheivement = BLLAchievement.FindByAchievementName(AchieveName);//AchievementID为零则不存在成果名称
                                 award.Acheivement = dr["成果名称"].ToString();
