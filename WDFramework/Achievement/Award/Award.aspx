@@ -111,7 +111,7 @@
                              <x:BoundField DataField="AwardNum" SortField="AwardNum" Width="150px" HeaderText="获奖证书号" />
                              <x:BoundField DataField="FirstAward" SortField="FirstAward" Width="150px" HeaderText="第一获奖人" />
                              <x:BoundField DataField="AwardName" SortField="AwardName" Width="150px" HeaderText="获奖名称" />
-                             <x:BoundField DataField="AwardPeople" SortField="AwardPeople" Width="150px" HeaderText="成员及排序" />
+                             <x:BoundField DataField="Member" SortField="Member" Width="150px" HeaderText="成员及排序" />
                             <%--  <x:TemplateField Width="80px" HeaderText="成果名称">
                     <ItemTemplate>
                         <asp:Label ID="LabeAgency" runat="server" Text='<%# FindName(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "Acheivement"))) %>'></asp:Label>
