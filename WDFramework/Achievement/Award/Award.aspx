@@ -102,7 +102,7 @@
                         <asp:Label ID="Label7" runat="server" Text='<%#RowNumber( Container.DataItemIndex + 1) %>'></asp:Label>
                     </ItemTemplate>
                 </x:TemplateField>
-                             <x:BoundField DataField="AwardName" SortField="AwardName" Width="150px" HeaderText="获奖名称" />                                                         
+                             <x:BoundField DataField="Acheivement" SortField="Acheivement" Width="150px" HeaderText="成果名称" />                                                         
                             <x:BoundField DataField="AwardwSpecies" SortField="AwardwSpecies" Width="100px" HeaderText="奖励种类" />         
                             <x:BoundField DataField="Grade" SortField="Grade" Width="150px" HeaderText="等级" />
                             <x:BoundField DataField="GivAgency" SortField="GivAgency" Width="150px" HeaderText="授予机构" />
@@ -110,11 +110,13 @@
                              <x:BoundField DataField="AwardForm" SortField="AwardForm" Width="150px" HeaderText="获奖类型" />
                              <x:BoundField DataField="AwardNum" SortField="AwardNum" Width="150px" HeaderText="获奖证书号" />
                              <x:BoundField DataField="FirstAward" SortField="FirstAward" Width="150px" HeaderText="第一获奖人" />
-                             <%-- <x:TemplateField Width="80px" HeaderText="成果名称">
+                             <x:BoundField DataField="AwardName" SortField="AwardName" Width="150px" HeaderText="获奖名称" />
+                             <x:BoundField DataField="AwardPeople" SortField="AwardPeople" Width="150px" HeaderText="成员及排序" />
+                            <%--  <x:TemplateField Width="80px" HeaderText="成果名称">
                     <ItemTemplate>
                         <asp:Label ID="LabeAgency" runat="server" Text='<%# FindName(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "Acheivement"))) %>'></asp:Label>
                     </ItemTemplate> 
-                </x:TemplateField>--%>     
+                </x:TemplateField> --%>    
                               <x:TemplateField Width="80px" HeaderText="保密级别">
                     <ItemTemplate>
                         <asp:Label ID="Label2" runat="server" Text='<%# ChangeSecrecyLevel(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "SecrecyLevel"))) %>'></asp:Label>
@@ -136,21 +138,21 @@
                     </ItemTemplate>
                 </x:TemplateField> 
                                <x:BoundField DataField="Remark" SortField="Remark" Hidden="true" Width="150px" HeaderText="备注"/> 
-                             <x:TemplateField HeaderText="成果名称" Width="60px" >
+                            <%-- <x:TemplateField HeaderText="获奖名称" Width="60px" >
                            <ItemTemplate>
                         <a href="javascript:<%# GetEditUrla(Eval("AwardID ")) %>">详情</a>
                           </ItemTemplate>
-                          </x:TemplateField>  
+                          </x:TemplateField>  --%>
                             <%-- <x:TemplateField HeaderText="全部获奖人" Width="60px" >
                            <ItemTemplate>
                         <a href="javascript:<%# GetEditUrlp(Eval("AwardID ")) %>">详情</a>
                           </ItemTemplate>
                           </x:TemplateField> --%>
-                            <x:TemplateField HeaderText="成员及排序" Width="80px" >
+                           <%-- <x:TemplateField HeaderText="成员及排序" Width="80px" >
                            <ItemTemplate>
                         <a href="javascript:<%# GetEditUrlf(Eval("AwardID ")) %>">详情</a>
                           </ItemTemplate>
-                          </x:TemplateField>     
+                          </x:TemplateField> --%>    
                              <x:TemplateField HeaderText="单位" Width="60px" >
                            <ItemTemplate>
                         <a href="javascript:<%# GetEditUrlw(Eval("AwardID ")) %>">详情</a>
