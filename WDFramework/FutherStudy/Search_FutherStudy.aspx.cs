@@ -138,6 +138,7 @@ namespace WebApplication1
                 }
                 InitData();
                 Alert.ShowInTop("删除数据成功!");
+                btnSelect_All.Text = "全选";
             }
             else
             {
@@ -154,6 +155,7 @@ namespace WebApplication1
                 }
                 InitData();
                 Alert.ShowInTop("操作已经提交，请等待管理员确认!");
+                btnSelect_All.Text = "全选";
             }
             btnDelete.Enabled = false;
         }

@@ -7,6 +7,7 @@
  *           2.修改人：陈起明
  *           修改时间：2015年11月28日
  *           修改内容：1.字段名“资料著作人”改成“资料保存人”；2.增加原始文件保存人字段
+ *           3.修改人：苏瑀 修改时间：2017.5.3 修改内容：增加全选，取消全选功能，实现批量删除
  **/
 using FineUI;
 using System;
@@ -185,6 +186,7 @@ namespace WebApplication1.ContractAndPact.Contract
                         BLLContract.Delete(Convert.ToInt32(Grid_Contract.DataKeys[selections[i]][0].ToString()));
                     }
                     Alert.ShowInTop("删除成功!");
+                    btnSelect_All.Text = "全选";
                 }
                 else
                 {
@@ -206,7 +208,7 @@ namespace WebApplication1.ContractAndPact.Contract
                         op.Insert(operate);
                         //BindData();
                         Alert.ShowInTop("操作已经提交，请等待管理员确认!");
-
+                        btnSelect_All.Text = "全选";
                     }
                 }
                 btnDelete.Enabled = false;

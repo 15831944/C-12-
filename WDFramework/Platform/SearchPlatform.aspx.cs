@@ -263,6 +263,8 @@ namespace WDFramework.Platform
                         BLLPlatform.Delete(Convert.ToInt32(Grid_Platform.DataKeys[selections[i]][0].ToString())); //平台表删除
                     }
                     Alert.ShowInTop("删除数据成功!");
+                    btnSelect_All.Text = "全选";
+
                 }
                 else
                 {
@@ -278,6 +280,7 @@ namespace WDFramework.Platform
                         op.Insert(operate);
                     }
                     Alert.ShowInTop("操作已经提交，请等待管理员确认!");
+                    btnSelect_All.Text = "全选";
                 }
                 BindData();
             }

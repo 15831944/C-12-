@@ -140,6 +140,7 @@ namespace WDFramework.WithinPost
                     }
                     InitData();
                     Alert.ShowInTop("删除数据成功!");
+                    btnSelect_All.Text = "全选";
                 }
                 else
                 {
@@ -156,6 +157,7 @@ namespace WDFramework.WithinPost
                     }
                     InitData();
                     Alert.ShowInTop("您的数据已提交，请等待确认!");
+                    btnSelect_All.Text = "全选";
                 }
             }
             catch (Exception ex)

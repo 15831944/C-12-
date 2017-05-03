@@ -522,6 +522,7 @@ namespace WDFramework.Project
                         bllProject.Delete(Convert.ToInt32(GridProjectAll.DataKeys[selections[i]][0]));
                         BindData();
                         Alert.ShowInTop("删除数据成功!");
+                        btnSelect_All.Text = "全选";
                     }
                 }
                 else
@@ -542,6 +543,7 @@ namespace WDFramework.Project
                     }
                     Alert.ShowInTop("您的操作已提交，请等待审核！");
                     BindData();
+                    btnSelect_All.Text = "全选";
                 }
             }
             catch (Exception ex)
