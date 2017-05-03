@@ -287,6 +287,7 @@ namespace WDFramework.AcademicMeeting
                         //删除学术会议
                         BLLAcademic.Delete(Convert.ToInt32(Grid_MeetingName.DataKeys[selections[i]][0].ToString()));
                     }
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("删除成功!");
                 }
                 else
@@ -305,6 +306,7 @@ namespace WDFramework.AcademicMeeting
                         operate.OperationDataID = Convert.ToInt32(Grid_MeetingName.DataKeys[selections[i]][0]);
                         op.Insert(operate);
                         //BindData();
+                        btnSelect_All.Text = "全选";
                         Alert.ShowInTop("操作已经提交，请等待管理员确认!");
 
                     }

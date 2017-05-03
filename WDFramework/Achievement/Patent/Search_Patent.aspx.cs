@@ -710,6 +710,7 @@ namespace WebApplication1
                         pm.DeleteFile(attachid[1], path_Application);
                     }
                     InitData();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("删除数据成功!");
                     Delete.Enabled = false;
                 }
@@ -727,6 +728,7 @@ namespace WebApplication1
                         op.Insert(operate);
                     }
                     InitData();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("您的数据已提交，请等待确认!");
                     Delete.Enabled = false;
                 }

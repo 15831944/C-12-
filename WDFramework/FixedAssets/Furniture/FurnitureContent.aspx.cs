@@ -178,6 +178,7 @@ namespace WDFramework.FixedAssets.Furniture
                         bllfurniture.Delete(Convert.ToInt32(Grid_Furniture.DataKeys[pm.GridCount(Grid_Furniture, CBoxSelect)[i]][0].ToString()));
                     }
                     InitData();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("删除数据成功!");
                 }
                 else
@@ -194,6 +195,7 @@ namespace WDFramework.FixedAssets.Furniture
                         op.Insert(operate);
                     }
                     InitData();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("您的数据已提交，请等待确认!");
                 }
             }

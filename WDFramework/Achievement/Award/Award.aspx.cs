@@ -887,13 +887,13 @@ namespace WebApplication1
                         op.Insert(operate);
                         //BindData();
                         Alert.ShowInTop("操作已经提交，请等待管理员确认!");
-
                     }
                 }
                 Grid_Award.PageIndex = 0;
                 Grid_Award.PageSize = 20;
                 btnDelete.Enabled = false;
                 InitData();
+                btnSelect_All.Text = "全选";
             }
             catch (Exception ex)
             {

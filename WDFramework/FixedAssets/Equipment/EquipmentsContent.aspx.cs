@@ -176,6 +176,7 @@ namespace WDFramework.FixedAssets.Equipment
                         bllequipment.Delete(Convert.ToInt32(Grid_Equipment.DataKeys[pm.GridCount(Grid_Equipment, CBoxSelect)[i]][0].ToString()));
                     }
                     InitData();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("删除数据成功!");
                 }
                 else
@@ -192,6 +193,7 @@ namespace WDFramework.FixedAssets.Equipment
                         op.Insert(operate);
                     }
                     InitData();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("您的数据已提交，请等待确认!");
                 }
             }

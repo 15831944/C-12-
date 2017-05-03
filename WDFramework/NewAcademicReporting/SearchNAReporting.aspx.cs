@@ -191,6 +191,7 @@ namespace WDFramework.NewAcademicReporting
                     Grid_NAReporting.PageSize = 20;                 
                     btnDelete.Enabled = false;
                     BindData();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("删除数据成功!");
                 }
                 else
@@ -211,6 +212,7 @@ namespace WDFramework.NewAcademicReporting
                     //DropDownList_Agency.SelectedValue = "0";
                     btnDelete.Enabled = false;
                     BindData();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("操作已经提交，请等待管理员确认!");
                 }
             }

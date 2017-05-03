@@ -149,6 +149,7 @@ namespace WDFramework.People.SpeakClasses
                         bllSpeak.Delete(Convert.ToInt32(GridSpeakClass.DataKeys[selections[i]][0]));
                     }
                     BindData();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("删除成功!");
                 }
                 else
@@ -167,6 +168,7 @@ namespace WDFramework.People.SpeakClasses
                         operate.Remark = "";
                         bllOperate.Insert(operate);                      
                     }
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("您的操作已提交，请等待审核！");
                     BindData();
                 }
