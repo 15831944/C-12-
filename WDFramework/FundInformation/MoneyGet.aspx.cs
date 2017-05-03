@@ -398,7 +398,10 @@ namespace WDFramework
             }
             InitData();
             if (Convert.ToInt32(Session["SecrecyLevel"]) == 5)
+            {
+                
                 Alert.ShowInTop("删除成功！");
+            }
             else
                 Alert.ShowInTop("您的操作已经提交，请等待管理员确认！");
             btn_Delete.Enabled = false;

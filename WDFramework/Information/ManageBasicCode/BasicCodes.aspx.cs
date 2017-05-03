@@ -98,10 +98,12 @@ namespace WDFramework.People.ManageBasicCode
                         bllBasicCode.Delete(Convert.ToInt32(GridBasicCode.DataKeys[selections[i]][0]));
                     }
                     BindData();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("删除数据成功!");
                 }
                 else
                 {
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("您没有操作权限！");
                     BindData();
                 }

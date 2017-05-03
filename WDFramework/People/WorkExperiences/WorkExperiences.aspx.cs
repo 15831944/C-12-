@@ -116,6 +116,7 @@ namespace WDFramework.People.WorkExperiences
                         bllWork.Delete(Convert.ToInt32(GridWorkExperiences.DataKeys[selections[i]][0]));
                     }
                     BindData();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("删除数据成功!");
                 }
                 else
@@ -134,6 +135,7 @@ namespace WDFramework.People.WorkExperiences
                         operate.Remark = "";
                         bllOperate.Insert(operate);                       
                     }
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("您的操作已提交，请等待审核！");
                     BindData();
                 }

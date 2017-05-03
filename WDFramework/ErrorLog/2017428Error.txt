@@ -1,0 +1,126 @@
+2017/4/28 9:01:44
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.Achievement.Patent.Operate_Application.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Operate_Application.aspx.cs:行号 81
+ 
+
+引发异常的方法:Void DownFile_Click(System.Object, System.EventArgs)
+
+错误页面:/Achievement/Patent/Operate_Application.aspx?id=50
+------------------------------------------------------------------------------
+2017/4/28 9:01:45
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.Achievement.Patent.Operate_Application.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Operate_Application.aspx.cs:行号 81
+ 
+
+引发异常的方法:Void DownFile_Click(System.Object, System.EventArgs)
+
+错误页面:/Achievement/Patent/Operate_Application.aspx?id=50
+------------------------------------------------------------------------------
+2017/4/28 9:01:45
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.Achievement.Patent.Operate_Application.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Operate_Application.aspx.cs:行号 81
+ 
+
+引发异常的方法:Void DownFile_Click(System.Object, System.EventArgs)
+
+错误页面:/Achievement/Patent/Operate_Application.aspx?id=50
+------------------------------------------------------------------------------
+2017/4/28 9:02:03
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.Achievement.Patent.Operate_Patent.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Operate_Patent.aspx.cs:行号 81
+ 
+
+引发异常的方法:Void DownFile_Click(System.Object, System.EventArgs)
+
+错误页面:/Achievement/Patent/Operate_Patent.aspx?id=50
+------------------------------------------------------------------------------
+2017/4/28 9:02:03
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.Achievement.Patent.Operate_Patent.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Operate_Patent.aspx.cs:行号 81
+ 
+
+引发异常的方法:Void DownFile_Click(System.Object, System.EventArgs)
+
+错误页面:/Achievement/Patent/Operate_Patent.aspx?id=50
+------------------------------------------------------------------------------
+2017/4/28 9:02:04
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.Achievement.Patent.Operate_Patent.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Operate_Patent.aspx.cs:行号 81
+ 
+
+引发异常的方法:Void DownFile_Click(System.Object, System.EventArgs)
+
+错误页面:/Achievement/Patent/Operate_Patent.aspx?id=50
+------------------------------------------------------------------------------
+2017/4/28 9:02:04
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.Achievement.Patent.Operate_Patent.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Operate_Patent.aspx.cs:行号 81
+ 
+
+引发异常的方法:Void DownFile_Click(System.Object, System.EventArgs)
+
+错误页面:/Achievement/Patent/Operate_Patent.aspx?id=50
+------------------------------------------------------------------------------
+2017/4/28 9:02:05
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.Achievement.Patent.Operate_Patent.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Operate_Patent.aspx.cs:行号 81
+ 
+
+引发异常的方法:Void DownFile_Click(System.Object, System.EventArgs)
+
+错误页面:/Achievement/Patent/Operate_Patent.aspx?id=50
+------------------------------------------------------------------------------
+2017/4/28 9:02:05
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WDFramework.Achievement.Patent.Operate_Patent.DownFile_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\Achievement\Patent\Operate_Patent.aspx.cs:行号 81
+ 
+
+引发异常的方法:Void DownFile_Click(System.Object, System.EventArgs)
+
+错误页面:/Achievement/Patent/Operate_Patent.aspx?id=50
+------------------------------------------------------------------------------

@@ -303,6 +303,7 @@ namespace WebApplication1
                         mo.Delete(Convert.ToInt32(Grid_Monograph.DataKeys[selections[i]][0]));
                     }
                     InitData();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("删除数据成功!");
                     
                 }
@@ -322,6 +323,7 @@ namespace WebApplication1
                         operate.Remark = "";
                         bllOperate.Insert(operate);
                     }
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("您的操作已提交，请等待审核！");
                     InitData();
                 }

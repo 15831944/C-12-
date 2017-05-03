@@ -352,6 +352,7 @@ namespace WebApplication1
                         Grid_WorkPlanSummary.PageIndex = 0;
                         Grid_WorkPlanSummary.PageSize = 20;
                         Refresh();
+                        btnSelect_All.Text = "全选";
                         Alert.ShowInTop("删除数据成功!");
                         //}
 
@@ -374,6 +375,7 @@ namespace WebApplication1
                     Grid_WorkPlanSummary.PageSize = 20;
                     btnDelete.Enabled = false;
                     Refresh();
+                    btnSelect_All.Text = "全选";
                     Alert.ShowInTop("操作已经提交，请等待管理员确认!");
                 }
             }
