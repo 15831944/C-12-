@@ -313,6 +313,18 @@
                                 </x:Panel>
                                 <x:Label ID="Label13" runat="server" Label="Label" Text=" " Height="20px">
                                 </x:Label>
+                                 <%--这是空行--%>
+                                <x:Panel ID="Panel44" ShowHeader="false" CssClass="formitem" ShowBorder="false"
+                                    Layout="Column" runat="server">
+                                    <Items>
+                                        <x:Label ID="Label32" Width="110px" runat="server" CssClass="marginr" ShowLabel="false" Text="发表状态：">
+                                        </x:Label>
+                                        <x:DropDownList ID="DropDownList1" ShowLabel="true" Label="发表状态：" Required="true" EnableEdit="false" Width="195px" AutoPostBack="false" runat="server" TabIndex="25" EnableSimulateTree="true">
+                                        </x:DropDownList>
+                                    </Items>
+                                </x:Panel>
+                                <x:Label ID="Label33" runat="server" Label="Label" Text=" " Height="20px">
+                                </x:Label>
                                 <%--这是空行--%>
                                 <x:Panel ID="Panel24" ShowHeader="false" CssClass="formitem" ShowBorder="false"
                                     Layout="Column" runat="server">

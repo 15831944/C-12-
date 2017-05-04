@@ -27,11 +27,14 @@ namespace WebApplication1
         OperationLog log = new OperationLog();
         BLHelper.BLLAttachment at = new BLHelper.BLLAttachment();
         BLHelper.BLLUser user = new BLHelper.BLLUser();
+        BLHelper.BLLBasicCode ba = new BLHelper.BLLBasicCode();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 dPUblicationTime.MaxDate = DateTime.Now;
+                InitdFirstWriterSite();
                 Initddl();
             }
         }
@@ -47,6 +50,22 @@ namespace WebApplication1
             List<Common.Entities.BasicCode> bascode = bs.FindByCategoryName("著作类型");
             for (int i = 0; i < bascode.Count; i++)
                 ddlMonographType.Items.Add(bascode[i].CategoryContent.Trim(), bascode[i].CategoryContent.Trim());
+        }
+        //初始化第一作者身份
+        public void InitdFirstWriterSite()
+        {
+            try
+            {
+                List<BasicCode> listname = ba.FindByCategoryName("第一作者身份");
+                for (int i = 0; i < listname.Count(); i++)
+                {
+                    dPaperIdentity.Items.Add(listname[i].CategoryContent.ToString(), listname[i].CategoryContent.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
         }
         //成果名称验证
         /*protected void tAchievement_TextChanged(object sender, EventArgs e)
@@ -93,6 +112,7 @@ namespace WebApplication1
             mon.Revision = tRevision.Text.Trim();
             mon.MonographPeople = MoPeople.Text.Trim();
             mon.FirstWriter = TFirstWriter.Text.Trim();
+            mon.WriterIdentity = dPaperIdentity.SelectedValue;
             mon.MonographType = ddlMonographType.SelectedValue.Trim();
             if (tCIP.Text.Trim() == "")
                 mon.CIPNum = null;

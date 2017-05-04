@@ -59,6 +59,7 @@ namespace BLHelper
             paper.ImpactFactor = aPaper.ImpactFactor;
             paper.JournalNum = aPaper.JournalNum;
             paper.WriterIdentity = aPaper.WriterIdentity;
+            paper.PubliseState = aPaper.PubliseState;
             //paper.PaperForm = aPaper.PaperForm;         
             paper.PaperRank = aPaper.PaperRank;
             paper.PaperUnit = aPaper.PaperUnit;
@@ -379,6 +380,11 @@ namespace BLHelper
         public List<Paper> FindByFirstWriterPosition(string PaperFirstWriter,int level)
         {
             return dbcontext.PaperContext.Where(p => p.WriterIdentity == PaperFirstWriter && p.SecrecyLevel<=level && p.IsPass == true).OrderBy(c => c.PaperID).ToList();
+        }
+        //按发表状态查询论文
+        public List<Paper> FindByPublishState(string PubliseState, int level)
+        {
+            return dbcontext.PaperContext.Where(p => p.PubliseState == PubliseState && p.SecrecyLevel <= level && p.IsPass == true).OrderBy(c => c.PaperID).ToList();
         }
         //根据分类名称查询
         public List<Paper> FindByFirstWriterPosition(string WriterIdentity)

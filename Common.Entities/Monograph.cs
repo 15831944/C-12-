@@ -47,6 +47,8 @@ namespace Common.Entities
         //[Required]
         [StringLength(10)]
         public string FirstWriter { get; set; }//第一作者
+        [StringLength(10)]
+        public string WriterIdentity { get; set; }//第一作者身份
         //[Required]
         [StringLength(30)]
         public string CIPNum { get; set; }//CIP号

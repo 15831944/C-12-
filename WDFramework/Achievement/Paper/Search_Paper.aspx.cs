@@ -443,7 +443,30 @@ namespace WebApplication1
                 pm.SaveError(ex, this.Request);
             }
         }
-
+        //按发表状态查询
+        public void FindByPublishState()
+        {
+            try
+            {
+                ViewState["page"] = 8;
+                List<Paper> list = paper.FindByPublishState(dCondition.SelectedText.Trim(), Convert.ToInt32(Session["SecrecyLevel"]));
+                Grid_Paper.RecordCount = list.Count;
+                if (list != null)
+                {
+                    Grid_Paper.DataSource = list.Skip(Grid_Paper.PageIndex * Grid_Paper.PageSize).Take(Grid_Paper.PageSize);
+                    Grid_Paper.DataBind();
+                }
+                else
+                {
+                    Grid_Paper.DataSource = null;
+                    Grid_Paper.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
         //搜索
         protected void Select_Click(object sender, EventArgs e)
         {
@@ -496,6 +519,11 @@ namespace WebApplication1
                if (dChoose.SelectedText == "第一作者身份")
                {
                    FindByFirstWriterPosition();
+                   return;
+               }
+               if (dChoose.SelectedText == "发表状态")
+               {
+                   FindByPublishState();
                    return;
                }
                 else
@@ -561,7 +589,18 @@ namespace WebApplication1
                     tCondition.Enabled = false;
                     dCondition.Enabled = true;
                     break;
-               
+                case"发表状态":
+                    dCondition.Items.Clear();
+                    List<BasicCode> list2 = ba.FindByCategoryName("发表状态");
+                    for (int i = 0; i < list2.Count(); i++)
+                    {
+                        dCondition.Items.Add(list2[i].CategoryContent.ToString(), list2[i].CategoryContent.ToString());
+                    }
+                    dCondition.Items[0].Selected = true;
+                    dCondition.EnableEdit = false;
+                    tCondition.Enabled = false;
+                    dCondition.Enabled = true;
+                    break;
                 case "作者":
                     dCondition.Enabled = false;
                     tCondition.Enabled = true;

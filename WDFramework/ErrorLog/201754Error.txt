@@ -80,3 +80,55 @@
 
 错误页面:/Achievement/Paper/Add_Paper.aspx
 ------------------------------------------------------------------------------
+2017/5/4 19:25:40
+------------------------------------------------------------------------------
+
+错误消息:An error occurred while executing the command definition. See the inner exception for details.
+
+导致错误的应用程序或对象的名称:EntityFramework
+
+堆栈内容:   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass3.<GetResults>b__2()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass3.<GetResults>b__1()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BLHelper.BLLPaper.FindPaged(Nullable`1 SecrecyLevel) 位置 c:\Users\susu\Desktop\空间\空间7\kygl\BLHelper\BLLPaper.cs:行号 223
+   在 WebApplication1.Search_Paper.InitData() 位置 c:\Users\susu\Desktop\空间\空间7\kygl\WDFramework\Achievement\Paper\Search_Paper.aspx.cs:行号 49
+ 
+
+引发异常的方法:System.Data.Common.DbDataReader ExecuteStoreCommands(System.Data.Entity.Core.EntityClient.EntityCommand, System.Data.CommandBehavior)
+
+错误页面:/Achievement/Paper/Search_Paper.aspx
+------------------------------------------------------------------------------
+2017/5/4 20:00:00
+------------------------------------------------------------------------------
+
+错误消息:An error occurred while executing the command definition. See the inner exception for details.
+
+导致错误的应用程序或对象的名称:EntityFramework
+
+堆栈内容:   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass3.<GetResults>b__2()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass3.<GetResults>b__1()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BLHelper.BLLMonograph.FindPaged(Nullable`1 SecrecyLevel) 位置 c:\Users\susu\Desktop\空间\空间7\kygl\BLHelper\BLLMonograph.cs:行号 142
+   在 WebApplication1.Search_Monograph.InitData() 位置 c:\Users\susu\Desktop\空间\空间7\kygl\WDFramework\Achievement\Monograph\Search_Monograph.aspx.cs:行号 99
+ 
+
+引发异常的方法:System.Data.Common.DbDataReader ExecuteStoreCommands(System.Data.Entity.Core.EntityClient.EntityCommand, System.Data.CommandBehavior)
+
+错误页面:/Achievement/Monograph/Search_Monograph.aspx
+------------------------------------------------------------------------------

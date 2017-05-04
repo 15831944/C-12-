@@ -41,6 +41,7 @@ namespace WebApplication1.Achievement.Paper
                 InitDropListAgency();
                 InitDroplistForm();
                 InitdFirstWriterSite();
+                InitPubliseState();
                 InitData();
                
             }
@@ -111,6 +112,22 @@ namespace WebApplication1.Achievement.Paper
                 pm.SaveError(ex, this.Request);
             }
         }
+        //初始化发表状态
+        public void InitPubliseState()
+        {
+            try
+            {
+                List<BasicCode> listname = ba.FindByCategoryName("发表状态");
+                for (int i = 0; i < listname.Count(); i++)
+                {
+                    DropDownList1.Items.Add(listname[i].CategoryContent.ToString(), listname[i].CategoryContent.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
         //初始化界面
         public void InitData()
         {
@@ -131,6 +148,7 @@ namespace WebApplication1.Achievement.Paper
                 dPublicDate.SelectedDate = paper.PublicDate;
                 dPaperRank.SelectedValue = paper.PaperRank;
                 FirstWriter.Text = paper.FirstWriter;
+                DropDownList1.SelectedValue = paper.PubliseState ;
                 MessageWriter.Text = paper.MessageWriter;
                 MWAgency.Text = paper.MWAgency;
                 DropDownListAgency.SelectedValue = paper.PaperUnit;
@@ -218,6 +236,7 @@ namespace WebApplication1.Achievement.Paper
             paper.JournalNum = tJournalNum.Text.Trim();
             //paper.PaperForm = dPaperForm.Text.Trim();
             paper.WriterIdentity = dPaperIdentity.SelectedText.Trim();
+            paper.PubliseState = DropDownList1.SelectedText.Trim();
             paper.PaperRank = dPaperRank.SelectedText.Trim();
             paper.PaperUnit = DropDownListAgency.SelectedText;
             paper.PublicDate = dPublicDate.SelectedDate;
@@ -461,6 +480,7 @@ namespace WebApplication1.Achievement.Paper
                 tQuoteNum.Reset();
                 tRemark.Reset();
                 dRetrieveSituation.Reset();
+                dPaperIdentity.Reset();
                 tSerialNum.Reset();
                 tStartPageNum.Reset();
                 tSubject.Reset();

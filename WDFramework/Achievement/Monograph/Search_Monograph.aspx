@@ -38,6 +38,7 @@
                                     <%--x:ListItem Text="类别" Value="类别" /--%>
                                     <x:ListItem Text="著作名称" Value="著作名称" />
                                     <x:ListItem Text="第一作者" Value="第一作者" />
+                                     <x:ListItem Text="第一作者身份" Value="第一作者身份" />
                                 </x:DropDownList>
                                 <x:Label ID="Label2" runat="server" Label="Label" Text=" " Width="5px">
                                 </x:Label>
@@ -114,6 +115,7 @@
                         <x:BoundField DataField="MonographName" SortField="MonographName" Width="100px" HeaderText="著作名称" />
                         <x:BoundField DataField="Sort" SortField="Sort" Width="150px" HeaderText="类别" Hidden="true" />
                         <x:BoundField DataField="FirstWriter" SortField="FirstWriter" Width="150px" HeaderText="第一作者" />
+                         <x:BoundField DataField="WriterIdentity" SortField="WriterIdentity" Width="150px" HeaderText="第一作者身份" />
                         <x:BoundField DataField="Publisher" SortField="Publisher" Width="150px" HeaderText="出版单位" />
                         <x:BoundField DataField="IssueRegin" SortField="IssueRegin" Width="150px" HeaderText="出版地" />
                         <x:BoundField DataField="PUblicationTime" SortField="PUblicationTime" Width="150px" HeaderText="出版时间" DataFormatString="{0:yyyy-MM-dd}" />
