@@ -71,7 +71,7 @@ namespace Common.Entities
         [StringLength(50)]
         public string MWAgency { get; set; }//通讯作者部门
         [StringLength(10)]
-        public string WriterIdentity { get; set; }//论文作者身份
+        public string WriterIdentity { get; set; }//第一作者身份
         [StringLength(15)]
         public string Sort { get; set; }//分类（教研论文或论文）
 

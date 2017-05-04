@@ -40,6 +40,7 @@ namespace WebApplication1.Achievement.Paper
                 InitdRetrieveSituation();
                 InitDropListAgency();
                 InitDroplistForm();
+                InitdFirstWriterSite();
                 InitData();
                
             }
@@ -87,6 +88,22 @@ namespace WebApplication1.Achievement.Paper
                 for (int i = 0; i < listname.Count(); i++)
                 {
                     dRetrieveSituation.Items.Add(listname[i].CategoryContent.ToString(), listname[i].CategoryContent.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
+        //初始化第一作者身份
+        public void InitdFirstWriterSite()
+        {
+            try
+            {
+                List<BasicCode> listname = ba.FindByCategoryName("第一作者身份");
+                for (int i = 0; i < listname.Count(); i++)
+                {
+                    dPaperIdentity.Items.Add(listname[i].CategoryContent.ToString(), listname[i].CategoryContent.ToString());
                 }
             }
             catch (Exception ex)

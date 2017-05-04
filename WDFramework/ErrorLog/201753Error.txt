@@ -1,0 +1,54 @@
+2017/5/3 21:37:00
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.Search_Paper.FindByFirstWriter() 位置 c:\Users\susu\Desktop\空间\空间7\kygl\WDFramework\Achievement\Paper\Search_Paper.aspx.cs:行号 379
+ 
+
+引发异常的方法:Void FindByFirstWriter()
+
+错误页面:/Achievement/Paper/Search_Paper.aspx
+------------------------------------------------------------------------------
+2017/5/3 21:44:30
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.Search_Paper.FindByFirstWriterPosition() 位置 c:\Users\susu\Desktop\空间\空间7\kygl\WDFramework\Achievement\Paper\Search_Paper.aspx.cs:行号 428
+ 
+
+引发异常的方法:Void FindByFirstWriterPosition()
+
+错误页面:/Achievement/Paper/Search_Paper.aspx
+------------------------------------------------------------------------------
+2017/5/3 22:25:38
+------------------------------------------------------------------------------
+
+错误消息:索引超出了数组界限。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.Search_Paper.ChangeSecrecyLevel(Int32 level) 位置 c:\Users\susu\Desktop\空间\空间7\kygl\WDFramework\Achievement\Paper\Search_Paper.aspx.cs:行号 515
+   在 ASP.achievement_paper_search_paper_aspx.__DataBindingLabel2(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间7\kygl\WDFramework\Achievement\Paper\Search_Paper.aspx:行号 142
+   在 System.Web.UI.Control.OnDataBinding(EventArgs e)
+   在 System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   在 System.Web.UI.Control.DataBind()
+   在 System.Web.UI.Control.DataBindChildren()
+   在 System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   在 System.Web.UI.Control.DataBind()
+   在 FineUI.GridRow.DataBindRow() 位置 c:\Users\susu\Desktop\空间\空间7\kygl\FineUI\WebControls\PanelBase.Grid\GridRow\GridRow.cs:行号 330
+   在 FineUI.Grid.DataBindRow(Int32 rowIndex, Object rowObj) 位置 c:\Users\susu\Desktop\空间\空间7\kygl\FineUI\WebControls\PanelBase.Grid\Grid.cs:行号 3311
+   在 FineUI.Grid.DataBindToEnumerable(IEnumerable list) 位置 c:\Users\susu\Desktop\空间\空间7\kygl\FineUI\WebControls\PanelBase.Grid\Grid.cs:行号 3293
+   在 FineUI.Grid.DataBind() 位置 c:\Users\susu\Desktop\空间\空间7\kygl\FineUI\WebControls\PanelBase.Grid\Grid.cs:行号 3261
+   在 WebApplication1.Search_Paper.FindByFirstWriterPosition() 位置 c:\Users\susu\Desktop\空间\空间7\kygl\WDFramework\Achievement\Paper\Search_Paper.aspx.cs:行号 433
+ 
+
+引发异常的方法:System.String ChangeSecrecyLevel(Int32)
+
+错误页面:/Achievement/Paper/Search_Paper.aspx
+------------------------------------------------------------------------------

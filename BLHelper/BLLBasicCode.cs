@@ -110,5 +110,6 @@ namespace BLHelper
             var result = dbcontext.BasicCodeContext.Where(u => u.CategoryName == Name).ToList();
             return result.ToList();
         }
+
     }
 }
