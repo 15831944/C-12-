@@ -308,11 +308,11 @@
                         <x:Panel ID="Panel26" ShowHeader="false" CssClass="formitem" ShowBorder="false"
                             Layout="Column" runat="server">
                             <Items>
-                                <x:Label ID="Label28" Width="110px" runat="server" CssClass="marginr" ShowLabel="false" Text="论文作者身份：">
+                                <x:Label ID="Label28" Width="110px" runat="server" CssClass="marginr" ShowLabel="false" Text="第一作者身份：">
                                 </x:Label>
-                                <x:DropDownList ID="dPaperIdentity" ShowLabel="true" Label="论文作者身份：" EnableEdit="false" Width="195px" AutoPostBack="true" runat="server" TabIndex="19">
-                                    <x:ListItem Text="本校教工" Value="本校教工" Selected="true" />
-                                    <x:ListItem Text="学生" Value="学生" />
+                                <x:DropDownList ID="dPaperIdentity" ShowLabel="true" Label="第一作者身份：" EnableEdit="false" Width="195px" AutoPostBack="true" runat="server" TabIndex="19">
+                                   <%-- <x:ListItem Text="本校教工" Value="本校教工" Selected="true" />
+                                    <x:ListItem Text="学生" Value="学生" />--%>
 
                                 </x:DropDownList>
                             </Items>

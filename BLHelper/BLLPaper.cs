@@ -177,6 +177,7 @@ namespace BLHelper
         {
             return dbcontext.PaperContext.Where(p => p.PaperUnit == PaperUnit && p.SecrecyLevel <= SecrecyLevel && p.IsPass == true).OrderBy(c => c.PaperID).ToList();
         }
+     
         //数量
         public int CountAgency(string PaperUnit, int? SecrecyLevel)
         {
@@ -374,7 +375,23 @@ namespace BLHelper
             return dbcontext.PaperContext.Where(u => u.MessageWriter == messagewriter && u.SecrecyLevel <= level && u.IsPass == true).ToList();
         }
 
+        //分第一作者身份查询论文
+        public List<Paper> FindByFirstWriterPosition(string PaperFirstWriter,int level)
+        {
+            return dbcontext.PaperContext.Where(p => p.WriterIdentity == PaperFirstWriter && p.SecrecyLevel<=level && p.IsPass == true).OrderBy(c => c.PaperID).ToList();
+        }
+        //根据分类名称查询
+        public List<Paper> FindByFirstWriterPosition(string WriterIdentity)
+        {
+            return dbcontext.PaperContext.Where(u => u.WriterIdentity == WriterIdentity).ToList();
+        }
+        //查找所有机构名称
+        public List<Paper> FindByFirstWriterPosition()
+        {
 
-
+            List<Paper> list = (from a in dbcontext.PaperContext select new { WriterIdentity = a.WriterIdentity }).ToList().Select(a => new Paper { WriterIdentity = a.WriterIdentity }).ToList();
+            return list;
+        }
+       
     }
 }

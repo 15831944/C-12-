@@ -36,6 +36,7 @@ namespace WebApplication1
                 InitDropListAgency();
                 InitdRetrieveSituation();
                 InitDroplistForm();
+                InitdFirstWriterSite();
             }
         }
       //初始化刊物级别
@@ -88,6 +89,22 @@ namespace WebApplication1
                 pm.SaveError(ex, this.Request);
             }
         }
+        //初始化第一作者身份
+        public void InitdFirstWriterSite()
+        {
+            try
+            {
+                List<BasicCode> listname = ba.FindByCategoryName("第一作者身份");
+                for (int i = 0; i < listname.Count(); i++)
+                {
+                    dPaperIdentity.Items.Add(listname[i].CategoryContent.ToString(), listname[i].CategoryContent.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
         //插入赋值
         public void InsertValue()
         {       
@@ -95,7 +112,9 @@ namespace WebApplication1
             paper.ImpactFactor = tImpactFactor.Text.Trim();
             paper.JournalNum = tJournalNum.Text.Trim();
             paper.PaperRank = dPaperRank.SelectedValue;
-            paper.WriterIdentity = dPaperIdentity.SelectedText.Trim();
+            //paper.WriterIdentity = dPaperIdentity.SelectedText.Trim();
+            paper.WriterIdentity = dPaperIdentity.SelectedValue;
+
             //dPaperIdentity
             //paper.PaperRank = tPaperRank.Text.Trim(); 
             paper.PaperUnit = DropDownListAgency.SelectedText;

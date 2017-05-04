@@ -40,7 +40,7 @@
 
                                     <x:ListItem Text="发表年份" Value="发表年份" />
                                     <x:ListItem Text="收录情况" Value="收录情况" />
-
+                                    <x:ListItem Text="第一作者身份" Value="第一作者身份" />
                                     
                                     <x:ListItem Text="第一作者" Value="第一作者" />
                                     <x:ListItem Text="通讯作者" Value="通讯作者" />
@@ -107,7 +107,7 @@
                         </x:TemplateField>
                         <x:BoundField DataField="Subject" SortField="Subject" Width="100px" HeaderText="题目" />
                         <x:BoundField DataField="FirstWriter" SortField="FirstWriter" Width="150px" HeaderText="第一作者" />
-                        <x:BoundField DataField="WriterIdentity" SortField="WriterIdentity" Width="150px" HeaderText="论文作者身份" />
+                        <x:BoundField DataField="WriterIdentity" SortField="WriterIdentity" Width="150px" HeaderText="第一作者身份" />
                         <x:BoundField DataField="MessageWriter" SortField="MessageWriter" Width="150px" HeaderText="通讯作者" />
                         <x:BoundField DataField="MWAgency" SortField="MWAgency" Width="150px" HeaderText="通讯作者部门" />
                         <x:BoundField DataField="PublicJournalName" SortField="PublicJournalName" Width="150px" HeaderText="发布刊物" />

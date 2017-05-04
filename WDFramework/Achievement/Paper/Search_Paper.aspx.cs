@@ -369,7 +369,7 @@ namespace WebApplication1
                 pm.SaveError(ex, this.Request);
             }
         }
-
+       
         //按第一作者查询
         public void FindByFirstWriter()
         {
@@ -419,7 +419,30 @@ namespace WebApplication1
                 pm.SaveError(ex, this.Request);
             }
         }
-
+        //按第一作者身份查询
+        public void FindByFirstWriterPosition()
+        {
+            try
+            {
+                ViewState["page"] = 8;
+                List<Paper> list = paper.FindByFirstWriterPosition(dCondition.SelectedText.Trim(), Convert.ToInt32(Session["SecrecyLevel"]));
+                Grid_Paper.RecordCount = list.Count;
+                if (list != null)
+                {
+                    Grid_Paper.DataSource = list.Skip(Grid_Paper.PageIndex * Grid_Paper.PageSize).Take(Grid_Paper.PageSize);
+                    Grid_Paper.DataBind();
+                }
+                else
+                {
+                    Grid_Paper.DataSource = null;
+                    Grid_Paper.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
 
         //搜索
         protected void Select_Click(object sender, EventArgs e)
@@ -453,7 +476,7 @@ namespace WebApplication1
                 }
                 if (tCondition.Text.Trim() != "")
                 {
-                  
+
                     if (dChoose.SelectedText == "作者")
                     {
                         FindByWriter();
@@ -470,6 +493,11 @@ namespace WebApplication1
                         return;
                     }
                 }
+               if (dChoose.SelectedText == "第一作者身份")
+               {
+                   FindByFirstWriterPosition();
+                   return;
+               }
                 else
                 {
                     return;
@@ -520,6 +548,20 @@ namespace WebApplication1
                     dCondition.Enabled = true;
                     tCondition.Enabled = false;
                     break;
+                case "第一作者身份":
+                    dCondition.Items.Clear();
+                    List<BasicCode> list1 = ba.FindByCategoryName("第一作者身份");
+                    //List<Common.Entities.Paper> list1 = paper.FindByFirstWriterPosition();
+                    for (int i = 0; i < list1.Count(); i++)
+                    {
+                        dCondition.Items.Add(list1[i].CategoryContent.ToString(), list1[i].CategoryContent.ToString());
+                    }
+                    dCondition.Items[0].Selected = true;
+                    dCondition.EnableEdit = false;
+                    tCondition.Enabled = false;
+                    dCondition.Enabled = true;
+                    break;
+               
                 case "作者":
                     dCondition.Enabled = false;
                     tCondition.Enabled = true;
@@ -548,6 +590,7 @@ namespace WebApplication1
                     dCondition.Enabled = true;
                     tCondition.Enabled = false;
                     break;
+               
             }
         }
 
