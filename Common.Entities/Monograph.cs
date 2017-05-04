@@ -58,5 +58,7 @@ namespace Common.Entities
         //[Required]
         [StringLength(10)]
         public string MonographType { get; set; }//专著类型
+         [StringLength(10)]
+        public string PaperUnit { get; set; }	//所属机构	
     }
 }

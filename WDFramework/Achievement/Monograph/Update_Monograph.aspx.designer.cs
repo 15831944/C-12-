@@ -166,40 +166,40 @@ namespace WebApplication1 {
         protected global::FineUI.Label Label6;
         
         /// <summary>
-        /// Panel26 控件。
+        /// Panel9 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Panel Panel26;
+        protected global::FineUI.Panel Panel9;
         
         /// <summary>
-        /// Label26 控件。
+        /// AwardUnit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label26;
+        protected global::FineUI.Label AwardUnit;
         
         /// <summary>
-        /// dPaperIdentity 控件。
+        /// DropDownListAgency 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.DropDownList dPaperIdentity;
+        protected global::FineUI.DropDownList DropDownListAgency;
         
         /// <summary>
-        /// Label2 控件。
+        /// Label27 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label2;
+        protected global::FineUI.Label Label27;
         
         /// <summary>
         /// Panel1 控件。
@@ -551,6 +551,51 @@ namespace WebApplication1 {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.TextArea tRemark;
+        
+        /// <summary>
+        /// Label17 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label17;
+        
+        /// <summary>
+        /// Panel26 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Panel Panel26;
+        
+        /// <summary>
+        /// Label26 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label26;
+        
+        /// <summary>
+        /// dPaperIdentity 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.DropDownList dPaperIdentity;
+        
+        /// <summary>
+        /// Label2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label2;
         
         /// <summary>
         /// Panelasp 控件。

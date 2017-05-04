@@ -40,7 +40,9 @@ namespace WebApplication1
                 dPUblicationTime.MaxDate = DateTime.Now;
                 InitdFirstWriterSite();
                 Initddl();
+                InitDropListAgency();
                 InitData();
+               
             }
         }
         //初始化等级下拉框
@@ -72,7 +74,23 @@ namespace WebApplication1
                 pm.SaveError(ex, this.Request);
             }
         }
-      
+        //初始化机构下拉框
+        public void InitDropListAgency()
+        {
+            try
+            {
+                BLHelper.BLLAgency agency = new BLHelper.BLLAgency();
+                List<Common.Entities.Agency> list = agency.FindAllAgencyName();
+                for (int i = 0; i < list.Count(); i++)
+                {
+                    DropDownListAgency.Items.Add(list[i].AgencyName.ToString(), list[i].AgencyName.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
         //成果名称验证
         /*protected void tAchievement_TextChanged(object sender, EventArgs e)
         {
@@ -134,8 +152,9 @@ namespace WebApplication1
                 tBookNuber.Text = mon.BookNuber;
                 tMonographName.Text = mon.MonographName;
                 dSecrecyLevel.SelectedIndex = Convert.ToInt32(mon.SecrecyLevel - 1);
-                dPaperIdentity.SelectedValue = mon.WriterIdentity;
+                dPaperIdentity.SelectedValue = mon.WriterIdentity;  //第一作者身份
                 //tSort.Text = mon.Sort;
+                DropDownListAgency.SelectedValue = mon.PaperUnit; //所属机构
                 tISBN.Text = mon.ISBNNum;
                 tCIP.Text = mon.CIPNum;
                 TFirstWriter.Text = mon.FirstWriter;
@@ -200,6 +219,8 @@ namespace WebApplication1
                 // monh.EntryPerson = Session["LoginName"].ToString();
                 monh.EntryPerson = mo.FindAll(Convert.ToInt32(Session["MonographID"])).EntryPerson;
                 monh.MonographName = tMonographName.Text.Trim();
+            
+               monh.PaperUnit = DropDownListAgency.SelectedText; //所属机构
                 monh.SecrecyLevel = Convert.ToInt32(dSecrecyLevel.SelectedIndex + 1);
                 //monh.Sort = tSort.Text.Trim();
                 monh.PUblicationTime = dPUblicationTime.SelectedDate;

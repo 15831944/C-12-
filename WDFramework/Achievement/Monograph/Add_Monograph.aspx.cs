@@ -36,6 +36,24 @@ namespace WebApplication1
                 dPUblicationTime.MaxDate = DateTime.Now;
                 InitdFirstWriterSite();
                 Initddl();
+                InitDropListAgency();
+            }
+        }
+        //初始化机构下拉框
+        public void InitDropListAgency()
+        {
+            try
+            {
+                BLHelper.BLLAgency agency = new BLHelper.BLLAgency();
+                List<Common.Entities.Agency> list = agency.FindAllAgencyName();
+                for (int i = 0; i < list.Count(); i++)
+                {
+                    DropDownListAgency.Items.Add(list[i].AgencyName.ToString(), list[i].AgencyName.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
             }
         }
         //初始化等级下拉框
@@ -110,6 +128,7 @@ namespace WebApplication1
             mon.PUblicationTime = dPUblicationTime.SelectedDate;
             mon.Publisher = tPublisher.Text.Trim();
             mon.Revision = tRevision.Text.Trim();
+            mon.PaperUnit = DropDownListAgency.SelectedText; //所属机构
             mon.MonographPeople = MoPeople.Text.Trim();
             mon.FirstWriter = TFirstWriter.Text.Trim();
             mon.WriterIdentity = dPaperIdentity.SelectedValue;
