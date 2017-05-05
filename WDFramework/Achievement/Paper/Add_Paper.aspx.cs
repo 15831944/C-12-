@@ -37,6 +37,7 @@ namespace WebApplication1
                 InitdRetrieveSituation();
                 InitDroplistForm();
                 InitdFirstWriterSite();
+                InitPubliseState();
             }
         }
       //初始化刊物级别
@@ -105,6 +106,22 @@ namespace WebApplication1
                 pm.SaveError(ex, this.Request);
             }
         }
+        //初始化发表状态
+        public void InitPubliseState()
+        {
+            try
+            {
+                List<BasicCode> listname = ba.FindByCategoryName("发表状态");
+                for (int i = 0; i < listname.Count(); i++)
+                {
+                    DropDownList1.Items.Add(listname[i].CategoryContent.ToString(), listname[i].CategoryContent.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
         //插入赋值
         public void InsertValue()
         {       
@@ -114,7 +131,7 @@ namespace WebApplication1
             paper.PaperRank = dPaperRank.SelectedValue;
             //paper.WriterIdentity = dPaperIdentity.SelectedText.Trim();
             paper.WriterIdentity = dPaperIdentity.SelectedValue;
-
+            paper.PubliseState = DropDownList1.SelectedValue;
             //dPaperIdentity
             //paper.PaperRank = tPaperRank.Text.Trim(); 
             paper.PaperUnit = DropDownListAgency.SelectedText;

@@ -139,6 +139,24 @@ namespace WebApplication1 {
         protected global::FineUI.Button btn_AddMonograph;
         
         /// <summary>
+        /// btnSelect_All 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button btnSelect_All;
+        
+        /// <summary>
+        /// Delete 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Delete;
+        
+        /// <summary>
         /// btn_UpdateInspect 控件。
         /// </summary>
         /// <remarks>
@@ -335,23 +353,5 @@ namespace WebApplication1 {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Label labResult;
-        /// <summary>
-        /// btnSelect_All 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button btnSelect_All;
-
-        /// <summary>
-        /// Delete 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button Delete;
-        
     }
 }

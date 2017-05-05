@@ -85,7 +85,9 @@ namespace BLHelper
             monograph.BookNuber = aMonograph.BookNuber;          
             monograph.IssueRegin = aMonograph.IssueRegin;
             monograph.MonographName = aMonograph.MonographName;
+            monograph.PaperUnit = aMonograph.PaperUnit; ; //所属机构
             monograph.PUblicationTime = aMonograph.PUblicationTime;
+            monograph.WriterIdentity = aMonograph.WriterIdentity; //第一作者身份
             monograph.Publisher = aMonograph.Publisher;
             monograph.Remark = aMonograph.Remark;
             monograph.Revision = aMonograph.Revision;    
@@ -283,6 +285,16 @@ namespace BLHelper
        public List<Monograph> FindByFirstWriter(string firstwriter, int level)
        {
            return dbcontext.MonographContext.Where(u => u.FirstWriter == firstwriter && u.SecrecyLevel <= level && u.IsPass == true).ToList();
+       }
+       //按第一作者身份查询
+       public List<Monograph> FindByFirstWriterPosition(string WriterIdentity, int level)
+       {
+           return dbcontext.MonographContext.Where(u => u.WriterIdentity == WriterIdentity && u.SecrecyLevel <= level && u.IsPass == true).ToList();
+       }
+       //分部门查询论文
+       public List<Monograph> FindByAgency(string PaperUnit, int? SecrecyLevel)
+       {
+           return dbcontext.MonographContext.Where(p => p.PaperUnit == PaperUnit && p.SecrecyLevel <= SecrecyLevel && p.IsPass == true).ToList();
        }
     }
 }

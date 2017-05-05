@@ -37,11 +37,10 @@
                                     <x:ListItem Text="部门" Value="部门" />
                                     <x:ListItem Text="作者" Value="作者" />
                                     <x:ListItem Text="刊物级别" Value="刊物级别" />
-
+                                     <x:ListItem Text="发表状态" Value="发表状态" />
                                     <x:ListItem Text="发表年份" Value="发表年份" />
                                     <x:ListItem Text="收录情况" Value="收录情况" />
                                     <x:ListItem Text="第一作者身份" Value="第一作者身份" />
-                                    
                                     <x:ListItem Text="第一作者" Value="第一作者" />
                                     <x:ListItem Text="通讯作者" Value="通讯作者" />
                                 </x:DropDownList>
@@ -108,7 +107,8 @@
                         <x:BoundField DataField="Subject" SortField="Subject" Width="100px" HeaderText="题目" />
                         <x:BoundField DataField="FirstWriter" SortField="FirstWriter" Width="150px" HeaderText="第一作者" />
                         <x:BoundField DataField="WriterIdentity" SortField="WriterIdentity" Width="150px" HeaderText="第一作者身份" />
-                        <x:BoundField DataField="MessageWriter" SortField="MessageWriter" Width="150px" HeaderText="通讯作者" />
+                        <x:BoundField DataField="PubliseState" SortField="PubliseState" Width="80px" HeaderText="发表状态" />
+                        <x:BoundField DataField="MessageWriter" SortField="MessageWriter" Width="80px" HeaderText="通讯作者" />
                         <x:BoundField DataField="MWAgency" SortField="MWAgency" Width="150px" HeaderText="通讯作者部门" />
                         <x:BoundField DataField="PublicJournalName" SortField="PublicJournalName" Width="150px" HeaderText="发布刊物" />
                         <x:BoundField DataField="PublicDate" SortField="PublicDate" Width="100px" DataFormatString="{0:yyyy-MM-dd}" HeaderText="发表时间" />

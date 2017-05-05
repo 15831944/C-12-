@@ -31,14 +31,18 @@ namespace WebApplication1
         BLCommon.PublicMethod pm = new BLCommon.PublicMethod();
         BLHelper.BLLOperationLog op = new BLHelper.BLLOperationLog();
         OperationLog log = new OperationLog();
+        BLHelper.BLLBasicCode ba = new BLHelper.BLLBasicCode();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 dPUblicationTime.MaxDate = DateTime.Now;
-              
+                InitdFirstWriterSite();
                 Initddl();
+                InitDropListAgency();
                 InitData();
+               
             }
         }
         //初始化等级下拉框
@@ -54,8 +58,39 @@ namespace WebApplication1
             for (int i = 0; i < bascode.Count; i++)
                 ddlMonographType.Items.Add(bascode[i].CategoryContent.Trim(), bascode[i].CategoryContent.Trim());
         }
-     
-      
+        //初始化第一作者身份
+        public void InitdFirstWriterSite()
+        {
+            try
+            {
+                List<BasicCode> listname = ba.FindByCategoryName("第一作者身份");
+                for (int i = 0; i < listname.Count(); i++)
+                {
+                    dPaperIdentity.Items.Add(listname[i].CategoryContent.ToString(), listname[i].CategoryContent.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
+        //初始化机构下拉框
+        public void InitDropListAgency()
+        {
+            try
+            {
+                BLHelper.BLLAgency agency = new BLHelper.BLLAgency();
+                List<Common.Entities.Agency> list = agency.FindAllAgencyName();
+                for (int i = 0; i < list.Count(); i++)
+                {
+                    DropDownListAgency.Items.Add(list[i].AgencyName.ToString(), list[i].AgencyName.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
         //成果名称验证
         /*protected void tAchievement_TextChanged(object sender, EventArgs e)
         {
@@ -117,7 +152,9 @@ namespace WebApplication1
                 tBookNuber.Text = mon.BookNuber;
                 tMonographName.Text = mon.MonographName;
                 dSecrecyLevel.SelectedIndex = Convert.ToInt32(mon.SecrecyLevel - 1);
+                dPaperIdentity.SelectedValue = mon.WriterIdentity;  //第一作者身份
                 //tSort.Text = mon.Sort;
+                DropDownListAgency.SelectedValue = mon.PaperUnit; //所属机构
                 tISBN.Text = mon.ISBNNum;
                 tCIP.Text = mon.CIPNum;
                 TFirstWriter.Text = mon.FirstWriter;
@@ -182,6 +219,8 @@ namespace WebApplication1
                 // monh.EntryPerson = Session["LoginName"].ToString();
                 monh.EntryPerson = mo.FindAll(Convert.ToInt32(Session["MonographID"])).EntryPerson;
                 monh.MonographName = tMonographName.Text.Trim();
+            
+               monh.PaperUnit = DropDownListAgency.SelectedText; //所属机构
                 monh.SecrecyLevel = Convert.ToInt32(dSecrecyLevel.SelectedIndex + 1);
                 //monh.Sort = tSort.Text.Trim();
                 monh.PUblicationTime = dPUblicationTime.SelectedDate;
@@ -192,6 +231,7 @@ namespace WebApplication1
                 monh.CIPNum = tCIP.Text.Trim();
                 monh.ISBNNum = tISBN.Text.Trim();
                 monh.FirstWriter = TFirstWriter.Text.Trim();
+                monh.WriterIdentity = dPaperIdentity.SelectedValue.Trim();
                 monh.MonographType = ddlMonographType.SelectedValue.Trim();
                 monh.IssueRegin = tIssueRegin.Text.Trim();
                 monh.Remark = tRemark.Text.Trim();
@@ -326,6 +366,7 @@ namespace WebApplication1
                 tCIP.Reset();
                 TFirstWriter.Reset();
                 dPUblicationTime.Reset();
+                dPaperIdentity.Reset();
                 tPublisher.Reset();
                 tRevision.Reset();
                 tIssueRegin.Reset();

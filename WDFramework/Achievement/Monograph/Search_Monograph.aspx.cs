@@ -24,7 +24,7 @@ namespace WebApplication1
         BLHelper.BLLOperationLog bllOperate = new BLHelper.BLLOperationLog();
         BLHelper.BLLUser user = new BLHelper.BLLUser();
         //BLHelper.BLLStaffMonograph st = new BLHelper.BLLStaffMonograph();
-       
+        BLHelper.BLLBasicCode ba = new BLHelper.BLLBasicCode();
         BLCommon.PublicMethod pm = new BLCommon.PublicMethod();
       
         private int page;
@@ -113,6 +113,8 @@ namespace WebApplication1
                 pm.SaveError(ex, this.Request);
             }
         }
+
+       
         //按时间查询
         public void FindByTime()
         {
@@ -231,8 +233,54 @@ namespace WebApplication1
             }
 
         }
+        //按第一作者身份查询
+        private void FindByFirstWriterPosition()
+        {
+            try
+            {
+                ViewState["page"] = 6;
+                List<Monograph> list = mo.FindByFirstWriterPosition(dCondition.SelectedText.Trim(), Convert.ToInt32(Session["SecrecyLevel"]));  //dCondition.SelectedText.Trim()
+                Grid_Monograph.RecordCount = list.Count();
+                if (list != null)
+                {
+                    Grid_Monograph.DataSource = list.Skip(Grid_Monograph.PageIndex * Grid_Monograph.PageSize).Take(Grid_Monograph.PageSize);
+                    Grid_Monograph.DataBind();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
 
+        }
+        //按部门查询
+        private void FindByAgency()
+        {
+            try
+            {
+                ViewState["page"] = 7;
+                List<Monograph> list = mo.FindByAgency(dCondition.SelectedText.Trim(), Convert.ToInt32(Session["SecrecyLevel"]));  //dCondition.SelectedText.Trim()
+                Grid_Monograph.RecordCount = list.Count();
+                if (list != null)
+                {
+                    Grid_Monograph.DataSource = list.Skip(Grid_Monograph.PageIndex * Grid_Monograph.PageSize).Take(Grid_Monograph.PageSize);
+                    Grid_Monograph.DataBind();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
 
+        }
         //搜索
         protected void Select_Click(object sender, EventArgs e)
         {
@@ -246,6 +294,16 @@ namespace WebApplication1
                 if (dChoose.SelectedText == "出版年份")
                 {
                     FindByTime();
+                    return;
+                }
+                if (dChoose.SelectedText == "第一作者身份")
+                {
+                    FindByFirstWriterPosition();
+                    return;
+                }
+                if (dChoose.SelectedText == "部门")
+                {
+                    FindByAgency();
                     return;
                 }
                 if (tCondition.Text.Trim() != "")
@@ -266,11 +324,7 @@ namespace WebApplication1
                         FindByMonographName();
                         return;
                     }
-                    if (dChoose.SelectedText == "第一作者")
-                    {
-                        FindByFirstWriter();
-                        return;
-                    }
+                   
                 }
             }
             catch (Exception ex)
@@ -383,12 +437,16 @@ namespace WebApplication1
                 case 4:
                     FindByMonographName();
                     break;
+
                 case 5:
-                    FindByFirstWriter();
+                    FindByFirstWriterPosition();
+                    break;
+                case 6:
+                    FindByAgency();
                     break;
             }
         }
-
+        //搜索
         protected void ddlGridPageSize_SelectedIndexChanged(object sender, EventArgs e)
         {
             Grid_Monograph.PageIndex = 0;
@@ -411,7 +469,10 @@ namespace WebApplication1
                     FindByMonographName();
                     break;
                 case 5:
-                    FindByFirstWriter();
+                    FindByFirstWriterPosition();
+                    break;
+                case 6:
+                    FindByAgency();
                     break;
             }
         }
@@ -453,7 +514,7 @@ namespace WebApplication1
                 pm.SaveError(ex, this.Request);
             }
         }
-        //搜索条件
+        //搜索条件即搜索框变化
         protected void dChoose_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (dChoose.SelectedValue)
@@ -480,6 +541,32 @@ namespace WebApplication1
                     dCondition.Enabled = true;
                     tCondition.Enabled = false;
                     break;
+                case"第一作者身份":
+                     dCondition.Items.Clear();
+                    List<BasicCode> list1 = ba.FindByCategoryName("第一作者身份");
+                    for (int i = 0; i < list1.Count(); i++)
+                    {
+                        dCondition.Items.Add(list1[i].CategoryContent.ToString(), list1[i].CategoryContent.ToString());
+                    }
+                    dCondition.Items[0].Selected = true;
+                    dCondition.EnableEdit = false;
+                    tCondition.Enabled = false;
+                    dCondition.Enabled = true;
+                    break;
+                case "部门":
+                    dCondition.Items.Clear();
+                    BLHelper.BLLAgency agency = new BLHelper.BLLAgency();
+                    List<Common.Entities.Agency> list = agency.FindAllAgencyName();
+                    for (int i = 0; i < list.Count(); i++)
+                    {
+                        dCondition.Items.Add(list[i].AgencyName.ToString(), list[i].AgencyName.ToString());
+                    }
+                    dCondition.Items[0].Selected = true;
+                    dCondition.EnableEdit = false;
+                    tCondition.Enabled = false;
+                    dCondition.Enabled = true;
+                    break;
+                    
             }
         }
         //导出

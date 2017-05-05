@@ -86,6 +86,20 @@
 
                             <x:Label ID="Label6" runat="server" Label="Label" Text=" " Height="20px">
                             </x:Label>
+                               <%--这是空行--%>
+                                <x:Panel ID="Panel9" ShowHeader="false" CssClass="formitem" ShowBorder="false"
+                                    Layout="Column" runat="server">
+                                    <Items>
+                                        <x:Label ID="AwardUnit" Width="110px" runat="server" CssClass="marginr" ShowLabel="false" Text="所属机构：">
+                                        </x:Label>
+                                        <x:DropDownList Label="所属机构" AutoPostBack="false" EnableEdit="false" Required="true" EnableSimulateTree="true"
+                                            runat="server" ID="DropDownListAgency" Width="185px" TabIndex="15">
+                                        </x:DropDownList>
+                                    </Items>
+                                </x:Panel>
+
+                                <x:Label ID="Label27" runat="server" Label="Label" Text=" " Height="20px">
+                                </x:Label>
                             <%--这是空行--%>
 
                             <x:Panel ID="Panel1" ShowHeader="false" CssClass="formitem" ShowBorder="false"
@@ -238,6 +252,20 @@
                                     </x:TextArea>
                                 </Items>
                             </x:Panel>
+                             <x:Label ID="Label17" runat="server" Label="Label" Text=" " Height="20px">
+                                </x:Label>
+                            <%--这是空行--%>
+                                <x:Panel ID="Panel26" ShowHeader="false" CssClass="formitem" ShowBorder="false"
+                                    Layout="Column" runat="server">
+                                    <Items>
+                                        <x:Label ID="Label26" Width="110px" runat="server" CssClass="marginr" ShowLabel="false" Text="第一作者身份：">
+                                        </x:Label>
+                                        <x:DropDownList ID="dPaperIdentity" ShowLabel="true" Label="第一作者身份：" Required="true" EnableEdit="false" Width="195px" AutoPostBack="false" runat="server" TabIndex="19" EnableSimulateTree="true">
+                                        </x:DropDownList>
+                                    </Items>
+                                </x:Panel>
+                                <x:Label ID="Label2" runat="server" Label="Label" Text=" " Height="20px">
+                                </x:Label>
                         </Items>
                     </x:Panel>
 
