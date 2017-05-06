@@ -59,7 +59,7 @@ namespace WDFramework.Project
                 DropDownListYearandLevel.Enabled = false;
                 SourceUnit.Enabled = false;
                 AN.Enabled = false;
-                ProjectNature.Enabled = false;
+                //ProjectNature.Enabled = false;
                 ProjectNatureBind();
                 btnAdd_two.OnClientClick = WindowAddDocument.GetShowReference("Add_Document.aspx", "新增项目文档");
                 btnUpdate_two.OnClientClick = WindowUpdateDocument.GetShowReference("Update_Document.aspx", "编辑项目文档");
@@ -708,7 +708,7 @@ namespace WDFramework.Project
             DropDownListYearandLevel.Enabled = false;
             SourceUnit.Enabled = false;
             AN.Enabled = false;
-            ProjectNature.Enabled = false;
+            //ProjectNature.Enabled = false;
         }
         //修改按钮
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -992,7 +992,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = false;
                     AN.Enabled = false;
-                    ProjectNature.Enabled = false;
+                    //ProjectNature.Enabled = false;
                     break;
                 case "项目名称":
                     DropDownListYearandLevel.Items.Clear();
@@ -1000,7 +1000,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = true;
                     AN.Enabled = false;
-                    ProjectNature.Enabled = false;
+                    //ProjectNature.Enabled = false;
                     break;
                 case "项目状态":
                     DropDownListYearandLevel.Items.Clear();
@@ -1010,7 +1010,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.EnableEdit = false;
                     SourceUnit.Enabled = false;
                     AN.Enabled = false;
-                    ProjectNature.Enabled = false;
+                    //ProjectNature.Enabled = false;
                     List<BasicCode> lists = bllBasicCode.FindALLName("项目状态");
                     for (int i = 0; i < lists.Count(); i++)
                     {
@@ -1028,7 +1028,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.EnableEdit = false;
                     DropDownListYearandLevel.Enabled = true;
                     SourceUnit.Enabled = false;
-                    ProjectNature.Enabled = true;
+                    //ProjectNature.Enabled = true;
                     AN.Enabled = true;
                     AN.Items.Clear();
                     AN.Items.Add("项目来源", "项目来源");
@@ -1040,7 +1040,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.Items.Clear();
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = true;
-                    ProjectNature.Enabled = true;
+                    //ProjectNature.Enabled = true;
                     AN.Enabled = true;
                     AN.Items.Clear();
                     AN.Items.Add("年份", "年份");
@@ -1052,7 +1052,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.EnableEdit = false;
                     DropDownListYearandLevel.Enabled = true;
                     SourceUnit.Enabled = false;
-                    ProjectNature.Enabled = true;
+                    //ProjectNature.Enabled = true;
                     AN.Enabled = true;
                     AN.Items.Clear();
                     AN.Items.Add("年份", "年份");
@@ -1068,7 +1068,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.Items.Clear();
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = true;
-                    ProjectNature.Enabled = true;
+                    //ProjectNature.Enabled = true;
                     AN.Enabled = true;
                     AN.Items.Clear();
                     AN.Items.Add("年份", "年份");
@@ -1079,14 +1079,14 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.Items.Clear();
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = true;
-                    ProjectNature.Enabled = false;
+                    //ProjectNature.Enabled = false;
                     break;
                 case "项目性质":
                     SourceUnit.Text = "";
                     DropDownListYearandLevel.Items.Clear();
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = true;
-                    ProjectNature.Enabled = false;
+                    //ProjectNature.Enabled = false;
                     break;
                 case "项目成员":
                     DropDownListYearandLevel.Items.Clear();
@@ -1094,7 +1094,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = true;
                     AN.Enabled = false;
-                    ProjectNature.Enabled = false;
+                    //ProjectNature.Enabled = false;
                     break;
                 case "保密等级":
                     DropDownListYearandLevel.Items.Clear();
@@ -1104,7 +1104,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.EnableEdit = false;
                     SourceUnit.Enabled = false;
                     AN.Enabled = false;
-                    ProjectNature.Enabled = false;
+                    //ProjectNature.Enabled = false;
                     DropDownListYearandLevel.Items.Add("四级", "四级");
                     DropDownListYearandLevel.Items.Add("三级", "三级");
                     DropDownListYearandLevel.Items.Add("二级", "二级");

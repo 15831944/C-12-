@@ -94,7 +94,7 @@ namespace BLHelper
 
         }
         //根据ID获取文件路径
-        public string FindPath(int AttachmentID)
+        public string FindPath(int? AttachmentID)
         {
             List<Attachment> at = new List<Attachment>();
             at = dbcontext.AttachmentContext.Where(a => a.AttachmentID == AttachmentID).ToList();

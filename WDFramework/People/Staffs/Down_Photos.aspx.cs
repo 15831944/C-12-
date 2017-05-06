@@ -27,6 +27,17 @@ namespace WDFramework.People.Staffs
         public void InitData()
         {
             int AcademicID = Convert.ToInt32(Request.QueryString["id"].ToString());
+            int photoId = Blluser.FindPhotoID(AcademicID);
+            if (photoId != 0)
+            {
+                string srcPaths = BLLAttachments.FindPath(photoId);
+                if (srcPaths != "")
+                    Image_show.ImageUrl = srcPaths;
+                else
+                    Image_show.ImageUrl="../../images/blank.png";
+            }
+            else
+                Image_show.ImageUrl = "../../images/blank.png";
         }
         //下载
         protected void DownLoad_Click(object sender, EventArgs e)

@@ -1,0 +1,53 @@
+2017/5/6 8:17:01
+------------------------------------------------------------------------------
+
+错误消息:未能找到文件“~/Uploads/636296553091192046_地和.jpg”。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileInfo.get_Length()
+   在 BLCommon.PublicMethod.DownloadPhoto(String photoPath) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 55
+   在 WDFramework.People.Staffs.Down_Photos.DownLoad_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\People\Staffs\Down_Photos.aspx.cs:行号 42
+ 
+
+引发异常的方法:Void WinIOError(Int32, System.String)
+
+错误页面:/People/Staffs/Down_Photos.aspx?id=253
+------------------------------------------------------------------------------
+2017/5/6 8:17:21
+------------------------------------------------------------------------------
+
+错误消息:未能找到文件“~/Uploads/636296553091192046_地和.jpg”。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileInfo.get_Length()
+   在 BLCommon.PublicMethod.DownloadPhoto(String photoPath) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 55
+   在 WDFramework.People.Staffs.Down_Photos.DownLoad_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\People\Staffs\Down_Photos.aspx.cs:行号 42
+ 
+
+引发异常的方法:Void WinIOError(Int32, System.String)
+
+错误页面:/People/Staffs/Down_Photos.aspx?id=253
+------------------------------------------------------------------------------
+2017/5/6 9:36:49
+------------------------------------------------------------------------------
+
+错误消息:正在中止线程。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Threading.Thread.AbortInternal()
+   在 System.Threading.Thread.Abort(Object stateInfo)
+   在 System.Web.HttpResponse.AbortCurrentThread()
+   在 System.Web.HttpResponse.End()
+   在 BLCommon.PublicMethod.DownloadPhoto(String photoPath) 位置 c:\Users\admin\Source\Repos\kygl\BLCommon\PublicMethod.cs:行号 58
+   在 WDFramework.People.Staffs.Down_Photos.DownLoad_Click(Object sender, EventArgs e) 位置 c:\Users\admin\Source\Repos\kygl\WDFramework\People\Staffs\Down_Photos.aspx.cs:行号 42
+ 
+
+引发异常的方法:Void AbortInternal()
+
+错误页面:/People/Staffs/Down_Photos.aspx?id=253
+------------------------------------------------------------------------------

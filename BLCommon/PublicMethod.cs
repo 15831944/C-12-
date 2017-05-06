@@ -46,7 +46,7 @@ namespace BLCommon
         /// <param name="photoPath"></param>
         public void DownloadPhoto(string photoPath)
         {
-            FileInfo photo = new System.IO.FileInfo(photoPath);
+            FileInfo photo = new System.IO.FileInfo(System.Web.HttpContext.Current.Server.MapPath(photoPath));
             HttpContext.Current.Response.Clear();
             HttpContext.Current.Response.ClearHeaders();
             HttpContext.Current.Response.Buffer = false;
@@ -210,7 +210,7 @@ namespace BLCommon
                         Common.Entities.Attachment attachment = new Common.Entities.Attachment();
                         //向附件表中插入数据
                         attachment.FileName = fileName;
-                        attachment.FilePath = System.Web.HttpContext.Current.Server.MapPath(filepath) + FileName;
+                        attachment.FilePath = filepath + FileName;
                         file.SaveAs(System.Web.HttpContext.Current.Server.MapPath(filepath) + FileName);
                         BLLattachment.Insert(attachment);
                         return Convert.ToInt32(attachment.AttachmentID);
@@ -237,7 +237,7 @@ namespace BLCommon
             bool isFileType = false;
             string thestr = str.ToLower();
 
-            string[] allowExtension = {".jpg", ".gif","png"};
+            string[] allowExtension = {".jpg", ".gif",".png"};
             //对上传的文件的类型进行一个个匹对
             for (int i = 0; i < allowExtension.Length; i++)
             {

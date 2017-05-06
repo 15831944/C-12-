@@ -83,6 +83,10 @@ namespace WDFramework.People
                 DropDownListDegree.SelectedValue = user.Degree;
                 DropDownListStaffType.SelectedValue = user.StaffType;
                 T_Specilty.Text = user.Specialty;
+
+                //图片加载
+                BLHelper.BLLAttachment att = new BLHelper.BLLAttachment();
+                Image_show.ImageUrl = att.FindPath(user.PhotoID);
                 if (user.Marriage == true)
                 {
                     ISMarriage.Checked = true;
@@ -124,15 +128,15 @@ namespace WDFramework.People
                 DropDownListSecrecyLevel.SelectedIndex = Convert.ToInt32(user.SecrecyLevel) - 1;
                 T_Reserch.Text = user.ResearchDirection;
                 LastSchool.Text = user.LastSchool;
-                DatePickerEnterSchoolTime.SelectedDate= user.EnterSchoolTime;//入校时间；
-                DropDownListStudySource.SelectedValue =user.StudySource;//学缘
+                DatePickerEnterSchoolTime.SelectedDate = user.EnterSchoolTime;//入校时间；
+                DropDownListStudySource.SelectedValue = user.StudySource;//学缘
             }
             catch (Exception ex)
             {
                 publicmethod.SaveError(ex, this.Request);
             }
         }
-       
+
         //初始化项目涉密等级等级
         public void InitDropListSecrecyLevel()
         {
@@ -142,8 +146,8 @@ namespace WDFramework.People
             {
                 DropDownListSecrecyLevel.Items.Add(SecrecyLevels[i], i.ToString());
             }
-        }        
-       
+        }
+
         //更新
         public void Update()
         {
@@ -183,7 +187,7 @@ namespace WDFramework.People
                 NewUser.Degree = DropDownListDegree.SelectedItem.Text;
                 NewUser.StaffType = DropDownListStaffType.SelectedItem.Text;
                 NewUser.Specialty = T_Specilty.Text.Trim();
-              if (ISMarriage.Checked == true)
+                if (ISMarriage.Checked == true)
                 {
                     NewUser.Marriage = true;
                 }
@@ -197,7 +201,7 @@ namespace WDFramework.People
                 NewUser.qqNum = T_QQnum.Text.Trim();
                 NewUser.Remark = T_Remark.Text.Trim();
                 NewUser.UnitName = T_UnitName.Text.Trim();
-               //NewUser.StaffType = T_StaffType.Text.Trim();
+                //NewUser.StaffType = T_StaffType.Text.Trim();
                 //NewUser.UserInfoBH = T_UserInfoBH.Text.Trim();
                 NewUser.LoginName = T_LoginName.Text.Trim();
                 //密码没有修改
@@ -222,7 +226,7 @@ namespace WDFramework.People
                 else
                 {
                     NewUser.IsDocdorTeacher = false;
-                }                
+                }
                 if (IsMasterTeacher.Checked == true)
                 {
                     NewUser.IsMasteTeacher = true;
@@ -249,30 +253,13 @@ namespace WDFramework.People
                 int PhotoID = bllUser.FindPhotoID(Convert.ToInt32(Session["UserInfoID"]));
                 string attachmentPath = BLLattachment.FindPath(PhotoID);
                 string photoPath = BLLattachment.FindPath(PhotoID);
-                int Attachment = publicmethod.UpLoadPhoto(photoupload);
-                if (Attachment != -3)
+
+                if (Session["AttachID"] != null)
                 {
-                    switch (Attachment)
-                    {
-                        case -1:
-                            Alert.ShowInTop("文件类型不符，请重新选择！");
-                            return;
-                        case 0:
-                            Alert.ShowInTop("文件名已经存在！");
-                            return;
-                        case -2:
-                            Alert.ShowInTop("文件不能大于150M");
-                            return;
-                    }
-                    NewUser.PhotoID = Attachment;
-                    publicmethod.DeleteFile(PhotoID, photoPath);
+                    NewUser.PhotoID = int.Parse(Session["AttachID"].ToString());
                 }
-                else
-                {
-                    if (PhotoID != 0)
-                        NewUser.PhotoID = PhotoID;
-                }
-          
+
+
                 NewUser.EntryPerson = bllUser.Find(Convert.ToInt32(Session["UserInfoID"]), true).EntryPerson;
                 if (Convert.ToInt32(Session["SecrecyLevel"]) == 5)
                 {
@@ -312,7 +299,7 @@ namespace WDFramework.People
             {
                 string UserName = bllUser.Find(Convert.ToInt32(Session["UserInfoID"]), true).UserName;
                 string LoginName = bllUser.Find(Convert.ToInt32(Session["UserInfoID"]), true).LoginName;
-               // string UserInfoBH = bllUser.Find(Convert.ToInt32(Session["UserInfoID"]), true).UserInfoBH;
+                // string UserInfoBH = bllUser.Find(Convert.ToInt32(Session["UserInfoID"]), true).UserInfoBH;
                 //if (T_UserName.Text.Trim() != "")
                 {
                     //if (T_UserInfoBH.Text.Trim() == "")
@@ -352,8 +339,8 @@ namespace WDFramework.People
                             }
                         }
                     }
-                   
-                    
+
+
                     if (bllUser.IsLoginName(T_LoginName.Text.Trim()) != null)
                     {
                         if (T_LoginName.Text.Trim() != LoginName)
@@ -418,7 +405,7 @@ namespace WDFramework.People
                 T_QQnum.Reset();
                 T_Remark.Reset();
                 T_UnitName.Reset();
-               // T_UserInfoBH.Reset();
+                // T_UserInfoBH.Reset();
                 T_LoginName.Reset();
                 //T_LoginPWD.Reset();
                 //IsPWD.Reset();
@@ -601,6 +588,35 @@ namespace WDFramework.People
             catch (Exception ex)
             {
                 publicmethod.SaveError(ex, this.Request);
+            }
+        }
+
+        protected void photoupload_FileSelected(object sender, EventArgs e)
+        {
+            int AttachID = publicmethod.UpLoadPhoto(photoupload);
+            switch (AttachID)
+            {
+                case -1:
+                    Alert.ShowInTop("照片类型不符，请重新选择！");
+                    return;
+                case 0:
+                    Alert.ShowInTop("文件名已经存在！");
+                    return;
+                case -2:
+                    Alert.ShowInTop("照片不能大于150M");
+                    return;
+                case -3:
+                    Session["AttachID"] = null;
+                    break;
+                //Alert.ShowInTop("请上传附件");
+                //return;
+                default:
+                    {
+                        Session["AttachID"] = AttachID;
+                        BLHelper.BLLAttachment att = new BLHelper.BLLAttachment();
+                        Image_show.ImageUrl = att.FindPath(AttachID);
+                        break;
+                    }
             }
         }
     }

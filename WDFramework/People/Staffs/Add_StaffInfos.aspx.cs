@@ -187,27 +187,34 @@ namespace WDFramework.People
                                 NewUser.StudySource = DropDownListStudySource.SelectedItem.Text;//学缘
                                 NewUser.EntryPerson = bllUser.FindByLoginName(Session["LoginName"].ToString()).UserName;
 
-                                int AttachID = publicmethod.UpLoadPhoto(photoupload);
-                                switch (AttachID)
+                                if(Session["AttachID"]!=null)
                                 {
-                                    case -1:
-                                        Alert.ShowInTop("照片类型不符，请重新选择！");
-                                        return;
-                                    case 0:
-                                        Alert.ShowInTop("文件名已经存在！");
-                                        return;
-                                    case -2:
-                                        Alert.ShowInTop("照片不能大于150M");
-                                        return;
-                                    case -3:
-                                        NewUser.PhotoID = null;
-                                        break;
-                                    //Alert.ShowInTop("请上传附件");
-                                    //return;
-                                    default:
-                                        NewUser.PhotoID = AttachID;
-                                        break;
+                                    NewUser.PhotoID = int.Parse(Session["AttachID"].ToString());
+                                } 
+                                else
+                                {
+                                    NewUser.PhotoID = null;
                                 }
+                                //switch (AttachID)
+                                //{
+                                //    case -1:
+                                //        Alert.ShowInTop("照片类型不符，请重新选择！");
+                                //        return;
+                                //    case 0:
+                                //        Alert.ShowInTop("文件名已经存在！");
+                                //        return;
+                                //    case -2:
+                                //        Alert.ShowInTop("照片不能大于150M");
+                                //        return;
+                                //    case -3:
+                                //        NewUser.PhotoID = null;
+                                //        break;
+                                //    //Alert.ShowInTop("请上传附件");
+                                //    //return;
+                                //    default:
+                                //        NewUser.PhotoID = AttachID;
+                                //        break;
+                                //}
                                 if (Convert.ToInt32(Session["SecrecyLevel"]) == 5)
                                 {
                                     bllUser.Insert(NewUser);//插入人员基本信息表
@@ -504,6 +511,36 @@ namespace WDFramework.People
             catch (Exception ex)
             {
                 publicmethod.SaveError(ex, this.Request);
+            }
+        }
+
+        protected void photoupload_FileSelected(object sender, EventArgs e)
+        
+        {
+            int AttachID = publicmethod.UpLoadPhoto(photoupload);
+            switch (AttachID)
+            {
+                case -1:
+                    Alert.ShowInTop("照片类型不符，请重新选择！");
+                    return;
+                case 0:
+                    Alert.ShowInTop("文件名已经存在！");
+                    return;
+                case -2:
+                    Alert.ShowInTop("照片不能大于150M");
+                    return;
+                case -3:
+                    Session["AttachID"] = null;
+                    break;
+                //Alert.ShowInTop("请上传附件");
+                //return;
+                default:
+                    {
+                        Session["AttachID"] = AttachID;
+                        BLHelper.BLLAttachment att = new BLHelper.BLLAttachment();
+                        Image_show.ImageUrl = att.FindPath(AttachID);
+                        break;
+                    }
             }
         }
     }

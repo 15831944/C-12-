@@ -397,6 +397,16 @@
                                         </x:TextBox>
                                     </Items>
                                 </x:Panel>
+                                <x:Panel ID="Panel42" ShowHeader="false" CssClass="formitem" ShowBorder="false"
+                                    Layout="Column" runat="server">
+                                    <Items>
+                                        <x:Label ID="Label57" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="备注：">
+                                        </x:Label>
+                                        <x:TextArea runat="server" MaxLength="200" MaxLengthMessage ="最多输入200个字符" Label ="备注" ShowLabel="true" CssStyle ="overflow-y:scroll" ID="T_Remark" Width="195px" Height="160px" TabIndex="41">
+                                        </x:TextArea>
+                                    </Items>
+                                </x:Panel>
+
                             </Items>
                         </x:Panel>
 
@@ -639,9 +649,11 @@
                                  <x:Panel ID="Panel46" ShowHeader="false" CssClass="formitem" ShowBorder="false"
                                     Layout="Column" runat="server">
                                     <Items>
-                                        <x:Label ID="Labe172" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="人员照片：">
+                                        <x:Label ID="Label71" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="人员照片："></x:Label>
+                                        <x:Image ID="Image_show" runat="server" ImageUrl="../../images/blank.png" ImageHeight="220px" ImageWidth="195px" ShowEmptyLabel="true"></x:Image>
+                                        <x:Label ID="Label34" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="">
                                         </x:Label>
-                                        <x:FileUpload ID="photoupload" width="195" runat="server" Label="人员照片" ShowLabel="true" TabIndex="27">
+                                        <x:FileUpload ID="photoupload" Width="195" runat="server" TabIndex="27" ShowRedStar="false" ShowEmptyLabel="true" ButtonText="上传个人头像" ButtonOnly="true" Required="false" ButtonIcon="ImageAdd" AutoPostBack="true" OnFileSelected="photoupload_FileSelected">
                                         </x:FileUpload>
                                     </Items>
                                 </x:Panel>
@@ -650,26 +662,6 @@
 
                         <x:Panel ID="Panel47" Title="空Panel" runat="server" BodyPadding="5px" ShowBorder="false"
                             ShowHeader="false" ColumnWidth="8%">
-                        </x:Panel>
-
-                        <x:Panel ID="Panel48" BoxFlex="1" runat="server" ColumnWidth="46%" BodyPadding="0px" ShowBorder="false"
-                            ShowHeader="false">
-
-                            <Items>
-                                <x:Label ID="Label73" runat="server" Label="Label" Text=" " Height="10px">
-                                </x:Label>
-                                 <%--这是空行--%>
-
-                                <x:Panel ID="Panel42" ShowHeader="false" CssClass="formitem" ShowBorder="false"
-                                    Layout="Column" runat="server">
-                                    <Items>
-                                        <x:Label ID="Label57" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="备注：">
-                                        </x:Label>
-                                        <x:TextArea runat="server" MaxLength="200" MaxLengthMessage ="最多输入200个字符" Label ="备注" ShowLabel="true" CssStyle ="overflow-y:scroll" ID="T_Remark" Width="195px" Height="160px" TabIndex="41">
-                                        </x:TextArea>
-                                    </Items>
-                                </x:Panel>
-                            </Items>
                         </x:Panel>
 
                     </Items>

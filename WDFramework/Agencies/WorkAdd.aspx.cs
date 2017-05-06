@@ -137,7 +137,7 @@ namespace WDFramework
                 return;
             else
             {
-                AgencyName2.Text = "";
+                //AgencyName2.Text = "";
                 if (agen.FindByName(AgencyName2.Text.ToString()).IsPass == true)
                     Alert.ShowInTop("该机构已经存在，请重新填写！");
                 else

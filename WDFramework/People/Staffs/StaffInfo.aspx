@@ -205,7 +205,7 @@
             IsModal="True" Width="750px" Height="450px">
         </x:Window>
         <x:Window ID="Remark" Popup="false" EnableIFrame="true" runat="server"
-            EnableMaximize="false" EnableResize="false" Height="250px" Width="350px">
+            EnableMaximize="false" EnableResize="false" Height="450px" Width="350px">
         </x:Window>
         <x:Label ID="labResult" Visible="false" runat="server">
         </x:Label>

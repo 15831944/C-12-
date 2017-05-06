@@ -14,10 +14,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <x:Image ID="Image_show" runat="server" ImageUrl="../../images/blank.png" ImageHeight="250px" ImageWidth="195px" ShowEmptyLabel="true"></x:Image>
         <x:PageManager ID="PageManager1" AutoSizePanelID="SimpleForm1" runat="server" />
         <x:Form ID="SimpleForm1" ShowBorder="false" ShowHeader="false"
             AutoScroll="true" BodyPadding="10px" runat="server">
-           
             <Rows>
                 <x:FormRow>
                     <Items>
