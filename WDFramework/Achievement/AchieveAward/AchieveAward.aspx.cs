@@ -26,6 +26,8 @@ namespace WebApplication1
         BLHelper.BLLAchieveAward award = new BLHelper.BLLAchieveAward();
         BLCommon.PublicMethod pm = new BLCommon.PublicMethod();
         BLHelper.BLLUser user = new BLHelper.BLLUser();
+        BLHelper.BLLOperationLog bllOperate = new BLHelper.BLLOperationLog();
+
         private int page;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -123,7 +125,48 @@ namespace WebApplication1
 
             }
         }
-
+        //按achieveAwardID进行删除
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<int> selections = pm.GridCount(Grid_AchieveAward, CBoxSelect);
+                if (Convert.ToInt32(Session["SecrecyLevel"]) == 5)
+                {
+                    for (int i = 0; i < selections.Count(); i++)
+                    {
+                        award.Delete(Convert.ToInt32(Grid_AchieveAward.DataKeys[selections[i]][0]));
+                    }
+                    InitData();
+                    btnSelect_All.Text = "全选";
+                    Alert.ShowInTop("删除数据成功!");
+                }
+                else
+                {
+                    for (int i = 0; i < selections.Count(); i++)
+                    {
+                        award.UpdateIsPass(Convert.ToInt32(Grid_AchieveAward.DataKeys[selections[i]][0]), false);
+                        //向操作日志表中插入
+                        OperationLog operate = new OperationLog();
+                        operate.LoginName = user.FindByLoginName(Session["LoginName"].ToString()).UserName;
+                        operate.LoginIP = "";
+                        operate.OperationType = "删除";
+                        operate.OperationContent = "ProjectImportantNode";
+                        operate.OperationDataID = Convert.ToInt32(Grid_AchieveAward.DataKeys[selections[i]][0]);
+                        operate.OperationTime = System.DateTime.Now;
+                        operate.Remark = "";
+                        bllOperate.Insert(operate);
+                    }
+                    btnSelect_All.Text = "全选";
+                    Alert.ShowInTop("您的操作已提交，请等待审核！");
+                    InitData();
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
         //修改
         protected void btnReviseAchieveAward_Click(object sender, EventArgs e)
         {
@@ -230,7 +273,27 @@ namespace WebApplication1
                     string str = "您无对此行操作的权限！此行信息为" + Person + "录入，请与管理员联系!";
                     CBoxSelect.SetCheckedState(e.RowIndex, false);
                     Alert.ShowInTop(str);
+
                 }
+
+                int m;
+                //取整数（不是四舍五入，全舍）
+                int Pages = (int)Math.Floor(Convert.ToDouble(Grid_AchieveAward.RecordCount / this.Grid_AchieveAward.PageSize));
+
+                if (Grid_AchieveAward.PageIndex == Pages)
+                    m = (Grid_AchieveAward.RecordCount - this.Grid_AchieveAward.PageSize * Grid_AchieveAward.PageIndex);
+                else
+                    m = this.Grid_AchieveAward.PageSize;
+                bool isCheck = false;
+                for (int i = 0; i < m; i++)
+                {
+                    if (CBoxSelect.GetCheckedState(i))
+                        isCheck = true;
+                }
+                if (isCheck)
+                    btnDelete.Enabled = true;
+                else
+                    btnDelete.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -512,6 +575,44 @@ namespace WebApplication1
             {
                 tAchieveName.Enabled = true;
                 secrecyLevel.Enabled = false;
+            }
+        }
+        //全选按钮
+        protected void btnSelect_All_Click(object sender, EventArgs e)
+        {
+            Grid_AchieveAward.SelectAllRows();
+            int[] select = Grid_AchieveAward.SelectedRowIndexArray;
+            int m;
+            //取整数（不是四舍五入，全舍）
+            int Pages = (int)Math.Floor(Convert.ToDouble(Grid_AchieveAward.RecordCount / this.Grid_AchieveAward.PageSize));
+
+            if (Grid_AchieveAward.PageIndex == Pages)
+                m = (Grid_AchieveAward.RecordCount - this.Grid_AchieveAward.PageSize * Grid_AchieveAward.PageIndex);
+            else
+                m = this.Grid_AchieveAward.PageSize;
+            bool isCheck = false;
+            for (int i = 0; i < m; i++)
+            {
+                if (CBoxSelect.GetCheckedState(i) == false)
+                    isCheck = true;
+            }
+            if (isCheck)
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, true);
+                }
+                btnDelete.Enabled = true;
+                btnSelect_All.Text = "取消全选";
+            }
+            else
+            {
+                foreach (int item in select)
+                {
+                    CBoxSelect.SetCheckedState(item, false);
+                }
+                btnDelete.Enabled = false;
+                btnSelect_All.Text = "全选";
             }
         }
     }
