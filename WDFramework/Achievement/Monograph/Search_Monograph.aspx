@@ -152,9 +152,14 @@
                                 <a href="javascript:<%# GetEditUrl(Eval("MonographID")) %>">详情</a>
                             </ItemTemplate>
                         </x:TemplateField>
-                        <x:TemplateField HeaderText="封面" Width="60px">
+                       <%-- <x:TemplateField HeaderText="封面" Width="60px">
                             <ItemTemplate>
                                 <a href="javascript:<%# GetEditUrlf(Eval("MonographID")) %>">操作</a>
+                            </ItemTemplate>
+                        </x:TemplateField>--%>
+                         <x:TemplateField HeaderText="封面" Width="80px" ID="TemplateField5">
+                            <ItemTemplate>
+                                <a id="A1" href="javascript:<%# GetEditUrlf(Eval("MonographID")) %>">操作</a>
                             </ItemTemplate>
                         </x:TemplateField>
                         <x:TemplateField HeaderText="版权页" Width="60px">

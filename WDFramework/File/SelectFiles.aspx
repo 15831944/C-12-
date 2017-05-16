@@ -50,6 +50,8 @@
                                      </x:Button>
                                  <x:Button ID="ButtonUpdate" Text="编辑选中行"  Icon="Pencil"   runat="server" OnClick="ButtonUpdate_Click"   >
                                   </x:Button> 
+                                    <x:Button ID="btn_delete_all" runat="server" OnClick="btn_delete_all_Click" Text="清空数据表" EnablePostBack="true" ConfirmText ="确定删除？" Icon="Delete"></x:Button>
+                            </Items>
                                 </Items>
                             </x:Toolbar>
                         </Toolbars>

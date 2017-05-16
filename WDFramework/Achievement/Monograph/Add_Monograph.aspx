@@ -22,8 +22,8 @@
         <div>
             <x:PageManager ID="PageManager1" AutoSizePanelID="Panel2" runat="server" />
 
-            <x:Panel ID="Panel2" runat="server" Height="390px" Width="734px" ShowBorder="false" EnableCollapse="true"
-                Layout="HBox" BoxConfigAlign="Stretch" BoxConfigPosition="Start" BoxConfigPadding="5"
+            <x:Panel ID="Panel2" runat="server" Height="390px"  ShowBorder="false" EnableCollapse="true"
+                Layout="HBox" BoxConfigAlign="Stretch" BoxConfigPosition="Start" BoxConfigPadding="5" AutoScroll="true"
                 BoxConfigChildMargin="0 5 0 0" ShowHeader="false">
 
                 <Items>
@@ -165,7 +165,8 @@
                                     </x:TextBox>
                                 </Items>
                             </x:Panel>
-
+                              <x:Label ID="Label23" runat="server" Label="Label" Text=" " Height="1000px">
+                            </x:Label>
                         </Items>
                     </x:Panel>
                     <x:Panel ID="Panel6" Title="项目概要" BoxFlex="1" runat="server"

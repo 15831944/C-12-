@@ -1,0 +1,17 @@
+2017/5/12 9:28:19
+------------------------------------------------------------------------------
+
+错误消息:未能找到文件“F:\Team\newwenjian\Main\WDFramework\WDFramework\Uploads\635836515704966620_hehe.txt”。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileInfo.get_Length()
+   在 BLCommon.PublicMethod.DownloadFile(String aFilepath) 位置 c:\Users\susu\Desktop\空间\空间8\kygl\BLCommon\PublicMethod.cs:行号 31
+   在 WDFramework.File.Operate.DownLoad_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\File\Operate.aspx.cs:行号 58
+ 
+
+引发异常的方法:Void WinIOError(Int32, System.String)
+
+错误页面:/File/Operate.aspx?id=80
+------------------------------------------------------------------------------

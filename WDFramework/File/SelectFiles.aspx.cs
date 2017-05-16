@@ -422,5 +422,10 @@ namespace WebApplication1
                 btnSelect_All.Text = "全选";
             }
         }
+        //清空数据库中表数据
+        protected void btn_delete_all_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

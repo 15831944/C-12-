@@ -129,6 +129,7 @@
     <Content Include="Achievement\Award\Unit.aspx" />
     <Content Include="Achievement\Award\Update_Award.aspx" />
     <Content Include="Achievement\Monograph\Add_Monograph.aspx" />
+    <Content Include="Achievement\Monograph\Down_Photo.aspx" />
     <Content Include="Achievement\Monograph\OperateB.aspx" />
     <Content Include="Achievement\Monograph\OperateF.aspx" />
     <Content Include="Achievement\Monograph\Remark.aspx" />
@@ -2420,6 +2421,13 @@
     </Compile>
     <Compile Include="Achievement\Monograph\Add_Monograph.aspx.designer.cs">
       <DependentUpon>Add_Monograph.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Achievement\Monograph\Down_Photo.aspx.cs">
+      <DependentUpon>Down_Photo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Achievement\Monograph\Down_Photo.aspx.designer.cs">
+      <DependentUpon>Down_Photo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Achievement\Monograph\OperateB.aspx.cs">
       <DependentUpon>OperateB.aspx</DependentUpon>

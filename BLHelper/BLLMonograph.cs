@@ -157,6 +157,21 @@ namespace BLHelper
                 return "";
             }
         }
+        //根据ID查找照片
+        public int FindPhotoID(int id)
+        {
+
+            var Academic = dbcontext.MonographContext.Find(id);
+            if (Academic == null)
+                return 0;
+            else
+            {
+                if (Academic.MonographID == null)
+                    return 0;
+                else
+                    return Convert.ToInt32(Academic.MonographID);
+            }
+        }
         //根据ID查找封面附件ID
         public int FindFAttachmentID(int id)
         {

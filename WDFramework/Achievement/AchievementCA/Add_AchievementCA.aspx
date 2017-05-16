@@ -16,7 +16,7 @@
 <body oncontextmenu='return false'>
     <%--取消鼠标右键的点击--%>
     <form id="form1" runat="server">
-        <x:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
+        <x:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server"  />
         <%--  <x:Panel ID="Panel1" runat="server" BodyPadding="5px" EnableBackgroundColor="true" 
             ShowBorder="false" Layout="VBox" BoxConfigAlign="Stretch" BoxConfigPosition="Start" AutoScroll="true" 
             ShowHeader="false"    >

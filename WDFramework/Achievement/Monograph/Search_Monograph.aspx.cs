@@ -42,7 +42,7 @@ namespace WebApplication1
         //下载
         protected string GetEditUrlf(object ID)
         {
-            return DownLoadf.GetShowReference("OperateF.aspx?id=" + ID, "操作");
+            return DownLoadf.GetShowReference("Down_Photo.aspx?id=" + ID, "操作");
         }
         protected string GetEditUrlb(object ID)
         {
