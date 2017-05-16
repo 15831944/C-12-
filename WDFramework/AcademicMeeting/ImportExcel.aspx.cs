@@ -737,8 +737,8 @@ namespace WDFramework.AcademicMeeting
                                 if (AchieveName == "")
                                     patent.AchievementID = null;
                                 else
-                                    patent.AchievementID = BLLAchievement.FindByAchievementName(AchieveName);//AchievementID为零则不存在成果名称
-                                if (AchieveName != "" && patent.AchievementID == 0)
+                                    patent.AchievementID = AchieveName;//AchievementID为零则不存在成果名称
+                                if (AchieveName != "" && patent.AchievementID == null)
                                     return "第" + row + "行出错，所属成果名称不存在！";
                                 if (dr["授权时间"].ToString() == "")
                                     patent.AccreditTime = null;

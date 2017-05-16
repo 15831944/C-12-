@@ -159,12 +159,12 @@
                         </x:TemplateField>--%>
                          <x:TemplateField HeaderText="封面" Width="80px" ID="TemplateField5">
                             <ItemTemplate>
-                                <a id="A1" href="javascript:<%# GetEditUrlf(Eval("MonographID")) %>">操作</a>
+                                <a id="A1" href="javascript:<%# GetEditUrlf(Eval("FAttachmentID")) %>">操作</a>
                             </ItemTemplate>
                         </x:TemplateField>
                         <x:TemplateField HeaderText="版权页" Width="60px">
                             <ItemTemplate>
-                                <a href="javascript:<%# GetEditUrlb(Eval("MonographID")) %>">操作</a>
+                                <a href="javascript:<%# GetEditUrlb(Eval("BAttachmentID")) %>">操作</a>
                             </ItemTemplate>
                         </x:TemplateField>
                     </Columns>

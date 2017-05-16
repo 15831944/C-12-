@@ -47,7 +47,7 @@
                                     </x:Label>
                                     <%--<x:TextBox ID="tAchievement" MaxLength="100" MaxLengthMessage="最多可输入100个字符" ShowLabel="true" Label="所属成果名称" Width="200px" CssClass="marginr" runat="server" TabIndex="2" AutoPostBack="true" OnTextChanged="tAchievement_TextChanged">
                                     </x:TextBox>--%>
-                                    <x:DropDownList ID="tAchievement" ShowLabel="true" Label="所属成果名称" Required="true" Width="195px" AutoPostBack="true" runat="server" TabIndex="4">
+                                    <x:DropDownList ID="tAchievement" ShowLabel="true" Label="所属成果名称" Required="true" Width="195px" AutoPostBack="true" runat="server" TabIndex="4" EnableEdit="true" ForceSelection="false">
                                     </x:DropDownList>
                                 </Items>
                             </x:Panel>

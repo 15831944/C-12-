@@ -21,10 +21,10 @@ namespace WDFramework.Achievement.Monograph
         public void InitData()
         {
             int MonographID = Convert.ToInt32(Request.QueryString["id"].ToString());
-            int photoId = BLLMonograph.FindFAttachmentID(MonographID);
-            if (photoId != 0)
+            //int photoId = BLLMonograph.FindFAttachmentID(MonographID);
+            if (MonographID != 0)
             {
-                string srcPaths = BLLAttachments.FindPath(photoId);
+                string srcPaths = BLLAttachments.FindPath(MonographID);
                 if (srcPaths != "")
                     Image_show.ImageUrl = srcPaths;
                 else

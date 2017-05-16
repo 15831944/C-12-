@@ -40,7 +40,9 @@ namespace Common.Entities
         //[Required ]
         [StringLength(10) ]
         public string PatentForm { get; set; }//专利类型
-        public int? AchievementID { get; set; }//成果ID
+
+        [StringLength(50)]
+        public string AchievementID { get; set; }//成果ID
         //[Required]
         public int? SecrecyLevel { get; set; }//涉密级别
         //[Required]

@@ -123,13 +123,14 @@
                         <x:BoundField DataField="PatentCondition" HeaderText="专利情况" />
                         <x:BoundField DataField="PatentAuthorization" HeaderText="专利授权号" />
                         <x:BoundField DataField="PatentCertificate" HeaderText="专利证书号" />
+                        <x:BoundField DataField="AchievementID" HeaderText="所属成果" />
                         <%-- <x:BoundField DataField="ApplyNum" HeaderText="申请号" /> --%>
 
-                        <x:TemplateField Width="200px" HeaderText="所属成果">
+                        <%--<x:TemplateField Width="200px" HeaderText="所属成果">
                             <ItemTemplate>
                                 <asp:Label ID="Label5" runat="server" Text='<%# FindName(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "AchievementID"))) %>'></asp:Label>
                             </ItemTemplate>
-                        </x:TemplateField>
+                        </x:TemplateField>--%>
                         <x:TemplateField Width="80px" HeaderText="保密级别">
                             <ItemTemplate>
                                 <asp:Label ID="Label1" runat="server" Text='<%# ChangeSecrecyLevel(Convert.ToInt32(DataBinder.Eval(Container.DataItem, "SecrecyLevel"))) %>'></asp:Label>

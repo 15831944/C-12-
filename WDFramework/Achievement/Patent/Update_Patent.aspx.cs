@@ -247,7 +247,7 @@ namespace WebApplication1.Achievement.Patent
 
             if (tAchievement.Text.Trim() != "")
             {
-                pat.AchievementID = ach.FindByAchievementName(tAchievement.Text.Trim());
+                pat.AchievementID = tAchievement.Text.Trim();
             }
             else
             {

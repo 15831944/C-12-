@@ -40,7 +40,6 @@ namespace WebApplication1
                 InitdPatentForm();
                 InitDropListAgency();
                 InitPatentCondition();
-                InitAchievement();
                 InitSecrecyLevell();
             }
         }
@@ -54,6 +53,7 @@ namespace WebApplication1
                 {
                     tAchievement.Items.Add(list[i].AchievementName.ToString(), list[i].AchievementID.ToString());
                 }
+                tAchievement.SelectedValue = list[0].AchievementID.ToString();
             }
             catch (Exception ex)
             {
@@ -155,7 +155,7 @@ namespace WebApplication1
             //pa.Member = PatentMember.Text.Trim();
             if (tAchievement.Text.Trim() != "")
             {
-                pa.AchievementID = ach.FindByAchievementName(tAchievement.Text.Trim());
+                pa.AchievementID = tAchievement.Text.Trim();
             }
             else
             {
@@ -305,7 +305,14 @@ namespace WebApplication1
                     {
                         pa.Attachment_Application = null;
                     }
-                    pa.AchievementID = int.Parse(tAchievement.SelectedValue);
+                    if(tAchievement.SelectedItem!=null)
+                    {
+                        pa.AchievementID = tAchievement.SelectedItem.Text;
+                    }
+                    else
+                    {
+                        pa.AchievementID = tAchievement.Text;
+                    }
                     patent.Insert(pa);
                     PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference() + Alert.GetShowInTopReference("保存成功！"));
                 }
