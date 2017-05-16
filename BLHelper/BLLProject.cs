@@ -321,8 +321,16 @@ namespace BLHelper
         public List<Project> FindYP(int Time, string projectnature, int secrecylevel)
         {
             bool Ispass = true;
-            List<Project> res = dbcontext.ProjectContext.Where(u => u.StartTime.Value.Year == Time
+            List<Project> res = new List<Project>();
+            if(projectnature==null)
+            {
+                res = dbcontext.ProjectContext.Where(u => u.StartTime.Value.Year == Time && u.SecrecyLevel <= secrecylevel && u.IsPass == Ispass).ToList();
+            }
+            else
+            {
+                res = dbcontext.ProjectContext.Where(u => u.StartTime.Value.Year == Time
                 && u.ProjectNature == projectnature && u.SecrecyLevel <= secrecylevel && u.IsPass == Ispass).ToList();
+            }
             res.OrderBy(u => u.SourceUnit);
             return res;          
         }
@@ -348,8 +356,17 @@ namespace BLHelper
         public List<Project> FindACU(int Time, string projectnature, int secrecylevel)
         {
             bool Ispass = true;
-            List<Project> res = dbcontext.ProjectContext.Where(u => u.StartTime.Value.Year == Time
+            List<Project> res = new List<Project>();
+            if(projectnature==null)
+            {
+                res = dbcontext.ProjectContext.Where(u => u.StartTime.Value.Year == Time
+                && u.SecrecyLevel <= secrecylevel && u.IsPass == Ispass).ToList();
+            }
+            else
+            {
+                res = dbcontext.ProjectContext.Where(u => u.StartTime.Value.Year == Time
                 && u.ProjectNature == projectnature && u.SecrecyLevel <= secrecylevel && u.IsPass == Ispass).ToList();
+            }
             res.OrderBy(u => u.AcceptUnit);
             return res;
         }
@@ -361,8 +378,17 @@ namespace BLHelper
         public List<Project> FindSU(string sourceunit, string projectnature, int secrecylevel)
         {
             bool Ispass = true;
-            List<Project> res = dbcontext.ProjectContext.Where(u => u.SourceUnit.Contains ( sourceunit)
+            List<Project> res = new List<Project>();
+            if(projectnature==null)
+            {
+                res = dbcontext.ProjectContext.Where(u => u.SourceUnit.Contains(sourceunit)
+                && u.SecrecyLevel <= secrecylevel && u.IsPass == Ispass).ToList();
+            }
+            else
+            {
+                res = dbcontext.ProjectContext.Where(u => u.SourceUnit.Contains(sourceunit)
                 && u.SecrecyLevel <= secrecylevel && u.ProjectNature == projectnature && u.IsPass == Ispass).ToList();
+            }
             res.OrderBy(u => u.StartTime.Value.Year);
             return res;
         }
@@ -375,8 +401,17 @@ namespace BLHelper
         public List<Project> FindPT(string ProjectLevel, string projectnature, int secrecylevel)
         {
             bool Ispass = true;
-            List<Project> res = dbcontext.ProjectContext.Where(u => u.ProjectLevel  == ProjectLevel
+            List<Project> res = new List<Project>();
+            if(projectnature==null)
+            {
+                res = dbcontext.ProjectContext.Where(u => u.ProjectLevel == ProjectLevel
+                && u.SecrecyLevel <= secrecylevel && u.IsPass == Ispass).ToList();
+            }
+            else
+            {
+                res = dbcontext.ProjectContext.Where(u => u.ProjectLevel == ProjectLevel
                 && u.ProjectNature == projectnature && u.SecrecyLevel <= secrecylevel && u.IsPass == Ispass).ToList();
+            }
             res.OrderBy(u => u.StartTime.Value.Year);
             return res;       
         }
@@ -388,8 +423,17 @@ namespace BLHelper
         public List<Project> FindTime(string acceptunit, string projectnature, int secrecylevel)
         {
             bool Ispass = true;
-            List<Project> res = dbcontext.ProjectContext.Where(u => u.AcceptUnit.Contains (acceptunit)
+            List<Project> res = new List<Project>();
+            if (projectnature == null)
+            {
+                res = dbcontext.ProjectContext.Where(u => u.AcceptUnit.Contains(acceptunit)
+                && u.SecrecyLevel <= secrecylevel && u.IsPass == Ispass).ToList();
+            }
+            else
+            {
+                res = dbcontext.ProjectContext.Where(u => u.AcceptUnit.Contains(acceptunit)
                 && u.ProjectNature == projectnature && u.SecrecyLevel <= secrecylevel && u.IsPass == Ispass).ToList();
+            }
             res.OrderBy(u => u.StartTime.Value.Year);
             return res;      
         }
@@ -401,16 +445,35 @@ namespace BLHelper
         public List<Project> FindPH(string acceptunit, string projectnature, int secrecylevel)
         {
             bool Ispass = true;
-            List<Project> res = dbcontext.ProjectContext.Where(u => u.AcceptUnit.Contains(acceptunit)
-                && u.ProjectNature == projectnature && u.SecrecyLevel <= secrecylevel && u.IsPass == Ispass).ToList();
+             List<Project> res = new List<Project>();
+            if (projectnature == null)
+            {
+               res = dbcontext.ProjectContext.Where(u => u.AcceptUnit.Contains(acceptunit)
+               && u.SecrecyLevel <= secrecylevel && u.IsPass == Ispass).ToList();
+            }
+            else
+            {
+               res = dbcontext.ProjectContext.Where(u => u.AcceptUnit.Contains(acceptunit)
+               && u.ProjectNature == projectnature && u.SecrecyLevel <= secrecylevel && u.IsPass == Ispass).ToList();
+            }
+           
             res.OrderBy(u => u.ProjectHeads);
             return res;
         }
         //按保密等级查询
         public List<Project> FindTA(int SecrecyLevel,string projectnature,int secrecylevel)
         {
-            List<Project> res = dbcontext.ProjectContext.Where(u => u.SecrecyLevel == SecrecyLevel && u.ProjectNature == projectnature &&
-                u.SecrecyLevel <= secrecylevel && u.IsPass == true).ToList();
+            List<Project> res = new List<Project>();
+            if (projectnature == null)
+            {
+                res = dbcontext.ProjectContext.Where(u => u.SecrecyLevel == SecrecyLevel &&
+               u.SecrecyLevel <= secrecylevel && u.IsPass == true).ToList();
+            }
+            else
+            {
+                res = dbcontext.ProjectContext.Where(u => u.SecrecyLevel == SecrecyLevel && u.ProjectNature == projectnature &&
+               u.SecrecyLevel <= secrecylevel && u.IsPass == true).ToList();
+            }
             res.OrderBy(u => u.ProjectHeads);
             return res;
         }
