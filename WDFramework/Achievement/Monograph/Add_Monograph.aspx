@@ -19,12 +19,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <x:PageManager ID="PageManager1" AutoSizePanelID="Panel2" runat="server" />
+            <x:PageManager ID="PageManager1" runat="server" />
 
-            <x:Panel ID="Panel2" runat="server" Height="390px"  ShowBorder="false" EnableCollapse="true"
-                Layout="HBox" BoxConfigAlign="Stretch" BoxConfigPosition="Start" BoxConfigPadding="5" AutoScroll="true"
-                BoxConfigChildMargin="0 5 0 0" ShowHeader="false">
+            <x:Panel ID="Panel2" runat="server" Height="390px" ShowBorder="false" EnableCollapse="true"
+                Layout="HBox" BoxConfigAlign="Stretch" BoxConfigPosition="Start" BoxConfigPadding="5" 
+                BoxConfigChildMargin="0 5 0 0" Width="770px" ShowHeader="false">
 
                 <Items>
 
@@ -64,12 +63,12 @@
                                 <Items>
                                     <x:Label ID="Label7" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="著作类型：">
                                     </x:Label>
-                                     <x:DropDownList ID="ddlMonographType" EnableEdit="false" runat="server" Width="195px" TabIndex="3" AutoPostBack="true"></x:DropDownList>
-                                  
+                                    <x:DropDownList ID="ddlMonographType" EnableEdit="false" runat="server" Width="195px" TabIndex="3" AutoPostBack="true"></x:DropDownList>
+
                                 </Items>
                             </x:Panel>
 
-                             <x:Label ID="Label12" runat="server" Label="Label" Text=" " Height="20px">
+                            <x:Label ID="Label12" runat="server" Label="Label" Text=" " Height="20px">
                             </x:Label>
                             <%--这是空行--%>
 
@@ -85,23 +84,23 @@
 
                             <x:Label ID="Label8" runat="server" Label="Label" Text=" " Height="20px">
                             </x:Label>
-                            
+
                             <%--这是空行--%>
 
 
-                                <x:Panel ID="Panel9" ShowHeader="false" CssClass="formitem" ShowBorder="false"
-                                    Layout="Column" runat="server">
-                                    <Items>
-                                        <x:Label ID="AwardUnit" Width="110px" runat="server" CssClass="marginr" ShowLabel="false" Text="所属机构：">
-                                        </x:Label>
-                                        <x:DropDownList Label="所属机构" AutoPostBack="false" EnableEdit="false" Required="true" EnableSimulateTree="true"
-                                            runat="server" ID="DropDownListAgency" Width="195px" TabIndex="15">
-                                        </x:DropDownList>
-                                    </Items>
-                                </x:Panel>
+                            <x:Panel ID="Panel9" ShowHeader="false" CssClass="formitem" ShowBorder="false"
+                                Layout="Column" runat="server">
+                                <Items>
+                                    <x:Label ID="AwardUnit" Width="110px" runat="server" CssClass="marginr" ShowLabel="false" Text="所属机构：">
+                                    </x:Label>
+                                    <x:DropDownList Label="所属机构" AutoPostBack="false" EnableEdit="false" Required="true" EnableSimulateTree="true"
+                                        runat="server" ID="DropDownListAgency" Width="195px" TabIndex="15">
+                                    </x:DropDownList>
+                                </Items>
+                            </x:Panel>
 
-                                <x:Label ID="Label27" runat="server" Label="Label" Text=" " Height="20px">
-                                </x:Label>
+                            <x:Label ID="Label27" runat="server" Label="Label" Text=" " Height="20px">
+                            </x:Label>
                             <%--这是空行--%>
 
                             <x:Panel ID="Panel1" ShowHeader="false" CssClass="formitem" ShowBorder="false"
@@ -165,7 +164,7 @@
                                     </x:TextBox>
                                 </Items>
                             </x:Panel>
-                              <x:Label ID="Label23" runat="server" Label="Label" Text=" " Height="1000px">
+                            <x:Label ID="Label23" runat="server" Label="Label" Text=" " Height="1000px">
                             </x:Label>
                         </Items>
                     </x:Panel>
@@ -230,7 +229,7 @@
                                 <Items>
                                     <x:Label ID="Label19" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="著作人：">
                                     </x:Label>
-                                    <x:TextArea runat="server" MaxLength="200" MaxLengthMessage="最多可输入200个字符" ShowLabel="true" EmptyText="两个或两个以上请用逗号隔开" Required="true" CssStyle ="overflow-y:scroll" Label="著作人" ID="MoPeople" Width="195px" Height="80px" AutoGrowHeight="false"  AutoGrowHeightMax="80" TabIndex="14">
+                                    <x:TextArea runat="server" MaxLength="200" MaxLengthMessage="最多可输入200个字符" ShowLabel="true" EmptyText="两个或两个以上请用逗号隔开" Required="true" CssStyle="overflow-y:scroll" Label="著作人" ID="MoPeople" Width="195px" Height="80px" AutoGrowHeight="false" AutoGrowHeightMax="80" TabIndex="14">
                                     </x:TextArea>
                                 </Items>
                             </x:Panel>
@@ -243,58 +242,67 @@
                                 <Items>
                                     <x:Label ID="Remark" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="备注：">
                                     </x:Label>
-                                    <x:TextArea runat="server" MaxLength="200" ShowLabel="true" Label="备注" ID="tRemark" Width="195px" Height="80px" AutoGrowHeight="false"  CssStyle ="overflow-y:scroll" AutoGrowHeightMax="80" TabIndex="15">
+                                    <x:TextArea runat="server" MaxLength="200" ShowLabel="true" Label="备注" ID="tRemark" Width="195px" Height="80px" AutoGrowHeight="false" CssStyle="overflow-y:scroll" AutoGrowHeightMax="80" TabIndex="15">
                                     </x:TextArea>
                                 </Items>
                             </x:Panel>
-                             <x:Label ID="Label17" runat="server" Label="Label" Text=" " Height="20px">
-                                </x:Label>
-                             <%--这是空行--%>
-                                <x:Panel ID="Panel26" ShowHeader="false" CssClass="formitem" ShowBorder="false"
-                                    Layout="Column" runat="server">
-                                    <Items>
-                                        <x:Label ID="Label26" Width="110px" runat="server" CssClass="marginr" ShowLabel="false" Text="第一作者身份：">
-                                        </x:Label>
-                                        <x:DropDownList ID="dPaperIdentity" ShowLabel="true" Label="第一作者身份：" Required="true" EnableEdit="false" Width="195px" AutoPostBack="false" runat="server" TabIndex="19" EnableSimulateTree="true">
-                                        </x:DropDownList>
-                                    </Items>
-                                </x:Panel>
-                                <x:Label ID="Label2" runat="server" Label="Label" Text=" " Height="20px">
-                                </x:Label>
+                            <x:Label ID="Label17" runat="server" Label="Label" Text=" " Height="20px">
+                            </x:Label>
+                            <%--这是空行--%>
+                            <x:Panel ID="Panel26" ShowHeader="false" CssClass="formitem" ShowBorder="false"
+                                Layout="Column" runat="server">
+                                <Items>
+                                    <x:Label ID="Label26" Width="110px" runat="server" CssClass="marginr" ShowLabel="false" Text="第一作者身份：">
+                                    </x:Label>
+                                    <x:DropDownList ID="dPaperIdentity" ShowLabel="true" Label="第一作者身份：" Required="true" EnableEdit="false" Width="195px" AutoPostBack="false" runat="server" TabIndex="19" EnableSimulateTree="true">
+                                    </x:DropDownList>
+                                </Items>
+                            </x:Panel>
+                            <x:Label ID="Label2" runat="server" Label="Label" Text=" " Height="20px">
+                            </x:Label>
                         </Items>
                     </x:Panel>
 
                 </Items>
             </x:Panel>
-            <asp:Panel ID="Panelasp" ShowHeader="false" ShowBorder="false"
-                Layout="Column" runat="server" Height="45px" BackColor="White">
-                <asp:Label ID="Labeld" runat="server" Label="Label" CssClass="marginr" Text=" " Width="35px">
-                </asp:Label>
-                <asp:Label ID="Label20" runat="server" Label="Label" CssClass="marginr" Text="封面： " Width="95px">
-                </asp:Label>
-                <input type="file" id="fileuploadF" style="width: 200px" runat="server" />
-                <asp:Label ID="Label5" runat="server" Label="Label" CssClass="marginr" Text=" " Width="75px">
-                </asp:Label>
-                <asp:Label ID="Label4" runat="server" Label="Label" CssClass="marginr" Text="版权页： " Width="100px">
-                </asp:Label>
-                <input type="file" id="fileuploadB" style="width: 200px" runat="server" />
-            </asp:Panel>
+             <x:Panel ID="Panel14" ShowHeader="false" CssClass="formitem" ShowBorder="false" Width="770px"
+                        Layout="Column" runat="server">
+                        <Items>
+                            <x:Label ID="Label71" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="封面图片："></x:Label>
+                            <x:Image ID="Image_showF" runat="server" ImageUrl="../../images/blank.png" ImageHeight="500px" ImageWidth="300px" ShowEmptyLabel="true"></x:Image>
+                            <x:Label ID="Labe172" Width="80px" runat="server" CssClass="marginr" ShowLabel="false" Text="">
+                            </x:Label>
+                            <x:FileUpload ID="fileuploadF" Width="150" runat="server" TabIndex="27" ShowRedStar="false" ShowEmptyLabel="true" ButtonText="上传封面" ButtonOnly="true" Required="false" ButtonIcon="ImageAdd" AutoPostBack="true" OnFileSelected="fileuploadF_FileSelected">
+                            </x:FileUpload>
+
+                        </Items>
+                    </x:Panel>
+                    <x:Panel ID="Panel18" ShowHeader="false" CssClass="formitem" ShowBorder="false" Width="770px"
+                        Layout="Column" runat="server">
+                        <Items>
+                            <x:Label ID="Label24" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="版权页图片："></x:Label>
+                            <x:Image ID="Image_showB" runat="server" ImageUrl="../../images/blank.png" ImageHeight="500px" ImageWidth="300px" ShowEmptyLabel="true"></x:Image>
+                            <x:Label ID="Label25" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="">
+                            </x:Label>
+                            <x:FileUpload ID="fileuploadB" Width="195" runat="server" TabIndex="27" ShowRedStar="false" ShowEmptyLabel="true" ButtonText="上传版权页" ButtonOnly="true" Required="false" ButtonIcon="ImageAdd" AutoPostBack="true" OnFileSelected="fileuploadB_FileSelected">
+                            </x:FileUpload>
+
+                        </Items>
+                    </x:Panel>
             <x:Panel ID="Panel4" ShowHeader="false" CssClass="formitem" ShowBorder="false" Layout="Column" runat="server">
                 <Items>
                     <x:Toolbar ID="Toolbar1" runat="server" ColumnWidth="100%">
                         <Items>
                             <x:Label ID="Label15" Width="310px" runat="server" ShowLabel="true" Text=" ">
                             </x:Label>
-                            <x:Button ID="Save" runat="server" CssClass="marginr" Type="Submit" Text="保存" Size="Medium" Icon="Add" ValidateForms="Panel2" OnClick="Save_Click" ConfirmText="确定保存？">
+                            <x:Button ID="Save"  runat="server" CssClass="marginr" Type="Submit" Text="保存" Icon="Add" Size="Medium" ValidateForms="Panel2" ConfirmText="确定保存？" OnClick="Save_Click">
                             </x:Button>
-                            <x:Button ID="DeleteAll" runat="server" CssClass="marginr" Text="重置" Icon="Delete" Size="Medium" ConfirmText="确定重置？" OnClick="DeleteAll_Click">
+                            <x:Button ID="DeleteAll"  runat="server" CssClass="marginr" Icon="Delete"  Text="重置" Size="Medium" ConfirmText="确定重置？" OnClick="DeleteAll_Click">
                             </x:Button>
                         </Items>
                     </x:Toolbar>
                 </Items>
             </x:Panel>
-
-        </div>
     </form>
 </body>
 </html>

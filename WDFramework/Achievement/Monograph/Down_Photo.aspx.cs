@@ -20,15 +20,19 @@ namespace WDFramework.Achievement.Monograph
         }
         public void InitData()
         {
-            int MonographID = Convert.ToInt32(Request.QueryString["id"].ToString());
+           
             //int photoId = BLLMonograph.FindFAttachmentID(MonographID);
-            if (MonographID != 0)
+            if (Request.QueryString["id"].ToString() != "")
             {
-                string srcPaths = BLLAttachments.FindPath(MonographID);
-                if (srcPaths != "")
-                    Image_show.ImageUrl = srcPaths;
-                else
-                    Image_show.ImageUrl="../../images/blank.png";
+                int MonographID = Convert.ToInt32(Request.QueryString["id"].ToString());
+                if (MonographID != 0)
+                {
+                    string srcPaths = BLLAttachments.FindPath(MonographID);
+                    if (srcPaths != "")
+                        Image_show.ImageUrl = srcPaths;
+                    else
+                        Image_show.ImageUrl = "../../images/blank.png";
+                }
             }
             else
                 Image_show.ImageUrl = "../../images/blank.png";
@@ -38,18 +42,24 @@ namespace WDFramework.Achievement.Monograph
         {
             try
             {
-                int MonographID = Convert.ToInt32(Request.QueryString["id"].ToString());
-                int photoId = BLLMonograph.FindFAttachmentID(MonographID);
-                if (photoId != 0)
+                if (Request.QueryString["id"].ToString() != "")
                 {
-                    string srcPaths = BLLAttachments.FindPath(photoId);
-                    if (srcPaths != "")
-                        publicMethods.DownloadPhoto(srcPaths);
+                    int MonographID = Convert.ToInt32(Request.QueryString["id"].ToString());
+                    if (MonographID != 0)
+                    {
+                        string srcPaths = BLLAttachments.FindPath(MonographID);
+                        if (srcPaths != "")
+                            publicMethods.DownloadPhoto(srcPaths);
+                        else
+                            Alert.ShowInTop("无附件可下载!");
+                    }
                     else
                         Alert.ShowInTop("无附件可下载!");
                 }
                 else
-                    Alert.ShowInTop("无附件可下载!");
+                {
+                    Alert.ShowInTop("数据错误!");
+                }
             }
             catch (Exception ex)
             {
@@ -63,17 +73,24 @@ namespace WDFramework.Achievement.Monograph
         {
             try
             {
-                int MonographID = Convert.ToInt32(Request.QueryString["id"].ToString());
-                int photoId = BLLMonograph.FindFAttachmentID(MonographID);
-                string srcPath = BLLAttachments.FindPath(photoId);
-                if (photoId == 0 || srcPath == "")
+                if (Request.QueryString["id"].ToString() != "")
                 {
-                    Alert.Show("该人员信息不存在人员照片");
+
+                    int MonographID = Convert.ToInt32(Request.QueryString["id"].ToString());
+                    string srcPath = BLLAttachments.FindPath(MonographID);
+                    if (MonographID == 0 || srcPath == "")
+                    {
+                        Alert.Show("数据错误!");
+                    }
+                    else
+                    {
+                        publicMethods.DeleteFile(MonographID, srcPath);
+                        PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideReference() + Alert.GetShowInTopReference("删除成功！"));
+                    }
                 }
                 else
                 {
-                    publicMethods.DeleteFile(photoId, srcPath);
-                    PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideReference() + Alert.GetShowInTopReference("删除成功！"));
+                    Alert.Show("数据错误!");
                 }
             }
             catch (Exception ex)

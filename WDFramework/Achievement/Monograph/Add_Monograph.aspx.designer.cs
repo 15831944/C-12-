@@ -598,31 +598,40 @@ namespace WebApplication1 {
         protected global::FineUI.Label Label2;
         
         /// <summary>
-        /// Panelasp 控件。
+        /// Panel14 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panelasp;
+        protected global::FineUI.Panel Panel14;
         
         /// <summary>
-        /// Labeld 控件。
+        /// Label71 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Labeld;
+        protected global::FineUI.Label Label71;
         
         /// <summary>
-        /// Label20 控件。
+        /// Image_showF 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label20;
+        protected global::FineUI.Image Image_showF;
+        
+        /// <summary>
+        /// Labe172 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Labe172;
         
         /// <summary>
         /// fileuploadF 控件。
@@ -631,25 +640,43 @@ namespace WebApplication1 {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile fileuploadF;
+        protected global::FineUI.FileUpload fileuploadF;
         
         /// <summary>
-        /// Label5 控件。
+        /// Panel18 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::FineUI.Panel Panel18;
         
         /// <summary>
-        /// Label4 控件。
+        /// Label24 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::FineUI.Label Label24;
+        
+        /// <summary>
+        /// Image_showB 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Image Image_showB;
+        
+        /// <summary>
+        /// Label25 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label25;
         
         /// <summary>
         /// fileuploadB 控件。
@@ -658,7 +685,7 @@ namespace WebApplication1 {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile fileuploadB;
+        protected global::FineUI.FileUpload fileuploadB;
         
         /// <summary>
         /// Panel4 控件。

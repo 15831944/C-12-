@@ -190,7 +190,7 @@ namespace BLCommon
             BLHelper.BLLAttachment BLLattachment = new BLHelper.BLLAttachment();
             if (file.HasFile)
             {
-                if (file.PostedFile.ContentLength < 5120000)
+                if (file.PostedFile.ContentLength < 50*1024*1024)
                 {
                     string fileName = file.ShortFileName;
                     string fileExtension = Path.GetExtension(fileName);
@@ -205,11 +205,11 @@ namespace BLCommon
                     fileName = fileName.Replace(":", "_").Replace(" ", "_").Replace("\\", "_").Replace("/", "_");
                     string FileName = DateTime.Now.Ticks.ToString() + "_" + fileName;
 
-                    if (!BLLattachment.IsAttachmentName(fileName))
+                    if (!BLLattachment.IsAttachmentName(FileName))
                     {
                         Common.Entities.Attachment attachment = new Common.Entities.Attachment();
                         //向附件表中插入数据
-                        attachment.FileName = fileName;
+                        attachment.FileName = FileName;
                         attachment.FilePath = filepath + FileName;
                         file.SaveAs(System.Web.HttpContext.Current.Server.MapPath(filepath) + FileName);
                         BLLattachment.Insert(attachment);
@@ -331,7 +331,7 @@ namespace BLCommon
                     //插入附件表
                     Common.Entities.Attachment at = new Common.Entities.Attachment();
                     at.FileName = System.IO.Path.GetFileName(postedFile.FileName);
-                    at.FilePath = HttpContext.Current.Request.MapPath(filepath) + Filename;
+                    at.FilePath = filepath + Filename;
                     blat.Insert(at);
                     fp.Attachid = at.AttachmentID;
                     postedFile.SaveAs(phyPath + Filename);

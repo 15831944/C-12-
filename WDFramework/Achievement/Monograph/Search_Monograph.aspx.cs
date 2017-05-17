@@ -46,7 +46,7 @@ namespace WebApplication1
         }
         protected string GetEditUrlb(object ID)
         {
-            return DownLoadb.GetShowReference("OperateB.aspx?id=" + ID, "操作");
+            return DownLoadf.GetShowReference("Down_Photo.aspx?id=" + ID, "操作");
         }
         //将机构ID转化为机构名
         protected string FindAgencyName(int ag)

@@ -179,52 +179,15 @@ namespace WebApplication1
                 {
                     InsertValue();
                     mon.IsPass = true;
-                    int Battachid = pm.UpLoadFile(fileuploadB).Attachid;
-                    string path = at.FindPath(Battachid);
-                    switch (Battachid)
+                    if (Session["FAttachmentID"] != null)
                     {
-                        case -1:
-                            Alert.ShowInTop("版权页文件类型不符，请重新选择！");
-                            return;
-                        case 0:
-                            Alert.ShowInTop("版权页文件名已经存在！");
-                            return;
-                        case -2:
-                            Alert.ShowInTop("版权页文件不能大于150M");
-                            return;
+                        mon.FAttachmentID = Convert.ToInt32(Session["FAttachmentID"].ToString());
                     }
-                    if (Battachid != -3)
+                    if (Session["BAttachmentID"] != null)
                     {
-                        mon.BAttachmentID = Battachid;
+                        mon.BAttachmentID = Convert.ToInt32(Session["BAttachmentID"].ToString());
                     }
-                    else
-                    {
-                        mon.BAttachmentID = null;
-                    }
-                    int Fattachid = pm.UpLoadFile(fileuploadF).Attachid;
-                    switch (Fattachid)
-                    { 
-                        case -1:
-                            Alert.ShowInTop("封面文件类型不符，请重新选择！");
-                            pm.DeleteFile(Battachid, path);
-                            return;
-                        case 0:
-                            Alert.ShowInTop("封面文件名已经存在！");
-                            pm.DeleteFile(Battachid, path);
-                            return;
-                        case -2:
-                            Alert.ShowInTop("封面文件不能大于150M");
-                            pm.DeleteFile(Battachid, path);
-                            return;
-                    }
-                    if (Fattachid != -3)
-                    {
-                        mon.FAttachmentID = Fattachid;
-                    }
-                    else
-                    {
-                        mon.FAttachmentID = null;
-                    }
+                    
                     mo.Insert(mon);
                     PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference() + Alert.GetShowInTopReference("保存成功"));
                 }
@@ -232,51 +195,13 @@ namespace WebApplication1
                 {
                     InsertValue();
                     mon.IsPass = false;
-                    int Battachid = pm.UpLoadFile(fileuploadB).Attachid;
-                    string path = at.FindPath(Battachid);
-                    switch (Battachid)
+                    if (Session["FAttachmentID"] != null)
                     {
-                        case -1:
-                            Alert.ShowInTop("版权页文件类型不符，请重新选择！");
-                            return;
-                        case 0:
-                            Alert.ShowInTop("版权页文件名已经存在！");
-                            return;
-                        case -2:
-                            Alert.ShowInTop("版权页文件不能大于150M");
-                            return;
+                        mon.FAttachmentID = Convert.ToInt32(Session["FAttachmentID"].ToString());
                     }
-                    if (Battachid != -3)
+                    if (Session["BAttachmentID"] != null)
                     {
-                        mon.BAttachmentID = Battachid;
-                    }
-                    else
-                    {
-                        mon.BAttachmentID = null;
-                    }
-                    int Fattachid = pm.UpLoadFile(fileuploadF).Attachid;
-                    switch (Fattachid)
-                    {
-                        case -1:
-                            Alert.ShowInTop("封面文件类型不符，请重新选择！");
-                            pm.DeleteFile(Battachid, path);
-                            return;
-                        case 0:
-                            Alert.ShowInTop("封面文件名已经存在！");
-                            pm.DeleteFile(Battachid, path);
-                            return;
-                        case -2:
-                            Alert.ShowInTop("封面文件不能大于150M");
-                            pm.DeleteFile(Battachid, path);
-                            return;
-                    }
-                    if (Fattachid != -3)
-                    {
-                        mon.FAttachmentID = Fattachid;
-                    }
-                    else
-                    {
-                        mon.FAttachmentID = null;
+                        mon.BAttachmentID = Convert.ToInt32(Session["BAttachmentID"].ToString());
                     }
                     mo.Insert(mon);
                     log.LoginName = username;
@@ -348,6 +273,59 @@ namespace WebApplication1
                 pm.SaveError(ex, this.Request);
             }
         }
-        
+
+        protected void fileuploadF_FileSelected(object sender, EventArgs e)
+        {
+            int Fattachid = pm.UpLoadPhoto(fileuploadF);
+            string path = at.FindPath(Fattachid);
+            switch (Fattachid)
+            {
+                case -1:
+                    Alert.ShowInTop("封面文件类型不符，请重新选择！");
+                    return;
+                case 0:
+                    Alert.ShowInTop("封面文件名已经存在！");
+                    return;
+                case -2:
+                    Alert.ShowInTop("封面文件不能大于150M");
+                    return;
+            }
+            if (Fattachid != -3)
+            {
+                Session["FAttachmentID"] = Fattachid;
+            }
+            else
+            {
+                Session["FAttachmentID"] = null;
+            }
+            Image_showF.ImageUrl = path;
+        }
+
+        protected void fileuploadB_FileSelected(object sender, EventArgs e)
+        {
+            int Battachid = pm.UpLoadPhoto(fileuploadB);
+            string path = at.FindPath(Battachid);
+            switch (Battachid)
+            {
+                case -1:
+                    Alert.ShowInTop("版权页文件类型不符，请重新选择！");
+                    return;
+                case 0:
+                    Alert.ShowInTop("版权页文件名已经存在！");
+                    return;
+                case -2:
+                    Alert.ShowInTop("版权页文件不能大于150M");
+                    return;
+            }
+            if (Battachid != -3)
+            {
+                Session["BAttachmentID"] = Battachid;
+            }
+            else
+            {
+                Session["BAttachmentID"] = null;
+            }
+            Image_showB.ImageUrl = path;
+        } 
     }
 }

@@ -172,7 +172,7 @@
             </Items>
         </x:Panel>
         <x:Window ID="Window_addMonograph" Popup="false" EnableIFrame="true" runat="server"
-            EnableMaximize="false" EnableMinimize="false" EnableResize="false" Height="495px" Width="800px" Title="添加">
+            EnableMaximize="false" EnableMinimize="false" EnableResize="false" Height="600px" Width="803px" Title="添加">
         </x:Window>
 
         <x:Window ID="Window_UpdateMonograph" Popup="false" EnableIFrame="true" runat="server"
@@ -185,7 +185,7 @@
             EnableMaximize="false" EnableMinimize="false" EnableResize="false" Height="250px" Width="350px">
         </x:Window>
         <x:Window ID="DownLoadf" Popup="false" EnableIFrame="true" runat="server"
-            EnableMaximize="false" EnableMinimize="false" EnableResize="false" Height="250px" Width="350px" Title="相关文件操作">
+            EnableMaximize="false" EnableMinimize="false" EnableResize="false" Height="700px" Width="350px" Title="相关文件操作">
         </x:Window>
         <x:Window ID="DownLoadb" Popup="false" EnableIFrame="true" runat="server"
             EnableMaximize="false" EnableMinimize="false" EnableResize="false" Height="250px" Width="350px" Title="相关文件操作">

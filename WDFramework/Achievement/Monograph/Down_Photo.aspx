@@ -17,19 +17,19 @@
 <body>
     <form id="form1" runat="server" >
       
-        <x:Image ID="Image_show" runat="server" ImageUrl="../../images/blank.png" ImageHeight="150px" ImageWidth="150px" ShowEmptyLabel="true"></x:Image>
+        <x:Image ID="Image_show" runat="server" ImageUrl="../../images/blank.png" ImageHeight="550px" ImageWidth="350px" ShowEmptyLabel="true"></x:Image>
         <x:PageManager ID="PageManager1" AutoSizePanelID="SimpleForm1" runat="server" />
         <x:Form ID="SimpleForm1" ShowBorder="false" ShowHeader="false"
             AutoScroll="true" BodyPadding="10px" runat="server">
             <Rows>
                 <x:FormRow>
                     <Items>
-                       <x:LinkButton ID="DownFile" Label="相关封面"  runat="server" EnableAjax="false"  Text="下载"  OnClick="DownLoad_Click"></x:LinkButton>
+                       <x:LinkButton ID="DownFile" Label="相关图片"  runat="server" EnableAjax="false"  Text="下载"  OnClick="DownLoad_Click"></x:LinkButton>
                     </Items>
                 </x:FormRow>
                 <x:FormRow>
                     <Items>              
-                           <x:LinkButton ID="Delete"  Label="相关封面" ConfirmText="确定删除？"  runat="server"  Text="删除" OnClick="Delete_Click"></x:LinkButton>
+                           <x:LinkButton ID="Delete"  Label="相关图片" ConfirmText="确定删除？"  runat="server"  Text="删除" OnClick="Delete_Click"></x:LinkButton>
                     </Items>
                 </x:FormRow>
             </Rows>
