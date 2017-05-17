@@ -801,6 +801,7 @@ namespace WDFramework.Project
             try
             {
                 List<BasicCode> lists = bllBasicCode.FindALLName("项目性质");
+                ProjectNature.Items.Add("全部", null);
                 for (int i = 0; i < lists.Count(); i++)
                 {
                     ProjectNature.Items.Add(lists[i].CategoryContent.ToString(), lists[i].CategoryContent.ToString());
