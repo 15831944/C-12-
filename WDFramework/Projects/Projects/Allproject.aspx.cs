@@ -59,7 +59,7 @@ namespace WDFramework.Project
                 DropDownListYearandLevel.Enabled = false;
                 SourceUnit.Enabled = false;
                 AN.Enabled = false;
-                //ProjectNature.Enabled = false;
+                ProjectNature.Enabled = false;
                 ProjectNatureBind();
                 btnAdd_two.OnClientClick = WindowAddDocument.GetShowReference("Add_Document.aspx", "新增项目文档");
                 btnUpdate_two.OnClientClick = WindowUpdateDocument.GetShowReference("Update_Document.aspx", "编辑项目文档");
@@ -130,7 +130,7 @@ namespace WDFramework.Project
             try
             {
                 ViewState["page"] = 2;
-                List<Common.Entities.Project> ProjectList = bllProject.FindYP(Convert.ToInt32(DropDownListYearandLevel.SelectedItem.Text), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                List<Common.Entities.Project> ProjectList = bllProject.FindYP(Convert.ToInt32(DropDownListYearandLevel.SelectedItem.Text), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                 GridProjectAll.RecordCount = ProjectList.Count();
                 this.GridProjectAll.DataSource = ProjectList.Skip(GridProjectAll.PageIndex * GridProjectAll.PageSize).Take(GridProjectAll.PageSize).ToList();
                 this.GridProjectAll.DataBind();
@@ -147,7 +147,7 @@ namespace WDFramework.Project
             try
             {
                 ViewState["page"] = 3;
-                List<Common.Entities.Project> ProjectList = bllProject.FindTP(Convert.ToInt32(DropDownListYearandLevel.SelectedItem.Text), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                List<Common.Entities.Project> ProjectList = bllProject.FindTP(Convert.ToInt32(DropDownListYearandLevel.SelectedItem.Text), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                 GridProjectAll.RecordCount = ProjectList.Count();
                 this.GridProjectAll.DataSource = ProjectList.Skip(GridProjectAll.PageIndex * GridProjectAll.PageSize).Take(GridProjectAll.PageSize).ToList();
                 this.GridProjectAll.DataBind();
@@ -165,7 +165,7 @@ namespace WDFramework.Project
             try
             {
                 ViewState["page"] = 4;
-                List<Common.Entities.Project> ProjectList = bllProject.FindACU(Convert.ToInt32(DropDownListYearandLevel.SelectedItem.Text), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                List<Common.Entities.Project> ProjectList = bllProject.FindACU(Convert.ToInt32(DropDownListYearandLevel.SelectedItem.Text), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                 GridProjectAll.RecordCount = ProjectList.Count();
                 this.GridProjectAll.DataSource = ProjectList.Skip(GridProjectAll.PageIndex * GridProjectAll.PageSize).Take(GridProjectAll.PageSize).ToList();
                 this.GridProjectAll.DataBind();
@@ -182,7 +182,7 @@ namespace WDFramework.Project
             try
             {
                 ViewState["page"] = 13;
-                List<Common.Entities.Project> ProjectList = bllProject.FindTA(exchangesecrecylevel(DropDownListYearandLevel.SelectedValue), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                List<Common.Entities.Project> ProjectList = bllProject.FindTA(exchangesecrecylevel(DropDownListYearandLevel.SelectedValue), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                 GridProjectAll.RecordCount = ProjectList.Count();
                 this.GridProjectAll.DataSource = ProjectList.Skip(GridProjectAll.PageIndex * GridProjectAll.PageSize).Take(GridProjectAll.PageSize).ToList();
                 this.GridProjectAll.DataBind();
@@ -215,7 +215,7 @@ namespace WDFramework.Project
             try
             {
                 ViewState["page"] = 5;
-                List<Common.Entities.Project> ProjectList = bllProject.FindSU(SourceUnit.Text.Trim(), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                List<Common.Entities.Project> ProjectList = bllProject.FindSU(SourceUnit.Text.Trim(), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                 GridProjectAll.RecordCount = ProjectList.Count();
                 this.GridProjectAll.DataSource = ProjectList.Skip(GridProjectAll.PageIndex * GridProjectAll.PageSize).Take(GridProjectAll.PageSize).ToList();
                 this.GridProjectAll.DataBind();
@@ -232,7 +232,7 @@ namespace WDFramework.Project
             try
             {
                 ViewState["page"] = 6;
-                List<Common.Entities.Project> ProjectList = bllProject.FindPT(DropDownListYearandLevel.SelectedItem.Text, ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                List<Common.Entities.Project> ProjectList = bllProject.FindPT(DropDownListYearandLevel.SelectedItem.Text, ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                 GridProjectAll.RecordCount = ProjectList.Count();
                 this.GridProjectAll.DataSource = ProjectList.Skip(GridProjectAll.PageIndex * GridProjectAll.PageSize).Take(GridProjectAll.PageSize).ToList();
                 this.GridProjectAll.DataBind();
@@ -249,7 +249,7 @@ namespace WDFramework.Project
             try
             {
                 ViewState["page"] = 7;
-                List<Common.Entities.Project> ProjectList = bllProject.FindTime(SourceUnit.Text.Trim(), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                List<Common.Entities.Project> ProjectList = bllProject.FindTime(SourceUnit.Text.Trim(), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                 GridProjectAll.RecordCount = ProjectList.Count();
                 this.GridProjectAll.DataSource = ProjectList.Skip(GridProjectAll.PageIndex * GridProjectAll.PageSize).Take(GridProjectAll.PageSize).ToList();
                 this.GridProjectAll.DataBind();
@@ -266,7 +266,7 @@ namespace WDFramework.Project
             try
             {
                 ViewState["page"] = 8;
-                List<Common.Entities.Project> ProjectList = bllProject.FindPH(SourceUnit.Text.Trim(), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                List<Common.Entities.Project> ProjectList = bllProject.FindPH(SourceUnit.Text.Trim(), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                 GridProjectAll.RecordCount = ProjectList.Count();
                 this.GridProjectAll.DataSource = ProjectList.Skip(GridProjectAll.PageIndex * GridProjectAll.PageSize).Take(GridProjectAll.PageSize).ToList();
                 this.GridProjectAll.DataBind();
@@ -708,7 +708,7 @@ namespace WDFramework.Project
             DropDownListYearandLevel.Enabled = false;
             SourceUnit.Enabled = false;
             AN.Enabled = false;
-            //ProjectNature.Enabled = false;
+            ProjectNature.Enabled = false;
         }
         //修改按钮
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -801,7 +801,7 @@ namespace WDFramework.Project
             try
             {
                 List<BasicCode> lists = bllBasicCode.FindALLName("项目性质");
-                ProjectNature.Items.Add("全部", null);
+                ProjectNature.Items.Add("全部", "全部");
                 for (int i = 0; i < lists.Count(); i++)
                 {
                     ProjectNature.Items.Add(lists[i].CategoryContent.ToString(), lists[i].CategoryContent.ToString());
@@ -837,36 +837,36 @@ namespace WDFramework.Project
                         this.GridProjectAll.DataBind();
                         break;
                     case 2:
-                        List<Common.Entities.Project> findYP = bllProject.FindYP(Convert.ToInt32(DropDownListYearandLevel.SelectedItem.Text), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                        List<Common.Entities.Project> findYP = bllProject.FindYP(Convert.ToInt32(DropDownListYearandLevel.SelectedItem.Text), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                         this.GridProjectAll.DataSource = findYP;
                         this.GridProjectAll.DataBind();
 
                         break;
                     case 3:
-                        List<Common.Entities.Project> findTP = bllProject.FindTP(Convert.ToInt32(DropDownListYearandLevel.SelectedItem.Text), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                        List<Common.Entities.Project> findTP = bllProject.FindTP(Convert.ToInt32(DropDownListYearandLevel.SelectedItem.Text), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                         this.GridProjectAll.DataSource = findTP;
                         this.GridProjectAll.DataBind();
 
                         break;
                     case 4:
-                        List<Common.Entities.Project> findACU = bllProject.FindACU(Convert.ToInt32(DropDownListYearandLevel.SelectedItem.Text), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                        List<Common.Entities.Project> findACU = bllProject.FindACU(Convert.ToInt32(DropDownListYearandLevel.SelectedItem.Text), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                         this.GridProjectAll.DataSource = findACU;
                         this.GridProjectAll.DataBind();
                         break;
                     case 5:
-                        this.GridProjectAll.DataSource = bllProject.FindSU(SourceUnit.Text.Trim(), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                        this.GridProjectAll.DataSource = bllProject.FindSU(SourceUnit.Text.Trim(), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                         this.GridProjectAll.DataBind();
                         break;
                     case 6:
-                        this.GridProjectAll.DataSource = bllProject.FindPT(DropDownListYearandLevel.SelectedItem.Text, ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                        this.GridProjectAll.DataSource = bllProject.FindPT(DropDownListYearandLevel.SelectedItem.Text, ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                         this.GridProjectAll.DataBind();
                         break;
                     case 7:
-                        this.GridProjectAll.DataSource = bllProject.FindTime(SourceUnit.Text.Trim(), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                        this.GridProjectAll.DataSource = bllProject.FindTime(SourceUnit.Text.Trim(), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                         this.GridProjectAll.DataBind();
                         break;
                     case 8:
-                        this.GridProjectAll.DataSource = bllProject.FindPH(SourceUnit.Text.Trim(), ProjectNature.SelectedItem.Text, Convert.ToInt32(Session["SecrecyLevel"]));
+                        this.GridProjectAll.DataSource = bllProject.FindPH(SourceUnit.Text.Trim(), ProjectNature.SelectedText, Convert.ToInt32(Session["SecrecyLevel"]));
                         this.GridProjectAll.DataBind();
                         break;
                     case 9:
@@ -993,7 +993,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = false;
                     AN.Enabled = false;
-                    //ProjectNature.Enabled = false;
+                    ProjectNature.Enabled = false;
                     break;
                 case "项目名称":
                     DropDownListYearandLevel.Items.Clear();
@@ -1001,7 +1001,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = true;
                     AN.Enabled = false;
-                    //ProjectNature.Enabled = false;
+                    ProjectNature.Enabled = true;
                     break;
                 case "项目状态":
                     DropDownListYearandLevel.Items.Clear();
@@ -1011,7 +1011,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.EnableEdit = false;
                     SourceUnit.Enabled = false;
                     AN.Enabled = false;
-                    //ProjectNature.Enabled = false;
+                    ProjectNature.Enabled = false;
                     List<BasicCode> lists = bllBasicCode.FindALLName("项目状态");
                     for (int i = 0; i < lists.Count(); i++)
                     {
@@ -1029,7 +1029,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.EnableEdit = false;
                     DropDownListYearandLevel.Enabled = true;
                     SourceUnit.Enabled = false;
-                    //ProjectNature.Enabled = true;
+                    ProjectNature.Enabled = true;
                     AN.Enabled = true;
                     AN.Items.Clear();
                     AN.Items.Add("项目来源", "项目来源");
@@ -1041,7 +1041,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.Items.Clear();
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = true;
-                    //ProjectNature.Enabled = true;
+                    ProjectNature.Enabled = true;
                     AN.Enabled = true;
                     AN.Items.Clear();
                     AN.Items.Add("年份", "年份");
@@ -1053,7 +1053,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.EnableEdit = false;
                     DropDownListYearandLevel.Enabled = true;
                     SourceUnit.Enabled = false;
-                    //ProjectNature.Enabled = true;
+                    ProjectNature.Enabled = true;
                     AN.Enabled = true;
                     AN.Items.Clear();
                     AN.Items.Add("年份", "年份");
@@ -1069,7 +1069,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.Items.Clear();
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = true;
-                    //ProjectNature.Enabled = true;
+                    ProjectNature.Enabled = true;
                     AN.Enabled = true;
                     AN.Items.Clear();
                     AN.Items.Add("年份", "年份");
@@ -1080,14 +1080,14 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.Items.Clear();
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = true;
-                    //ProjectNature.Enabled = false;
+                    ProjectNature.Enabled = true;
                     break;
                 case "项目性质":
                     SourceUnit.Text = "";
                     DropDownListYearandLevel.Items.Clear();
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = true;
-                    //ProjectNature.Enabled = false;
+                    ProjectNature.Enabled = true;
                     break;
                 case "项目成员":
                     DropDownListYearandLevel.Items.Clear();
@@ -1095,7 +1095,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.Enabled = false;
                     SourceUnit.Enabled = true;
                     AN.Enabled = false;
-                    //ProjectNature.Enabled = false;
+                    ProjectNature.Enabled = true;
                     break;
                 case "保密等级":
                     DropDownListYearandLevel.Items.Clear();
@@ -1105,7 +1105,7 @@ namespace WDFramework.Project
                     DropDownListYearandLevel.EnableEdit = false;
                     SourceUnit.Enabled = false;
                     AN.Enabled = false;
-                    //ProjectNature.Enabled = false;
+                    ProjectNature.Enabled = true;
                     DropDownListYearandLevel.Items.Add("四级", "四级");
                     DropDownListYearandLevel.Items.Add("三级", "三级");
                     DropDownListYearandLevel.Items.Add("二级", "二级");
