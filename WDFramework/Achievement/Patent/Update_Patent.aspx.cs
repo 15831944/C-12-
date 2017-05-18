@@ -150,6 +150,7 @@ namespace WebApplication1.Achievement.Patent
                 if (pa.AchievementID != null)
                 {
                     tAchievement.Text = ach.FindAchieveName(Convert.ToInt32(pa.AchievementID));
+                    tAchievement.Text = pa.AchievementID;
                 }
                 else
                 {
@@ -525,27 +526,27 @@ namespace WebApplication1.Achievement.Patent
                 pm.SaveError(ex, this.Request);
             }
         }
-        //成果名称验证
-        protected void tAchievement_TextChanged(object sender, EventArgs e)
-        {
-            if (tAchievement.Text.Trim() != "")
-            {
-                if (ach.IsExitAchieveName(tAchievement.Text.Trim()) == null)
-                {
-                    Alert.Show("该成果名不存在！");
-                    tAchievement.Text = "";
-                    return;
-                }
-                else
-                {
-                    if (ach.IsExitAchieveName(tAchievement.Text.Trim()).IsPass == false)
-                    {
-                        Alert.Show("该成果名称正在审核中！");
-                        tAchievement.Text = "";
-                        return;
-                    }
-                }
-            }
-        }
+        ////成果名称验证
+        //protected void tAchievement_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (tAchievement.Text.Trim() != "")
+        //    {
+        //        if (ach.IsExitAchieveName(tAchievement.Text.Trim()) == null)
+        //        {
+        //            Alert.Show("该成果名不存在！");
+        //            tAchievement.Text = "";
+        //            return;
+        //        }
+        //        else
+        //        {
+        //            if (ach.IsExitAchieveName(tAchievement.Text.Trim()).IsPass == false)
+        //            {
+        //                Alert.Show("该成果名称正在审核中！");
+        //                tAchievement.Text = "";
+        //                return;
+        //            }
+        //        }
+        //    }
+        //}
     }
 }

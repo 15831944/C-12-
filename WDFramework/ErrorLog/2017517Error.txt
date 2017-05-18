@@ -50,3 +50,111 @@
 
 错误页面:/Achievement/Monograph/Down_Photo.aspx?id=1292
 ------------------------------------------------------------------------------
+2017/5/17 16:06:43
+------------------------------------------------------------------------------
+
+错误消息:值对于 Int32 太大或太小。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Convert.ToInt32(String value)
+   在 WebApplication1.Achievement.Patent.Update_Patent.InitData() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 152
+ 
+
+引发异常的方法:Int32 ParseInt32(System.String, System.Globalization.NumberStyles, System.Globalization.NumberFormatInfo)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/17 16:06:53
+------------------------------------------------------------------------------
+
+错误消息:值对于 Int32 太大或太小。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Convert.ToInt32(String value)
+   在 WebApplication1.Achievement.Patent.Update_Patent.InitData() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 152
+ 
+
+引发异常的方法:Int32 ParseInt32(System.String, System.Globalization.NumberStyles, System.Globalization.NumberFormatInfo)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/17 16:17:50
+------------------------------------------------------------------------------
+
+错误消息:值对于 Int32 太大或太小。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Convert.ToInt32(String value)
+   在 WebApplication1.Achievement.Patent.Update_Patent.InitData() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 152
+ 
+
+引发异常的方法:Int32 ParseInt32(System.String, System.Globalization.NumberStyles, System.Globalization.NumberFormatInfo)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/17 16:17:57
+------------------------------------------------------------------------------
+
+错误消息:值对于 Int32 太大或太小。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Convert.ToInt32(String value)
+   在 WebApplication1.Achievement.Patent.Update_Patent.InitData() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 152
+ 
+
+引发异常的方法:Int32 ParseInt32(System.String, System.Globalization.NumberStyles, System.Globalization.NumberFormatInfo)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/17 16:40:09
+------------------------------------------------------------------------------
+
+错误消息:值对于 Int32 太大或太小。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Convert.ToInt32(String value)
+   在 WebApplication1.Achievement.Patent.Update_Patent.InitData() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 152
+ 
+
+引发异常的方法:Int32 ParseInt32(System.String, System.Globalization.NumberStyles, System.Globalization.NumberFormatInfo)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/17 19:55:36
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.Achievement.Patent.Update_Patent.Save_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 401
+ 
+
+引发异常的方法:Void Save_Click(System.Object, System.EventArgs)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/17 19:55:41
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.Achievement.Patent.Update_Patent.Save_Click(Object sender, EventArgs e) 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 401
+ 
+
+引发异常的方法:Void Save_Click(System.Object, System.EventArgs)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------

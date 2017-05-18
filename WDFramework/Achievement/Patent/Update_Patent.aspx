@@ -40,15 +40,17 @@
 
                             <x:Label ID="Label11" runat="server" Label="Label" Text=" " Height="20px">
                             </x:Label>
-                            <%--这是空行--%>
+                             <%--这是空行--%>
 
                             <x:Panel ID="Panel14" ShowHeader="false" CssClass="formitem" ShowBorder="false"
                                 Layout="Column" runat="server">
                                 <Items>
                                     <x:Label ID="AchievementID" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="所属成果名称：">
                                     </x:Label>
-                                    <x:TextBox ID="tAchievement" MaxLength="100" MaxLengthMessage="最多可输入100个字符" ShowLabel="true" Label="所属成果名称" Width="200px" CssClass="marginr" runat="server" TabIndex="2" AutoPostBack="true" OnTextChanged="tAchievement_TextChanged">
+                                    <x:TextBox ID="tAchievement" MaxLength="100" MaxLengthMessage="最多可输入100个字符" ShowLabel="true" Label="所属成果名称" Width="200px" CssClass="marginr" runat="server" TabIndex="2" AutoPostBack="true"><%-- OnTextChanged="tAchievement_TextChanged"--%>>
                                     </x:TextBox>
+                                   <%-- <x:DropDownList ID="tAchievement" ShowLabel="true" Label="所属成果名称" Required="true" Width="195px" AutoPostBack="true" runat="server" TabIndex="4" EnableEdit="true" >
+                                    </x:DropDownList>--%>
                                 </Items>
                             </x:Panel>
                             <x:Label ID="Label2" runat="server" Label="Label" Text=" " Height="20px">
