@@ -1062,7 +1062,7 @@ namespace WDFramework.People.Staffs
         {
             try
             {
-                List<int> selections = bllUser.search(Session["LoginName"].ToString());
+                List<int> selections = bllUser.search();
                 //if (selections.Count != 0)
                 //{
                 //    for (int i = 0; i < selections.Count(); i++)

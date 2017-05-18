@@ -30,6 +30,24 @@ namespace BLHelper
     {
 
         DataBaseContext dbcontext = new DataBaseContext();
+
+        public List<int> search()
+        {
+            try
+            {
+                var result = (from o in dbcontext.UserInfoContext
+                              select o.UserInfoID).ToList();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw null;
+            }
+        }
+
+    
+
+
         //插入用户
         public bool Insert(UserInfo aUser)
         {

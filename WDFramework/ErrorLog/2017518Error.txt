@@ -1,0 +1,147 @@
+2017/5/18 11:00:58
+------------------------------------------------------------------------------
+
+错误消息:输入字符串的格式不正确。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Convert.ToInt32(String value)
+   在 WebApplication1.Achievement.Patent.Update_Patent.InitData() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 152
+ 
+
+引发异常的方法:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/18 11:01:05
+------------------------------------------------------------------------------
+
+错误消息:输入字符串的格式不正确。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Convert.ToInt32(String value)
+   在 WebApplication1.Achievement.Patent.Update_Patent.InitData() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 152
+ 
+
+引发异常的方法:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/18 11:03:06
+------------------------------------------------------------------------------
+
+错误消息:输入字符串的格式不正确。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Convert.ToInt32(String value)
+   在 WebApplication1.Achievement.Patent.Update_Patent.InitData() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 152
+ 
+
+引发异常的方法:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/18 11:04:30
+------------------------------------------------------------------------------
+
+错误消息:输入字符串的格式不正确。
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Convert.ToInt32(String value)
+   在 WebApplication1.Achievement.Patent.Update_Patent.InitData() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 152
+ 
+
+引发异常的方法:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/18 16:10:28
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.Achievement.Patent.Update_Patent.InitAchievement() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 129
+ 
+
+引发异常的方法:Void InitAchievement()
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/18 16:11:51
+------------------------------------------------------------------------------
+
+错误消息:未将对象引用设置到对象的实例。
+
+导致错误的应用程序或对象的名称:WDFramework
+
+堆栈内容:   在 WebApplication1.Achievement.Patent.Update_Patent.InitAchievement() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 129
+ 
+
+引发异常的方法:Void InitAchievement()
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/18 16:22:03
+------------------------------------------------------------------------------
+
+错误消息:索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 WebApplication1.Achievement.Patent.Update_Patent.InitAchievement() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 140
+ 
+
+引发异常的方法:Void ThrowArgumentOutOfRangeException(System.ExceptionArgument, System.ExceptionResource)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/18 16:22:41
+------------------------------------------------------------------------------
+
+错误消息:索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 WebApplication1.Achievement.Patent.Update_Patent.InitAchievement() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 140
+ 
+
+引发异常的方法:Void ThrowArgumentOutOfRangeException(System.ExceptionArgument, System.ExceptionResource)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------
+2017/5/18 16:23:20
+------------------------------------------------------------------------------
+
+错误消息:索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+
+导致错误的应用程序或对象的名称:mscorlib
+
+堆栈内容:   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 WebApplication1.Achievement.Patent.Update_Patent.InitAchievement() 位置 c:\Users\susu\Desktop\空间\空间8\kygl\WDFramework\Achievement\Patent\Update_Patent.aspx.cs:行号 140
+ 
+
+引发异常的方法:Void ThrowArgumentOutOfRangeException(System.ExceptionArgument, System.ExceptionResource)
+
+错误页面:/Achievement/Patent/Update_Patent.aspx
+------------------------------------------------------------------------------

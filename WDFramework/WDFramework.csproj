@@ -3779,6 +3779,7 @@
     </Content>
     <None Include="Properties\PublishProfiles\2015-2-11.pubxml" />
     <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\PublishProfiles\PUBLIC.pubxml" />
     <None Include="Properties\PublishProfiles\WDF1.pubxml" />
     <None Include="Properties\PublishProfiles\WDFramework.pubxml" />
     <Content Include="WDFrameworkDataSet.xsc">

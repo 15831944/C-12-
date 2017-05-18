@@ -32,17 +32,20 @@ namespace WebApplication1.Achievement.Patent
         Common.Entities.Patent pat = new Common.Entities.Patent();
         BLHelper.BLLAttachment at = new BLHelper.BLLAttachment();
         BLHelper.BLLBasicCode ba = new BLHelper.BLLBasicCode();
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 tApplicationTime.MaxDate = DateTime.Now;
                 tAccreditTime.MaxDate = DateTime.Now;
+                InitAchievement();
                 InitdPatentForm();
                 InitDropListAgency();
                 InitPatentCondition();
                 InitSecrecyLevel();
                 InitData();
+                
             }
         }
         //初始化等级下拉框
@@ -106,8 +109,46 @@ namespace WebApplication1.Achievement.Patent
             }
 
         }
-
-
+        //初始化所属成果名称
+        public void InitAchievement()
+        {
+            try
+            {
+                BLHelper.BLLAchievement achevement = new BLHelper.BLLAchievement();
+                List<Common.Entities.Achievement> list = achevement.FindAllAchievementName();
+                int id = 0;
+                List<Common.Entities.Patent> listA = patent.FindAll(Convert.ToInt32(Session["PatentID"]));
+                Common.Entities.Patent pa = listA.FirstOrDefault();
+                for (int i = 0; i < list.Count(); i++)
+                {
+                    tAchievement.Items.Add(list[i].AchievementName.ToString(), list[i].AchievementID.ToString());
+                    if (pa.AchievementID != null)
+                    {
+                        if (achevement.FindByAchievementName(pa.AchievementID) != 0)
+                            id = -1;
+                    }
+                }
+                
+                if (pa.AchievementID != null&&id==0)
+                {
+                    //tAchievement.Text = ach.FindAchieveName(Convert.ToInt32(pa.AchievementID));
+                    tAchievement.Items.Add(pa.AchievementID, pa.AchievementID);
+                    tAchievement.SelectedValue = pa.AchievementID;
+                }
+                else if (pa.AchievementID != null && id != 0)
+                {
+                    tAchievement.SelectedValue = achevement.FindByAchievementNamelist(pa.AchievementID)[0].ToString();
+                }
+                else
+                {
+                    tAchievement.SelectedValue = list[0].AchievementID.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                pm.SaveError(ex, this.Request);
+            }
+        }
         //初始化
         public void InitData()
         {
@@ -147,15 +188,8 @@ namespace WebApplication1.Achievement.Patent
                 //}
                 drSecrecyLevel.SelectedIndex = Convert.ToInt32(pa.SecrecyLevel - 1);
                 tState.Text = pa.State;
-                if (pa.AchievementID != null)
-                {
-                    tAchievement.Text = ach.FindAchieveName(Convert.ToInt32(pa.AchievementID));
-                    tAchievement.Text = pa.AchievementID;
-                }
-                else
-                {
-                    tAchievement.Text = "";
-                }
+
+                
                 PatentPeople.Text = pa.PatentPeople;
                 //PatentMember.Text = pa.Member;
                 if (pa.PatentDepartment != null)
