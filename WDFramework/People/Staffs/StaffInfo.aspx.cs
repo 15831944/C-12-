@@ -1060,7 +1060,310 @@ namespace WDFramework.People.Staffs
         //清空数据库中表数据
         protected void btn_delete_all_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                List<int> selections = bllUser.search(Session["LoginName"].ToString());
+                //if (selections.Count != 0)
+                //{
+                //    for (int i = 0; i < selections.Count(); i++)
+                //    {
+                //        string AdminUserName = bllUser.Find(selections[i], true).UserName;
+                //        if (AdminUserName == "超级管理员")
+                //        {
+                //            Alert.ShowInTop("您没有对“超级管理员”操作的权限，请重新选择！");
+                //            selections.Remove(i);
+                //        }
+                //        if (Session["LoginName"].ToString() == bllUser.Find(selections[i], true).LoginName)
+                //        {
+                //            Alert.ShowInTop("您没有删除本人的权限！");
+                //            selections.Remove(i);
+                //        }
+                //    }
+                //}
+                if (Convert.ToInt32(Session["SecrecyLevel"]) == 5)
+                {
+                    for (int i = 0; i < selections.Count(); i++)
+                    {
+                        string AdminUserName = bllUser.Find(selections[i], true).UserName;
+                        if (AdminUserName == "超级管理员")
+                        {
+                            Alert.ShowInTop("您没有对“超级管理员”操作的权限，请重新选择！");
+                            continue;
+
+                        }
+                        if (Session["LoginName"].ToString() == bllUser.Find(selections[i], true).LoginName)
+                        {
+                            Alert.ShowInTop("您没有删除本人的权限！");
+                            continue;
+                        }
+                        //删除人员相关学生信息
+                        List<int> Studentlist = bllStudent.FindStudentIDList(selections[i]);
+                        for (int j = 0; j < Studentlist.Count(); j++)
+                        {
+                            bllStudent.Delete(Convert.ToInt32(Studentlist[j]));
+                        }
+                        //删除人员相关社会兼职信息
+                        List<int> SocialPartTime = bllSocialPartTime.FindSocialPartTimeIDList(selections[i]);
+                        for (int j = 0; j < SocialPartTime.Count(); j++)
+                        {
+                            bllSocialPartTime.Delete(SocialPartTime[j]);
+                        }
+                        //删除人员相关主讲课程信息
+                        List<int> SpeakClass = bllSpeakClass.FindSpeakClassIDList(selections[i]);
+                        for (int j = 0; j < SpeakClass.Count(); j++)
+                        {
+                            bllSpeakClass.Delete(SpeakClass[j]);
+                        }
+                        //删除人员相关工作经历信息
+                        List<int> Work = bllWork.FindWorkExperienceIDList(selections[i]);
+                        for (int j = 0; j < Work.Count(); j++)
+                        {
+                            bllWork.Delete(Work[j]);
+                        }
+                        //删除人员相关照片信息
+                        int PhotoID = bllPhotos.FindPhotoID(selections[i]);
+                        if (PhotoID != 0)
+                        {
+                            int AttachmentID = bllPhotos.FindAttachmentID(PhotoID);
+                            string path = bllAttachment.FindPath(AttachmentID);
+                            publicmethod.DeleteFile(AttachmentID, path);
+                            bllPhotos.Delete(PhotoID);
+                        }
+                        //删除人员相关学历信息
+                        List<int> Education = bllEducation.FindEducationIDList(selections[i]);
+                        for (int j = 0; j < Education.Count(); j++)
+                        {
+                            bllEducation.Delete(Education[j]);
+                        }
+                        //删除人员相关教育经历信息
+                        List<int> EduE = bllEduE.FindEduExperienceIDList(selections[i]);
+                        for (int j = 0; j < EduE.Count(); j++)
+                        {
+                            bllEduE.Delete(EduE[j]);
+                        }
+                        //删除人员相关荣誉称号信息
+                        List<int> Honor = bllHonor.FindHonorIDList(selections[i]);
+                        for (int j = 0; j < Honor.Count(); j++)
+                        {
+                            bllHonor.Delete(Honor[j]);
+                        }
+                        //删除人员派遣学习
+                        BLHelper.BLLDFurtherStudy bllDFutherStudy = new BLLDFurtherStudy();
+                        List<int> DFurtherStudy = bllDFutherStudy.FindByUserInfoID(selections[i]);
+                        for (int j = 0; j < DFurtherStudy.Count(); j++)
+                        {
+                            bllDFutherStudy.Delete(DFurtherStudy[j]);
+                        }
+                        //删除学术会议参加人员
+                        BLHelper.BLLAttendMeeting bllAttendMeeting = new BLLAttendMeeting();
+                        List<int?> AttendMeetinglist = bllAttendMeeting.FindAcademicMeetingID(selections[i]);
+                        for (int j = 0; j < AttendMeetinglist.Count(); j++)
+                        {
+                            bllAttendMeeting.Delete(Convert.ToInt32(AttendMeetinglist[j]));
+                        }
+                        //删除借阅记录
+                        BLHelper.BLLWorkPlanSummary bllWorkPlan = new BLLWorkPlanSummary();
+                        List<int> WorkPlanlist = bllWorkPlan.FindWorkPlanSummaryIDList(selections[i]);
+                        for (int j = 0; j < WorkPlanlist.Count(); j++)
+                        {
+                            bllWorkPlan.Delete(Convert.ToInt32(WorkPlanlist[j]));
+                        }
+                        BLHelper.BLLLibraryRecord bllLibrary = new BLLLibraryRecord();
+                        List<int> LibraryRecordlist = bllLibrary.FindUserInfoIDList(selections[i]);
+                        for (int j = 0; j < LibraryRecordlist.Count(); j++)
+                        {
+                            bllLibrary.Delete(LibraryRecordlist[j]);
+                        }
+                        //删除工作计划总结
+                        //删除人员相关成果获奖信息
+                        string UserName = bllUser.Find(selections[i], true).UserName;
+                        BLHelper.BLLAward bllAward = new BLLAward();
+                        List<string> Awardlist = bllAward.FindAwardPeopleList();
+                        List<int> AwardIDlists = new List<int>();
+                        for (int n = 0; n < Awardlist.Count(); n++)
+                        {
+                            if (UserName == Awardlist[n])
+                            {
+                                for (int m = 0; m < bllAward.FindAwardIDList(Awardlist[n]).Count(); m++)
+                                {
+                                    AwardIDlists.Add((bllAward.FindAwardIDList(Awardlist[n]))[m]);
+                                }
+                            }
+                        }
+                        for (int k = 0; k < AwardIDlists.Count(); k++)
+                        {
+                            bllAward.Delete(AwardIDlists[k]);
+                        }
+                        //删除人员相关成果报奖信息
+                        BLHelper.BLLAchieveAward bllAchieveAward = new BLLAchieveAward();
+                        List<string> AchieveAwardlist = bllAchieveAward.FindAwardPeopleList();
+                        List<int> AchieveAwardID = new List<int>();
+                        for (int n = 0; n < AchieveAwardlist.Count(); n++)
+                        {
+                            if (UserName == AchieveAwardlist[n])
+                            {
+                                for (int m = 0; m < bllAchieveAward.FindAwardIDList(AchieveAwardlist[n]).Count(); m++)
+                                {
+                                    AchieveAwardID.Add((bllAchieveAward.FindAwardIDList(AchieveAwardlist[n]))[m]);
+                                }
+                            }
+                        }
+                        for (int k = 0; k < AchieveAwardID.Count(); k++)
+                        {
+                            bllAchieveAward.Delete(AchieveAwardID[k]);
+                        }
+                        //删除人员相关成果鉴定信息①②
+                        BLHelper.BLLAchievement bllAchivement = new BLLAchievement();
+                        BLHelper.BLLStaffAchieve bllStaffAchieve = new BLLStaffAchieve();
+                        List<int> AchivementIDlist = bllStaffAchieve.FindByUserID(selections[i]);
+                        List<int> StaffAchievelist = bllStaffAchieve.FindByStaffAchiveID(selections[i]);
+                        //删除只有该人员一人为完成人的人员成果表信息 
+                        for (int n = 0; n < StaffAchievelist.Count(); n++)
+                        {
+                            bllStaffAchieve.Delete(StaffAchievelist[n]);
+                        }
+                        //删除成果报奖
+                        List<int> AchieveAwardIDlist = new List<int>();
+                        for (int n = 0; n < AchivementIDlist.Count(); n++)
+                        {
+                            if (bllAchieveAward.FindByAchievement(AchivementIDlist[n]).Count() != 0)
+                            {
+                                for (int j = 0; j < bllAchieveAward.FindByAchievement(AchivementIDlist[n]).Count(); j++)
+                                {
+                                    AchieveAwardIDlist.Add(bllAchieveAward.FindByAchievement(AchivementIDlist[n])[j]);
+                                }
+                            }
+                        }
+                        for (int n = 0; n < AchieveAwardIDlist.Count(); n++)
+                        {
+                            bllAchieveAward.Delete(AchieveAwardIDlist[n]);
+                        }
+                        //删除成果应用
+                        BLHelper.BLLAchievementApply bllAchieveApply = new BLLAchievementApply();
+                        List<int> AchieveApplylist = new List<int>();
+                        for (int n = 0; n < AchivementIDlist.Count(); n++)
+                        {
+                            if (bllAchieveApply.FindByAchievement(AchivementIDlist[n]).Count() != 0)
+                            {
+                                for (int j = 0; j < bllAchieveApply.FindByAchievement(AchivementIDlist[n]).Count(); j++)
+                                {
+                                    AchieveApplylist.Add(bllAchieveApply.FindByAchievement(AchivementIDlist[n])[j]);
+                                }
+                            }
+                        }
+                        for (int n = 0; n < AchieveApplylist.Count(); n++)
+                        {
+                            bllAchieveApply.Delete(AchieveApplylist[n]);
+                        }
+                        //删除成果验收
+                        BLHelper.BLLAchievementCA bllAchieveCA = new BLLAchievementCA();
+                        List<int> AchieveCAlist = new List<int>();
+                        for (int n = 0; n < AchivementIDlist.Count(); n++)
+                        {
+                            if (bllAchieveCA.FindByAchievement(AchivementIDlist[n]).Count() != 0)
+                            {
+                                for (int j = 0; j < bllAchieveCA.FindByAchievement(AchivementIDlist[n]).Count(); j++)
+                                {
+                                    AchieveCAlist.Add(bllAchieveCA.FindByAchievement(AchivementIDlist[n])[j]);
+                                }
+                            }
+                        }
+                        for (int n = 0; n < AchieveCAlist.Count(); n++)
+                        {
+                            bllAchieveCA.Delete(AchieveCAlist[n]);
+                        }
+                        //删除只有该人员一人为完成人的成果鉴定
+                        for (int j = 0; j < AchivementIDlist.Count(); j++)
+                        {
+                            bllAchivement.Delete(AchivementIDlist[j]);
+                        }
+                        //删除人员相关专利信息
+                        BLHelper.BLLPatent bllPatent = new BLLPatent();
+                        List<string> Patentlist = bllPatent.FindPatentPeopleList();
+                        List<int> PatentID = new List<int>();
+                        for (int n = 0; n < Patentlist.Count(); n++)
+                        {
+                            if (UserName == Patentlist[n])
+                            {
+                                for (int m = 0; m < bllPatent.FindPatentIDList(Patentlist[n]).Count(); m++)
+                                {
+                                    PatentID.Add((bllPatent.FindPatentIDList(Patentlist[n]))[m]);
+                                }
+                            }
+                        }
+                        for (int k = 0; k < PatentID.Count(); k++)
+                        {
+                            bllPatent.Delete(PatentID[k]);
+                        }
+                        //删除人员相关专著信息
+                        BLHelper.BLLMonograph bllMonograph = new BLLMonograph();
+                        List<string> Monographlist = bllMonograph.FindMonographPeopleList();
+                        List<int> MonographID = new List<int>();
+                        for (int n = 0; n < Monographlist.Count(); n++)
+                        {
+                            if (UserName == Monographlist[n])
+                            {
+                                for (int m = 0; m < bllMonograph.FindMonographIDList(Monographlist[n]).Count(); m++)
+                                {
+                                    MonographID.Add((bllMonograph.FindMonographIDList(Monographlist[n]))[m]);
+                                }
+                            }
+                        }
+                        for (int k = 0; k < MonographID.Count(); k++)
+                        {
+                            bllMonograph.Delete(MonographID[k]);
+                        }
+                        //删除人员相关论文信息
+                        BLHelper.BLLPaper bllPaper = new BLLPaper();
+                        List<string> Paperlist = bllPaper.FindPaperPeopleList();
+                        List<int> PaperID = new List<int>();
+                        for (int n = 0; n < Paperlist.Count(); n++)
+                        {
+                            if (UserName == Paperlist[n])
+                            {
+                                for (int m = 0; m < bllPaper.FindPaperIDList(Paperlist[n]).Count(); m++)
+                                {
+                                    PaperID.Add((bllPaper.FindPaperIDList(Paperlist[n]))[m]);
+                                }
+                            }
+                        }
+                        for (int k = 0; k < PaperID.Count(); k++)
+                        {
+                            bllPaper.Delete(PaperID[k]);
+                        }
+                        //删除人员
+                        bllUser.Delete(selections[i]);
+                    }
+                    Alert.ShowInTop("删除成功!");
+                    btnSelect_All.Text = "全选";
+                    BindData();
+                }
+                else
+                {
+                    for (int i = 0; i < publicmethod.GridCount(People_Info, CBoxSelect).Count(); i++)
+                    {
+                        bllUser.ChangePass(Convert.ToInt32(People_Info.DataKeys[selections[i]][0]), false);
+                        //向操作日志表中插入
+                        OperationLog operate = new OperationLog();
+                        operate.LoginName = bllUser.FindByLoginName(Session["LoginName"].ToString()).UserName;
+                        operate.LoginIP = "";
+                        operate.OperationType = "删除";
+                        operate.OperationContent = "UserInfo";
+                        operate.OperationDataID = Convert.ToInt32(People_Info.DataKeys[selections[i]][0]);
+                        operate.OperationTime = System.DateTime.Now;
+                        operate.Remark = "";
+                        bllOperate.Insert(operate);
+                    }
+                    Alert.ShowInTop("您的数据已提交，请等待确认！");
+                    BindData();
+                    btnSelect_All.Text = "全选";
+
+                }
+            }
+            catch (Exception ex)
+            {
+                publicmethod.SaveError(ex, this.Request);
+            }
         }
     }
 }
