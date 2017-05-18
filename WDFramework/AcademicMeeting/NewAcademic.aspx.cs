@@ -35,6 +35,7 @@ namespace WDFramework.AcademicMeeting
         protected void Page_Load(object sender, EventArgs e)
         {
             page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
+            btnSelect_All.Text = "全选";
             if (!IsPostBack)
             {
                 btnAddMeeting.OnClientClick = Window_AddMeeting.GetShowReference("AddMeeting.aspx", "增加会议");//弹出增加学术会议界面

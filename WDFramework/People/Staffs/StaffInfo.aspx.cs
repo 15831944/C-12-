@@ -40,7 +40,8 @@ namespace WDFramework.People.Staffs
         private int page;
         protected void Page_Load(object sender, EventArgs e)
         {
-            page = ViewState["page"] == null ? 0 : (int)ViewState["page"]; 
+            page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
+            btnSelect_All.Text = "全选";
             if (!IsPostBack)
             {
                 //添加数据

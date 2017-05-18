@@ -22,6 +22,7 @@ namespace WDFramework.NewAcademicReporting
         protected void Page_Load(object sender, EventArgs e)
         {
             page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
+            btnSelect_All.Text = "全选";
             if (!IsPostBack)
             {
                 btnAddLecture.OnClientClick = Window_addLecture.GetShowReference("AddNAReporting.aspx", "新增报告信息");

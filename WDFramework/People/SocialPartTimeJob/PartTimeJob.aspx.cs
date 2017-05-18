@@ -29,6 +29,7 @@ namespace WDFramework.People
             if (!IsPostBack)
             {
                 page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
+                btnSelect_All.Text = "全选";
                 //添加
                 btnAdd.OnClientClick = WindowAdd.GetShowReference("Add_PartTimeJob.aspx");
                 //删除数据

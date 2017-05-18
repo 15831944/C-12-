@@ -34,6 +34,7 @@ namespace WebApplication1.ContractAndPact.Pact
         protected void Page_Load(object sender, EventArgs e)
         {
             page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
+            btnSelect_All.Text = "全选";
             if (!IsPostBack)
             {
                 btn_AddPact.OnClientClick = Window_AddPact.GetShowReference("Add_Pact.aspx", "新增合同信息");

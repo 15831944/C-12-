@@ -27,6 +27,7 @@ namespace WDFramework.Projects
         protected void Page_Load(object sender, EventArgs e)
         {
             page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
+            btnSelect_All.Text = "全选";
             if (!IsPostBack)
             {
                 //添加数据

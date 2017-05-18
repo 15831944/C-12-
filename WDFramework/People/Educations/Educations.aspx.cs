@@ -25,9 +25,10 @@ namespace WDFramework.People.Educations
         private int page;
         protected void Page_Load(object sender, EventArgs e)
         {
+            page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
+            btnSelect_All.Text = "全选";
             if (!IsPostBack)
             {
-                page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
                 //添加
                 btnAdd.OnClientClick = WindowAdd.GetShowReference("Add_Education.aspx");
                 BindData();

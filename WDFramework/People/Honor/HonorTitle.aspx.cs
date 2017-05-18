@@ -29,6 +29,7 @@ namespace WDFramework.People
             if (!IsPostBack)
             {
                 page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
+                btnSelect_All.Text = "全选";
                 //添加数据
                 btnAddProject.OnClientClick = WindowHonor.GetShowReference("Add_HonorTitle.aspx");
                 //修改数据

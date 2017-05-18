@@ -26,6 +26,7 @@ namespace WebApplication1
             if (!IsPostBack)
             {
                 page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
+                btnSelect_All.Text = "全选";
                 //删除数据
                 // btnDelete.OnClientClick = Grid_WorkPlanSummary.GetNoSelectionAlertReference("请至少选择一项！");
                 btnAddPlan.OnClientClick = Window_AddPlan.GetShowReference("Add_WorkPlanSummary.aspx", "新增信息");

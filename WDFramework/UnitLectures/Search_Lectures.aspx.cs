@@ -27,6 +27,7 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
+            btnSelect_All.Text = "全选";
             if (!IsPostBack)
             {
                 btnAddLecture.OnClientClick = Window_addLecture.GetShowReference("Add_Lectures.aspx", "新增讲学信息");

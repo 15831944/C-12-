@@ -32,6 +32,7 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             page = ViewState["page"] == null ? 0 : (int)ViewState["page"];
+            btnSelect_All.Text = "全选";
             if (ddl_search.SelectedIndex == 0)
                 tAchieveName.Enabled = false;
             if (ddl_search.SelectedIndex != 4)
